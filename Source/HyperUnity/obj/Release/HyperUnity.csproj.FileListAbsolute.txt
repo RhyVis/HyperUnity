@@ -74,5 +74,3 @@ D:\Program\Steam\steamapps\common\RimWorld\Mods\HyperUnity\Source\HyperUnity\bin
 D:\Program\Steam\steamapps\common\RimWorld\Mods\HyperUnity\Source\HyperUnity\bin\Release\PipeSystem.dll
 D:\Program\Steam\steamapps\common\RimWorld\Mods\HyperUnity\Source\HyperUnity\bin\Release\VFECore.dll
 D:\Program\Steam\steamapps\common\RimWorld\Mods\HyperUnity\Source\HyperUnity\bin\Release\KCSG.dll
-D:\Program\Steam\steamapps\common\RimWorld\Mods\HyperUnity\Source\HyperUnity\bin\Release\LWM.DeepStorage.dll
-D:\Program\Steam\steamapps\common\RimWorld\Mods\HyperUnity\Source\HyperUnity\bin\Release\LWM.DeepStorage.pdb

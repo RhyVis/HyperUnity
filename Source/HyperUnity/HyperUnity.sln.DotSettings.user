@@ -8,4 +8,6 @@
 	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;&#xD;
   &lt;Assembly Path="D:\Program\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp.dll" /&gt;&#xD;
   &lt;Assembly Path="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Xml.dll" /&gt;&#xD;
+  &lt;Assembly Path="D:\Program\Steam\steamapps\workshop\content\294100\2023507013\1.5\Assemblies\PipeSystem.dll" /&gt;&#xD;
+  &lt;Assembly Path="D:\Program\Steam\steamapps\workshop\content\294100\1617282896\1.5\Assemblies\LWM.DeepStorage.dll" /&gt;&#xD;
 &lt;/AssemblyExplorer&gt;</s:String></wpf:ResourceDictionary>

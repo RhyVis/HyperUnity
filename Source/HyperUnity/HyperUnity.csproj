@@ -42,9 +42,6 @@
         <Reference Include="Assembly-CSharp">
           <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
         </Reference>
-        <Reference Include="LWM.DeepStorage">
-          <HintPath>..\..\..\..\..\..\workshop\content\294100\1617282896\1.5\Assemblies\LWM.DeepStorage.dll</HintPath>
-        </Reference>
         <Reference Include="PipeSystem">
           <HintPath>..\..\..\..\..\..\workshop\content\294100\2023507013\1.5\Assemblies\PipeSystem.dll</HintPath>
         </Reference>
@@ -75,7 +72,6 @@
         <Compile Include="Comps\ThingComps\CompUltimateReactor.cs" />
         <Compile Include="Comps\ThingComps\CompUltimateReactorExt.cs" />
         <Compile Include="Harmony\Init.cs" />
-        <Compile Include="Harmony\Patch_LVMDontTouchMyThing.cs" />
         <Compile Include="Harmony\Patch_PreventDeterioratingOrRotting.cs" />
         <Compile Include="Harmony\Patch_WealthWatcher.cs" />
         <Compile Include="Utility.cs" />

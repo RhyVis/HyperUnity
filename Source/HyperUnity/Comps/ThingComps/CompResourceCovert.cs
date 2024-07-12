@@ -8,7 +8,8 @@ namespace HyperUnity
 {
   public class CompProperties_ResourceCovert : CompProperties
   {
-    public int checkInterval = 3600;
+    public int checkInterval = 1250;
+    public float ratio = -1.0f;
     
     public CompProperties_ResourceCovert()
     {
@@ -40,36 +41,42 @@ namespace HyperUnity
 
     private void doCovert()
     {
-      var things = parent.Map.thingGrid.ThingsListAt(parent.Position)
-        .Where(thing => thing.def != ThingDefOf.Silver).ToList();
-      if (things.Count == 0)
+      if (parent is IHaulDestination)
       {
-        return;
-      }
-      
-      var value = 0f;
-      foreach (var thing in things)
-      {
-        value += thing.def.BaseMarketValue * thing.stackCount;
-        thing.Destroy();
-      }
-      MoteMaker.ThrowText(parent.TrueCenter() + new Vector3(0.5f, 0.5f, 0.5f), parent.Map,
-        "R_HyperUnity_CompResourceCovert_Mote".Translate(value));
-      var stackSilverLimit = ThingDefOf.Silver.stackLimit;
-      var stackSilver = ThingMaker.MakeThing(ThingDefOf.Silver);
-      while (value > 0)
-      {
-        if (value > stackSilverLimit)
+        var things = parent.GetSlotGroup().HeldThings.Where(thing => thing.def != ThingDefOf.Silver).ToList();
+        if (things.Count == 0)
         {
-          stackSilver.stackCount = stackSilverLimit;
-          GenPlace.TryPlaceThing(stackSilver, parent.Position, parent.Map, ThingPlaceMode.Near);
-          value -= stackSilverLimit;
+          return;
         }
-        else
+      
+        var value = 0f;
+        foreach (var thing in things)
         {
-          stackSilver.stackCount = (int)value;
-          GenPlace.TryPlaceThing(stackSilver, parent.Position, parent.Map, ThingPlaceMode.Near);
-          value = 0;
+          value += thing.MarketValue * thing.stackCount;
+          thing.Destroy();
+        }
+        if (Props.ratio >= 0f)
+        {
+          value *= Props.ratio;
+        }
+        MoteMaker.ThrowText(parent.TrueCenter() + new Vector3(0.5f, 0.5f, 0.5f), parent.Map,
+          "R_HyperUnity_CompResourceCovert_Mote".Translate(value));
+        var stackSilverLimit = ThingDefOf.Silver.stackLimit;
+        while (value > 0)
+        {
+          var stackSilver = ThingMaker.MakeThing(ThingDefOf.Silver);
+          if (value > stackSilverLimit)
+          {
+            stackSilver.stackCount = stackSilverLimit;
+            GenPlace.TryPlaceThing(stackSilver, parent.Position, parent.Map, ThingPlaceMode.Near);
+            value -= stackSilverLimit;
+          }
+          else
+          {
+            stackSilver.stackCount = (int)value;
+            GenPlace.TryPlaceThing(stackSilver, parent.Position, parent.Map, ThingPlaceMode.Near);
+            value = 0;
+          }
         }
       }
     }
