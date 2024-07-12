@@ -20,13 +20,16 @@ namespace HyperUnity
   public class CompResourceCovert : ThingComp
   {
     private CompProperties_ResourceCovert Props => (CompProperties_ResourceCovert)props;
-    
-    private List<ThingDef> _allowedThingDefs;
 
-    public override void PostSpawnSetup(bool respawningAfterLoad)
+    public override IEnumerable<Gizmo> CompGetGizmosExtra()
     {
-      base.PostSpawnSetup(respawningAfterLoad);
-      _allowedThingDefs = parent.def.building.fixedStorageSettings.filter.AllowedThingDefs.ToList();
+      yield return new Command_Action()
+      {
+        defaultLabel = "R_HyperUnity_CompResourceCovert_Gizmo_Label".Translate(),
+        defaultDesc = "R_HyperUnity_CompResourceCovert_Gizmo_Desc".Translate(),
+        icon = TexCommand.ForbidOff,
+        action = DoCovert
+      };
     }
 
     public override void CompTick()
@@ -36,10 +39,10 @@ namespace HyperUnity
       {
         return;
       }
-      doCovert();
+      DoCovert();
     }
 
-    private void doCovert()
+    private void DoCovert()
     {
       if (parent is IHaulDestination)
       {
@@ -60,7 +63,7 @@ namespace HyperUnity
           value *= Props.ratio;
         }
         MoteMaker.ThrowText(parent.TrueCenter() + new Vector3(0.5f, 0.5f, 0.5f), parent.Map,
-          "R_HyperUnity_CompResourceCovert_Mote".Translate(value));
+          "R_HyperUnity_CompResourceCovert_Mote".Translate((int)value));
         var stackSilverLimit = ThingDefOf.Silver.stackLimit;
         while (value > 0)
         {

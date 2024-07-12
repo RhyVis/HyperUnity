@@ -23,6 +23,8 @@
   
   <R_HyperUnity_HediffComp_SkillDeplete_Mote>退行: {0} XP -{1}</R_HyperUnity_HediffComp_SkillDeplete_Mote>
   
+  <R_HyperUnity_CompResourceCovert_Gizmo_Label>立即转化</R_HyperUnity_CompResourceCovert_Gizmo_Label>
+  <R_HyperUnity_CompResourceCovert_Gizmo_Desc>立即将容器内的物品转化为白银</R_HyperUnity_CompResourceCovert_Gizmo_Desc>
   <R_HyperUnity_CompResourceCovert_Mote>转化财富: {0}</R_HyperUnity_CompResourceCovert_Mote>
   
   <!-- Wealth PipeSystem -->

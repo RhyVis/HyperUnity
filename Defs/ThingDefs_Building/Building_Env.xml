@@ -83,7 +83,6 @@
       <ComponentIndustrial>1</ComponentIndustrial>
     </costList>
   </ThingDef>
-
   <ThingDef ParentName="RWallEnvGoodBase">
     <defName>R_WallEnvGood_Clean</defName>
     <label>壁挂超净装置</label>
@@ -121,7 +120,6 @@
       <ComponentIndustrial>1</ComponentIndustrial>
     </costList>
   </ThingDef>
-
   <ThingDef ParentName="RWallEnvBadBase">
     <defName>R_WallEnvBad_Clean</defName>
     <label>壁挂污秽装置</label>

@@ -17,7 +17,7 @@
     </building>
     <costList>
       <Steel>300</Steel>
-      <Plateel>25</Plateel>
+      <Plasteel>25</Plasteel>
       <Silver>120</Silver>
     </costList>
     <tickerType>Normal</tickerType>
@@ -52,8 +52,11 @@
         <priority>Critical</priority>
         <filter>
           <categories>
-            <li>BodyPartsNatural</li>
+            <li>Root</li>
           </categories>
+          <disallowedThingDefs>
+            <li>Silver</li>
+          </disallowedThingDefs>
         </filter>
       </fixedStorageSettings>
       <defaultStorageSettings>
