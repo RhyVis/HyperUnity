@@ -23,6 +23,9 @@
     <graphicData>
       <texPath>Things/Item/Resource/RFoodRaw/R_RawSyntheticMeat</texPath>
     </graphicData>
+    <thingCategories Inherit="False">
+      <li>MeatRaw</li>
+    </thingCategories>
     <statBases>
       <MarketValue>1</MarketValue>
     </statBases>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <AlienMeatTest.MeatListDef>
+    <defName>R_MeatOpt_WhiteList</defName>
+    <label>White List For (Optimizations: Meat)</label>
+    <meats>
+      <li>R_RawSyntheticMeat</li>
+    </meats>
+  </AlienMeatTest.MeatListDef>
+</Defs>

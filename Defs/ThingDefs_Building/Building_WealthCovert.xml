@@ -3,14 +3,10 @@
   <ThingDef Name="RWealthCovertBase" ParentName="BuildingBase" Abstract="True">
     <thingClass>HyperUnity.Building_WithoutZoneSettings</thingClass>
     <graphicData>
-      <texPath>Things/Building/Misc/AnimalBed/AnimalSleepBox</texPath>
+      <texPath>Things/Building/RVarious/R_WealthCovert</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <damageData>
-        <rect>(0.05,0.05,0.9,0.9)</rect>
-        <cornerTL>Damage/Corner</cornerTL>
-        <cornerTR>Damage/Corner</cornerTR>
-        <cornerBL>Damage/Corner</cornerBL>
-        <cornerBR>Damage/Corner</cornerBR>
+        <enabled>False</enabled>
       </damageData>
     </graphicData>
     <altitudeLayer>Building</altitudeLayer>
@@ -20,7 +16,9 @@
       <ignoreStoredThingsBeauty>True</ignoreStoredThingsBeauty>
     </building>
     <costList>
-      <Steel>30</Steel>
+      <Steel>300</Steel>
+      <Plateel>25</Plateel>
+      <Silver>120</Silver>
     </costList>
     <tickerType>Normal</tickerType>
     <passability>PassThroughOnly</passability>
@@ -69,8 +67,10 @@
     </building>
     <comps>
       <li Class="LWM.DeepStorage.Properties" MayRequire="LWM.DeepStorage">
-        <maxNumberStacks>12</maxNumberStacks>
-        <overlayType>SumOfItemsPerCell</overlayType>
+        <maxNumberStacks>8</maxNumberStacks>
+        <showContents>False</showContents>
+        <timeStoringTakes>0</timeStoringTakes>
+        <overlayType>SumOfAllItems</overlayType>
       </li>
       <li Class="HyperUnity.CompProperties_ResourceCovert"/>
     </comps>
