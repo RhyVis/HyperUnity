@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <ThingDef Name="RResourceBase" Abstract="True">
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <drawerType>MapMeshOnly</drawerType>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <useHitPoints>False</useHitPoints>
+    <selectable>True</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <stackLimit>75</stackLimit>
+    <statBases>
+      <Beauty>-1</Beauty>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+    </comps>
+    <alwaysHaulable>True</alwaysHaulable>
+    <drawGUIOverlay>True</drawGUIOverlay>
+    <rotatable>False</rotatable>
+    <pathCost>0</pathCost>
+    <allowedArchonexusCount>-1</allowedArchonexusCount>
+  </ThingDef>
+
+  <ThingDef Abstract="True" Name="ROrganicProductBase" ParentName="RResourceBase">
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>60</MaxHitPoints>
+      <Mass>0.03</Mass>
+    </statBases>
+    <tickerType>Rare</tickerType>
+    <healthAffectsPrice>False</healthAffectsPrice>
+  </ThingDef>
+
+  <ThingDef Abstract="True" Name="RPlantFoodRawBase" ParentName="ROrganicProductBase">
+    <ingestible>
+      <preferability>RawBad</preferability>
+      <tasteThought>AteRawFood</tasteThought>
+      <ingestEffect>EatVegetarian</ingestEffect>
+      <ingestSound>RawVegetable_Eat</ingestSound>
+    </ingestible>
+    <statBases>
+      <Nutrition>0.05</Nutrition>
+      <FoodPoisonChanceFixedHuman>0.02</FoodPoisonChanceFixedHuman>
+    </statBases>
+    <socialPropernessMatters>True</socialPropernessMatters>
+    <thingCategories>
+      <li>PlantFoodRaw</li>
+    </thingCategories>
+    <allowedArchonexusCount>200</allowedArchonexusCount>
+  </ThingDef>
+</Defs>

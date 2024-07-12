@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+  <ThingDef Abstract="True" Name="FortressWallBase" ParentName="BuildingBase">
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <designationCategory>R_MainCategory</designationCategory>
+    <graphicData>
+      <graphicClass>Graphic_Appearances</graphicClass>
+      <linkType>CornerFiller</linkType>
+      <linkFlags>
+        <li>Wall</li>
+        <li>Rock</li>
+      </linkFlags>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+        <edgeTop>Damage/Edge</edgeTop>
+        <edgeBot>Damage/Edge</edgeBot>
+        <edgeLeft>Damage/Edge</edgeLeft>
+        <edgeRight>Damage/Edge</edgeRight>
+      </damageData>
+      <color>(255,255,255)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>30000</MaxHitPoints>
+      <WorkToBuild>50</WorkToBuild>
+      <Flammability>0</Flammability>
+      <MeditationFocusStrength>0.50</MeditationFocusStrength>
+      <Cleanliness>0.3</Cleanliness>
+      <Beauty>20</Beauty>
+      <MarketValue>10</MarketValue>
+    </statBases>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <useHitPoints>false</useHitPoints>
+    <coversFloor>true</coversFloor>
+    <placingDraggableDimensions>1</placingDraggableDimensions>
+    <tickerType>Never</tickerType>
+    <rotatable>false</rotatable>
+    <selectable>true</selectable>
+    <neverMultiSelect>true</neverMultiSelect>
+    <holdsRoof>true</holdsRoof>
+    <uiOrder>2000</uiOrder>
+    <staticSunShadowHeight>1.0</staticSunShadowHeight>
+    <blockLight>true</blockLight>
+    <canOverlapZones>false</canOverlapZones>
+    <fertility>0</fertility>
+    <costList>
+      <Plasteel>4</Plasteel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <building>
+      <paintable>true</paintable>
+      <isInert>true</isInert>
+      <isPlaceOverableWall>true</isPlaceOverableWall>
+      <ai_chillDestination>false</ai_chillDestination>
+      <supportsWallAttachments>true</supportsWallAttachments>
+      <relatedBuildCommands>
+        <li>FortressDoorRegular</li>
+        <li>FortressDoorAuto</li>
+      </relatedBuildCommands>
+    </building>
+  </ThingDef>
+
+  <ThingDef ParentName="FortressWallBase">
+    <defName>FortressWallRegular</defName>
+    <label>要塞墙</label>
+    <description>不可被通常方式摧毁的要塞墙。</description>
+    <graphicData>
+      <texPath>Things/Building/RFortress/RFortressWall</texPath>
+    </graphicData>
+    <uiIconPath>Things/Building/RFortress/RFortressWallIcon</uiIconPath>
+    <fillPercent>1</fillPercent>
+    <building>
+      <blueprintGraphicData>
+        <texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
+      </blueprintGraphicData>
+    </building>
+  </ThingDef>
+
+  <ThingDef ParentName="FortressWallBase">
+    <defName>FortressWallEmbrasure</defName>
+    <label>要塞射击墙</label>
+    <description>不可被通常方式摧毁的要塞墙，允许子弹通过。</description>
+    <graphicData>
+      <texPath>Things/Building/RFortress/RFortressEmbrasure</texPath>
+    </graphicData>
+    <uiIconPath>Things/Building/RFortress/RFortressEmbrasureIcon</uiIconPath>
+    <fillPercent>0.75</fillPercent>
+    <disableImpassableShotOverConfigError>true</disableImpassableShotOverConfigError>
+    <building>
+      <blueprintGraphicData>
+        <texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
+      </blueprintGraphicData>
+    </building>
+  </ThingDef>
+
+  <ThingDef Abstract="True" Name="FortressDoorBase" ParentName="DoorBase">
+    <useHitPoints>False</useHitPoints>
+    <stuffCategories Inherit="False"></stuffCategories>
+    <useStuffTerrainAffordance>False</useStuffTerrainAffordance>
+    <statBases>
+      <MaxHitPoints>30000</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Cleanliness>0.3</Cleanliness>
+      <Beauty>20</Beauty>
+      <MarketValue>10</MarketValue>
+    </statBases>
+    <designationCategory>R_MainCategory</designationCategory>
+    <graphicData>
+      <color>(255,255,255)</color>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="FortressDoorBase">
+    <defName>FortressDoorRegular</defName>
+    <label>要塞门</label>
+    <description>不可被通常方式摧毁的要塞门。</description>
+    <statBases>
+      <MaxHitPoints>30000</MaxHitPoints>
+      <WorkToBuild>50</WorkToBuild>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Building/Door/DoorSimple_Mover</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <damageData>
+        <enabled>false</enabled>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Things/Building/Door/DoorSimple_MenuIcon</uiIconPath>
+    <costList>
+      <Plasteel>6</Plasteel>
+      <Steel>4</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+  </ThingDef>
+
+  <ThingDef ParentName="FortressDoorBase">
+    <defName>FortressDoorAuto</defName>
+    <label>要塞自动门</label>
+    <description>不可被通常方式摧毁的要塞自动门。</description>
+    <statBases>
+      <MaxHitPoints>30000</MaxHitPoints>
+      <WorkToBuild>80</WorkToBuild>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Building/Door/Autodoor_Mover</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <damageData>
+        <enabled>false</enabled>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Things/Building/Door/Autodoor_MenuIcon</uiIconPath>
+    <costList>
+      <Plasteel>8</Plasteel>
+      <Steel>4</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>20</basePowerConsumption>
+      </li>
+    </comps>
+    <researchPrerequisites>
+      <li>Autodoors</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+  </ThingDef>
+
+  <ThingDef ParentName="FortressDoorBase">
+    <defName>FortressDoorRemote</defName>
+    <label>要塞遥控门</label>
+    <description>不可被通常方式摧毁的要塞遥控门，在通电时可以远程控制开关。</description>
+    <statBases>
+      <MaxHitPoints>30000</MaxHitPoints>
+      <WorkToBuild>80</WorkToBuild>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Building/Door/Autodoor_Mover</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <damageData>
+        <enabled>false</enabled>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Things/Building/Door/Autodoor_MenuIcon</uiIconPath>
+    <costList>
+      <Plasteel>18</Plasteel>
+      <Steel>20</Steel>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>20</basePowerConsumption>
+      </li>
+      <li Class="HyperUnity.CompProperties_RemoteDoor"/>
+    </comps>
+    <researchPrerequisites>
+      <li>Autodoors</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+  </ThingDef>
+
+
+</Defs>

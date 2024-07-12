@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <RecipeDef Name="R_SurgeryBase" Abstract="True">
+    <uiIconThing>R_SpecialMedicine</uiIconThing>
+    <effectWorking>Surgery</effectWorking>
+    <soundWorking>Recipe_Surgery</soundWorking>
+    <workAmount>1</workAmount>
+    <isViolation>false</isViolation>
+    <anesthetize>false</anesthetize>
+    <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+    <dontShowIfAnyIngredientMissing>true</dontShowIfAnyIngredientMissing>
+    <targetsBodyPart>false</targetsBodyPart>
+    <surgeryOutcomeEffect IsNull="True"/>
+    <workSkill>Medicine</workSkill>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <skillRequirements>
+      <Medicine>0</Medicine>
+    </skillRequirements>
+    <recipeUsers>
+      <li>Human</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <RecipeDef ParentName="R_SurgeryBase">
+    <defName>R_SurgeryApplyMedicine</defName>
+    <label>施用特制医药</label>
+    <description>施用特制医药。</description>
+    <jobString>正在施用特制医药。</jobString>
+    <workerClass>Recipe_AdministerUsableItem</workerClass>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>R_SpecialMedicine</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>R_SpecialMedicine</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+</Defs>

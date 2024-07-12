@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <ThingDef ParentName="BuildingBase">
+    <defName>R_MiniNuclearGenerator</defName>
+    <label>微型同位素发电机</label>
+    <description>一个小型同位素发电机。</description>
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <texPath>Things/Building/RVarious/R_MiniNuclearGenerator</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+      <damageData>
+        <rect>(0.3,0,5.4,6)</rect>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <pathCost>70</pathCost>
+    <passability>PassThroughOnly</passability>
+    <castEdgeShadows>True</castEdgeShadows>
+    <fillPercent>1</fillPercent>
+    <canOverlapZones>False</canOverlapZones>
+    <rotatable>False</rotatable>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <building>
+      <soundAmbient>GeothermalPlant_Ambience</soundAmbient>
+      <ai_chillDestination>false</ai_chillDestination>
+    </building>
+    <statBases>
+      <MaxHitPoints>800</MaxHitPoints>
+      <WorkToBuild>2000</WorkToBuild>
+      <Flammability>0</Flammability>
+      <Beauty>0</Beauty>
+      <Mass>10</Mass>
+    </statBases>
+    <tickerType>Rare</tickerType>
+    <size>(1,1)</size>
+    <selectable>true</selectable>
+    <costList>
+      <Steel>500</Steel>
+      <Uranium>80</Uranium>
+      <ComponentIndustrial>8</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerPlant</compClass>
+        <basePowerConsumption>-16000</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Glower">
+        <glowRadius>1</glowRadius>
+        <glowColor>(14,223,49,0)</glowColor>
+      </li>
+    </comps>
+    <designationCategory>R_MainCategory</designationCategory>
+    <constructEffect>ConstructMetal</constructEffect>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsPower</li>
+    </thingCategories>
+  </ThingDef>
+</Defs>

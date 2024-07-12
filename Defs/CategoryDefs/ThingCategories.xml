@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingCategoryDef>
+    <defName>R_SpecialMeal_ThingCatMeals</defName>
+    <label>退行套餐</label>
+    <parent>FoodMeals</parent>
+    <iconPath>UI/Icons/ThingCategories/RSpecialMeal</iconPath>
+  </ThingCategoryDef>
+
+  <ThingCategoryDef>
+    <defName>R_SpecialDrink_ThingCatMeals</defName>
+    <label>退行饮品</label>
+    <parent>FoodMeals</parent>
+    <iconPath>UI/Icons/ThingCategories/RSpecialDrink</iconPath>
+  </ThingCategoryDef>
+
+  <ThingCategoryDef>
+    <defName>R_JustMeal_ThingCatMeals</defName>
+    <label>经典食品</label>
+    <parent>FoodMeals</parent>
+    <iconPath>UI/Icons/ThingCategories/RSpecialDrink</iconPath>
+  </ThingCategoryDef>
+
+</Defs>

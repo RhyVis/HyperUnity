@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <ThingDef Name="RSpecialMealBase" ParentName="MealBase" Abstract="True">
+    <graphicData>
+      <texPath>Things/Item/Meal/RSpecialMeal</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>5</MarketValue>
+      <Nutrition>1</Nutrition>
+      <Mass>0.2</Mass>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <ingestible>
+      <preferability>MealAwful</preferability>
+      <tasteThought>R_AteSpecialMeal</tasteThought>
+      <ingestEffect>EatVegetarian</ingestEffect>
+      <ingestSound>Meal_Eat</ingestSound>
+      <baseIngestTicks>100</baseIngestTicks>
+      <outcomeDoers>
+        <li Class="HyperUnity.IngestionOutcomeDoer_AgeTweaker">
+          <offsetDays>3</offsetDays>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <tradeability>Buyable</tradeability>
+    <thingCategories Inherit="false">
+      <li>R_SpecialMeal_ThingCatMeals</li>
+    </thingCategories>
+    <useHitPoints>false</useHitPoints>
+  </ThingDef>
+
+  <ThingDef ParentName="RSpecialMealBase">
+    <defName>R_SpecialMeal</defName>
+    <label>退行套餐</label>
+    <description>一种奇异的餐食，营养充足，却越吃越饿。</description>
+    <ingestible>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>R_TwistedHediff</hediffDef>
+          <severity>0.8</severity>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+  </ThingDef>
+
+  <ThingDef ParentName="RSpecialMealBase">
+    <defName>R_SpecialMeal_Medic</defName>
+    <label>退行套餐（医疗）</label>
+    <description>一种奇异的餐食，营养充足，却越吃越饿。会增强食用者的免疫效果，原本的扭曲效果相对减弱。</description>
+    <ingestible>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>R_TwistedHediff</hediffDef>
+          <severity>0.5</severity>
+        </li>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>R_AntibioticsHediff</hediffDef>
+          <severity>1.0</severity>
+        </li>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>R_PainkillerHediff</hediffDef>
+          <severity>1.0</severity>
+        </li>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>R_HealEnhanceHediff</hediffDef>
+          <severity>1.0</severity>
+        </li>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>R_RegenerationHediff</hediffDef>
+          <severity>1.0</severity>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+  </ThingDef>
+
+  <ThingDef ParentName="RSpecialMealBase">
+    <defName>R_SpecialMeal_Mix</defName>
+    <label>退行套餐（混合）</label>
+    <description>一种奇异的餐食，营养充足，却越吃越饿。加入了太多效果，原本的扭曲效果大幅减弱。</description>
+    <statBases>
+      <MarketValue>30</MarketValue>
+      <Nutrition>1.2</Nutrition>
+      <Mass>0.40</Mass>
+    </statBases>
+    <ingestible>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>R_TwistedHediff</hediffDef>
+          <severity>0.25</severity>
+        </li>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>GoJuiceHigh</hediffDef>
+          <severity>0.5</severity>
+          <toleranceChemical>GoJuice</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_OffsetPsyfocus">
+          <offset>0.15</offset>
+        </li>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>YayoHigh</hediffDef>
+          <severity>0.75</severity>
+          <toleranceChemical>Psychite</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>PsychiteTolerance</hediffDef>
+          <toleranceChemical>Psychite</toleranceChemical>
+          <severity>0.040</severity>
+          <divideByBodySize>true</divideByBodySize>
+          <multiplyByGeneToleranceFactors>true</multiplyByGeneToleranceFactors>
+        </li>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>WakeUpHigh</hediffDef>
+          <severity>0.75</severity>
+          <toleranceChemical>WakeUp</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_OffsetNeed">
+          <need>Rest</need>
+          <offset>1.0</offset>
+          <toleranceChemical>WakeUp</toleranceChemical>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+  </ThingDef>
+
+  <ThingDef ParentName="RSpecialMealBase">
+    <defName>R_SpecialMeal_GoJuice</defName>
+    <label>退行套餐（活力）</label>
+    <description>一种奇异的餐食，营养充足，却越吃越饿。加入了活力水效果，原本的扭曲效果相对减弱。</description>
+    <statBases>
+      <MarketValue>10</MarketValue>
+      <Nutrition>0.8</Nutrition>
+      <Mass>0.25</Mass>
+    </statBases>
+    <ingestible>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>R_TwistedHediff</hediffDef>
+          <severity>0.7</severity>
+        </li>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>GoJuiceHigh</hediffDef>
+          <severity>0.5</severity>
+          <toleranceChemical>GoJuice</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_OffsetNeed">
+          <need>Rest</need>
+          <offset>0.4</offset>
+          <toleranceChemical>GoJuice</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_OffsetPsyfocus">
+          <offset>0.15</offset>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+  </ThingDef>
+
+  <ThingDef ParentName="RSpecialMealBase">
+    <defName>R_SpecialMeal_Yayo</defName>
+    <label>退行套餐（呀呦）</label>
+    <description>一种奇异的餐食，营养充足，却越吃越饿。加入了呀呦粉效果，原本的扭曲效果相对减弱。</description>
+    <statBases>
+      <MarketValue>10</MarketValue>
+      <Nutrition>0.8</Nutrition>
+      <Mass>0.25</Mass>
+    </statBases>
+    <ingestible>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>R_TwistedHediff</hediffDef>
+          <severity>0.7</severity>
+        </li>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>YayoHigh</hediffDef>
+          <severity>0.75</severity>
+          <toleranceChemical>Psychite</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_OffsetNeed">
+          <need>Rest</need>
+          <offset>0.4</offset>
+          <toleranceChemical>Psychite</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>PsychiteTolerance</hediffDef>
+          <toleranceChemical>Psychite</toleranceChemical>
+          <severity>0.040</severity>
+          <divideByBodySize>true</divideByBodySize>
+          <multiplyByGeneToleranceFactors>true</multiplyByGeneToleranceFactors>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+  </ThingDef>
+
+  <ThingDef ParentName="RSpecialMealBase">
+    <defName>R_SpecialMeal_Wakeup</defName>
+    <label>退行套餐（清醒）</label>
+    <description>一种奇异的餐食，营养充足，却越吃越饿。加入了清醒丸效果，原本的扭曲效果相对减弱。</description>
+    <statBases>
+      <MarketValue>10</MarketValue>
+      <Nutrition>0.8</Nutrition>
+      <Mass>0.25</Mass>
+    </statBases>
+    <ingestible>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>R_TwistedHediff</hediffDef>
+          <severity>0.7</severity>
+        </li>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>WakeUpHigh</hediffDef>
+          <severity>0.75</severity>
+          <toleranceChemical>WakeUp</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_OffsetNeed">
+          <need>Rest</need>
+          <offset>1.0</offset>
+          <toleranceChemical>WakeUp</toleranceChemical>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+  </ThingDef>
+</Defs>

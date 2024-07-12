@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <DesignatorDropdownGroupDef>
+    <defName>R_PawnSuppressorDropdown</defName>
+  </DesignatorDropdownGroupDef>
+
+  <ThingDef Name="RPawnSuppressorBase" ParentName="BuildingBase" Abstract="True">
+    <castEdgeShadows>False</castEdgeShadows>
+    <blockWind>False</blockWind>
+    <blockLight>False</blockLight>
+    <graphicData>
+      <texPath>Things/Building/RVarious/R_PawnSuppressor</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.8)</drawSize>
+      <damageData>
+        <enabled>False</enabled>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Standable</passability>
+    <fillPercent>0.1</fillPercent>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <WorkToBuild>1000</WorkToBuild>
+      <Mass>15</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <size>(1,1)</size>
+    <tickerType>Normal</tickerType>
+    <useHitPoints>False</useHitPoints>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <designationCategory>R_MainCategory</designationCategory>
+    <designatorDropdown>R_PawnSuppressorDropdown</designatorDropdown>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <comps>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Forbiddable"/>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="RPawnSuppressorBase">
+    <defName>R_PawnSuppressor_Normal</defName>
+    <label>压制力场</label>
+    <description>这个装置压制周围所有处于攻击性精神状态的生物，每次消耗200Wd。</description>
+    <specialDisplayRadius>4.9</specialDisplayRadius>
+    <costList Inherit="False">
+      <Steel>30</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>False</shortCircuitInRain>
+        <basePowerConsumption>150</basePowerConsumption>
+      </li>
+      <li Class="HyperUnity.CompProperties_PawnSuppressor">
+        <range>4.9</range>
+        <powerCost>200</powerCost>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="RPawnSuppressorBase">
+    <defName>R_PawnSuppressor_Large</defName>
+    <label>压制力场（大型）</label>
+    <description>这个装置压制周围所有处于攻击性精神状态的生物，每次消耗350Wd。这个版本的压制力场范围更大，消耗的电力更大。</description>
+    <specialDisplayRadius>9.9</specialDisplayRadius>
+    <costList Inherit="False">
+      <Steel>45</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <shortCircuitInRain>False</shortCircuitInRain>
+        <basePowerConsumption>250</basePowerConsumption>
+      </li>
+      <li Class="HyperUnity.CompProperties_PawnSuppressor">
+        <range>9.9</range>
+        <powerCost>350</powerCost>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>

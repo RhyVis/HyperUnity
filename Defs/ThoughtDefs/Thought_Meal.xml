@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+  <ThoughtDef>
+    <defName>R_AteSpecialMeal</defName>
+    <durationDays>1</durationDays>
+    <stackLimit>3</stackLimit>
+    <stackedEffectMultiplier>0.8</stackedEffectMultiplier>
+    <stages>
+      <li>
+        <label>吃了退行套餐</label>
+        <description>我吃了什么东西，好难受...</description>
+        <baseMoodEffect>-30</baseMoodEffect>
+      </li>
+    </stages>
+    <replaceThoughts>
+      <li>AteFineMeal</li>
+      <li>AteLavishMeal</li>
+    </replaceThoughts>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>R_AteSpecialDrink</defName>
+    <durationDays>1</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackedEffectMultiplier>0.8</stackedEffectMultiplier>
+    <stages>
+      <li>
+        <label>喝了退行饮品</label>
+        <description>我喝了什么东西，有点不舒服...</description>
+        <baseMoodEffect>-10</baseMoodEffect>
+      </li>
+    </stages>
+    <replaceThoughts>
+      <li>AteFineMeal</li>
+      <li>AteLavishMeal</li>
+    </replaceThoughts>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>R_AteJustMeal_Normal</defName>
+    <durationDays>1</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>喝了营养快线</label>
+        <description>还挺好喝的！</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+    </stages>
+    <replaceThoughts>
+      <li>AteFineMeal</li>
+      <li>R_AteSpecialMeal</li>
+      <li>R_AteSpecialDrink</li>
+    </replaceThoughts>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>R_AteJustMeal_Good</defName>
+    <durationDays>1</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>吃了加量套餐</label>
+        <description>还挺好吃的！</description>
+        <baseMoodEffect>3</baseMoodEffect>
+      </li>
+    </stages>
+    <replaceThoughts>
+      <li>R_AteSpecialMeal</li>
+      <li>R_AteSpecialDrink</li>
+    </replaceThoughts>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>R_AteJustMeal_Bad</defName>
+    <durationDays>1</durationDays>
+    <stackLimit>1</stackLimit>
+    <stages>
+      <li>
+        <label>吃了囚徒套餐</label>
+        <description>这东西真是难以下咽！</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+    </stages>
+    <replaceThoughts>
+      <li>AteFineMeal</li>
+      <li>AteLavishMeal</li>
+    </replaceThoughts>
+  </ThoughtDef>
+
+</Defs>

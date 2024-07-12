@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <ThingDef Name="RSpecialDrinkBase" ParentName="MealBase" Abstract="True">
+        <graphicData>
+            <texPath>Things/Item/Meal/RSpecialDrink</texPath>
+            <graphicClass>Graphic_StackCount</graphicClass>
+        </graphicData>
+        <statBases>
+            <MarketValue>20</MarketValue>
+            <Nutrition>0.6</Nutrition>
+            <Mass>0.05</Mass>
+            <Flammability>0</Flammability>
+            <DeteriorationRate>0</DeteriorationRate>
+        </statBases>
+        <ingestible>
+            <preferability>MealAwful</preferability>
+            <tasteThought>R_AteSpecialDrink</tasteThought>
+            <ingestEffect>EatVegetarian</ingestEffect>
+            <ingestSound>Meal_Eat</ingestSound>
+            <baseIngestTicks>100</baseIngestTicks>
+            <outcomeDoers>
+                <li Class="IngestionOutcomeDoer_GiveHediff">
+                    <hediffDef>R_TwistedHediff</hediffDef>
+                    <severity>0.30</severity>
+                </li>
+            </outcomeDoers>
+        </ingestible>
+        <tradeability>Buyable</tradeability>
+        <thingCategories Inherit="false">
+            <li>R_SpecialDrink_ThingCatMeals</li>
+        </thingCategories>
+        <useHitPoints>false</useHitPoints>
+    </ThingDef>
+
+    <ThingDef ParentName="RSpecialDrinkBase">
+        <defName>R_SpecialDrink_Regeneration</defName>
+        <label>退行饮品（再生）</label>
+        <description>附加强力再生效果。</description>
+        <ingestible>
+            <outcomeDoers>
+                <li Class="IngestionOutcomeDoer_GiveHediff">
+                    <hediffDef>R_RegenerationHediff</hediffDef>
+                    <severity>1.0</severity>
+                </li>
+            </outcomeDoers>
+        </ingestible>
+    </ThingDef>
+
+    <ThingDef ParentName="RSpecialDrinkBase">
+        <defName>R_SpecialDrink_Medic</defName>
+        <label>退行饮品（医疗）</label>
+        <description>附加止痛与免疫增幅效果。</description>
+        <ingestible>
+            <outcomeDoers>
+                <li Class="IngestionOutcomeDoer_GiveHediff">
+                    <hediffDef>R_PainkillerHediff</hediffDef>
+                    <severity>1.0</severity>
+                </li>
+                <li Class="IngestionOutcomeDoer_GiveHediff">
+                    <hediffDef>R_HealEnhanceHediff</hediffDef>
+                    <severity>1.0</severity>
+                </li>
+                <li Class="IngestionOutcomeDoer_GiveHediff">
+                    <hediffDef>R_AntibioticsHediff</hediffDef>
+                    <severity>1.0</severity>
+                </li>
+            </outcomeDoers>
+        </ingestible>
+    </ThingDef>
+
+    <ThingDef ParentName="RSpecialDrinkBase">
+        <defName>R_SpecialDrink_Mix</defName>
+        <label>退行饮品（混合）</label>
+        <description>附加各种精神药物的效果。</description>
+        <ingestible>
+            <outcomeDoers>
+                <li Class="IngestionOutcomeDoer_GiveHediff">
+                    <hediffDef>R_TwistedHediff</hediffDef>
+                    <severity>0.25</severity>
+                </li>
+                <li Class="IngestionOutcomeDoer_GiveHediff">
+                    <hediffDef>GoJuiceHigh</hediffDef>
+                    <severity>0.5</severity>
+                    <toleranceChemical>GoJuice</toleranceChemical>
+                </li>
+                <li Class="IngestionOutcomeDoer_OffsetPsyfocus">
+                    <offset>0.15</offset>
+                </li>
+                <li Class="IngestionOutcomeDoer_GiveHediff">
+                    <hediffDef>YayoHigh</hediffDef>
+                    <severity>0.75</severity>
+                    <toleranceChemical>Psychite</toleranceChemical>
+                </li>
+                <li Class="IngestionOutcomeDoer_GiveHediff">
+                    <hediffDef>PsychiteTolerance</hediffDef>
+                    <toleranceChemical>Psychite</toleranceChemical>
+                    <severity>0.040</severity>
+                    <divideByBodySize>true</divideByBodySize>
+                    <multiplyByGeneToleranceFactors>true</multiplyByGeneToleranceFactors>
+                </li>
+                <li Class="IngestionOutcomeDoer_GiveHediff">
+                    <hediffDef>WakeUpHigh</hediffDef>
+                    <severity>0.75</severity>
+                    <toleranceChemical>WakeUp</toleranceChemical>
+                </li>
+                <li Class="IngestionOutcomeDoer_OffsetNeed">
+                    <need>Rest</need>
+                    <offset>1.0</offset>
+                    <toleranceChemical>WakeUp</toleranceChemical>
+                </li>
+            </outcomeDoers>
+        </ingestible>
+    </ThingDef>
+</Defs>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <ThingDef Name="RJustMealBase" ParentName="MealBase" Abstract="True">
+    <statBases>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <thingCategories Inherit="false">
+      <li>R_JustMeal_ThingCatMeals</li>
+    </thingCategories>
+    <useHitPoints>false</useHitPoints>
+  </ThingDef>
+
+  <ThingDef ParentName="RJustMealBase">
+    <defName>R_JustMeal_Normal</defName>
+    <label>营养快线</label>
+    <description>没有什么特殊效果，喝起来挺好喝。</description>
+    <graphicData>
+      <texPath>Things/Item/Meal/RSpecialDrink</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>15</MarketValue>
+      <Nutrition>1</Nutrition>
+      <Mass>0.05</Mass>
+    </statBases>
+    <ingestible>
+      <preferability>MealFine</preferability>
+      <ingestEffect>EatVegetarian</ingestEffect>
+      <ingestSound>Meal_Eat</ingestSound>
+      <baseIngestTicks>100</baseIngestTicks>
+      <tasteThought>R_AteJustMeal_Normal</tasteThought>
+    </ingestible>
+  </ThingDef>
+
+  <ThingDef ParentName="RJustMealBase">
+    <defName>R_JustMeal_ComboMeal_Fine</defName>
+    <label>加量套餐</label>
+    <description>精致食物水平的套餐，吃了对健康似乎也有好处。</description>
+    <graphicData>
+      <texPath>Things/Item/Meal/RComboMeal</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>30</MarketValue>
+      <Nutrition>1.2</Nutrition>
+      <Mass>0.2</Mass>
+    </statBases>
+    <ingestible>
+      <preferability>MealFine</preferability>
+      <ingestEffect>EatVegetarian</ingestEffect>
+      <ingestSound>Meal_Eat</ingestSound>
+      <baseIngestTicks>800</baseIngestTicks>
+      <tasteThought>R_AteJustMeal_Good</tasteThought>
+    </ingestible>
+  </ThingDef>
+
+  <ThingDef ParentName="RJustMealBase">
+    <defName>R_JustMeal_ComboMeal_Bad</defName>
+    <label>囚徒套餐</label>
+    <description>简单食物水平的套餐，能吃饱但并不令人开心，吃起来也偏慢。</description>
+    <graphicData>
+      <texPath>Things/Item/Meal/RComboMeal</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>10</MarketValue>
+      <Nutrition>1.1</Nutrition>
+      <Mass>0.2</Mass>
+    </statBases>
+    <ingestible>
+      <preferability>MealSimple</preferability>
+      <ingestEffect>EatVegetarian</ingestEffect>
+      <ingestSound>Meal_Eat</ingestSound>
+      <baseIngestTicks>1200</baseIngestTicks>
+      <tasteThought>R_AteJustMeal_Bad</tasteThought>
+    </ingestible>
+  </ThingDef>
+</Defs>

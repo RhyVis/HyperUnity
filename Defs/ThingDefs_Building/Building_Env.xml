@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <DesignatorDropdownGroupDef>
+    <defName>R_WallEnv_Good</defName>
+  </DesignatorDropdownGroupDef>
+
+  <DesignatorDropdownGroupDef>
+    <defName>R_WallEnv_Bad</defName>
+  </DesignatorDropdownGroupDef>
+
+  <ThingDef Name="RWallBuildingBase" ParentName="BuildingBase" Abstract="True">
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawOffsetNorth>(0,0,0.95)</drawOffsetNorth>
+      <drawOffsetSouth>(0,0,-0.9)</drawOffsetSouth>
+      <drawOffsetWest>(-0.9,0,0)</drawOffsetWest>
+      <drawOffsetEast>(0.9,0,0)</drawOffsetEast>
+      <damageData>
+        <enabled>false</enabled>
+      </damageData>
+    </graphicData>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <passability>Standable</passability>
+    <terrainAffordanceNeeded IsNull="True" />
+    <pathCost>0</pathCost>
+    <rotatable>True</rotatable>
+    <fillPercent>0.4</fillPercent>
+    <overrideMinifiedRot>North</overrideMinifiedRot>
+    <minifiedDrawOffset>(0, 0, 0.2)</minifiedDrawOffset>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <statBases>
+      <WorkToBuild>800</WorkToBuild>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Mass>5</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <tickerType>Rare</tickerType>
+    <building>
+      <isEdifice>False</isEdifice>
+      <isAttachment>True</isAttachment>
+      <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+    </building>
+    <placeWorkers>
+      <li>Placeworker_AttachedToWall</li>
+    </placeWorkers>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>3</glowRadius>
+        <glowColor>(255,150,100,0)</glowColor>
+      </li>
+    </comps>
+    <designationCategory>R_MainCategory</designationCategory>
+    <researchPrerequisites>
+      <li>Electricity</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+  </ThingDef>
+
+  <!-- Good -->
+
+  <ThingDef Name="RWallEnvGoodBase" ParentName="RWallBuildingBase" Abstract="True">
+    <designatorDropdown>R_WallEnv_Good</designatorDropdown>
+    <graphicData>
+      <texPath>Things/Building/RVarious/RWallEnv/RWallEnv_Good</texPath>
+    </graphicData>
+    <uiIconPath>Things/Building/RVarious/RWallEnv/RWallEnv_Good_MenuIcon</uiIconPath>
+  </ThingDef>
+
+  <ThingDef ParentName="RWallEnvGoodBase">
+    <defName>R_WallEnvGood_Beauty</defName>
+    <label>壁挂美学装置</label>
+    <description>一个壁挂式装置，可以大幅提升房间美观度。</description>
+    <statBases>
+      <Beauty>500000</Beauty>
+    </statBases>
+    <costList>
+      <Steel>100</Steel>
+      <Gold>150</Gold>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+  </ThingDef>
+
+  <ThingDef ParentName="RWallEnvGoodBase">
+    <defName>R_WallEnvGood_Clean</defName>
+    <label>壁挂超净装置</label>
+    <description>一个壁挂式装置，可以大幅提升房间清洁度。</description>
+    <statBases>
+      <Cleanliness>500</Cleanliness>
+    </statBases>
+    <costList>
+      <Steel>100</Steel>
+      <Silver>150</Silver>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+  </ThingDef>
+
+  <!-- Bad -->
+
+  <ThingDef Name="RWallEnvBadBase" ParentName="RWallBuildingBase" Abstract="True">
+    <designatorDropdown>R_WallEnv_Bad</designatorDropdown>
+    <graphicData>
+      <texPath>Things/Building/RVarious/RWallEnv/RWallEnv_Bad</texPath>
+    </graphicData>
+    <uiIconPath>Things/Building/RVarious/RWallEnv/RWallEnv_Bad_MenuIcon</uiIconPath>
+  </ThingDef>
+
+  <ThingDef ParentName="RWallEnvBadBase">
+    <defName>R_WallEnvBad_Beauty</defName>
+    <label>壁挂丑恶装置</label>
+    <description>一个壁挂式装置，可以大幅降低房间美观度。</description>
+    <statBases>
+      <Beauty>-500000</Beauty>
+    </statBases>
+    <costList>
+      <Steel>100</Steel>
+      <Gold>150</Gold>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+  </ThingDef>
+
+  <ThingDef ParentName="RWallEnvBadBase">
+    <defName>R_WallEnvBad_Clean</defName>
+    <label>壁挂污秽装置</label>
+    <description>一个壁挂式装置，可以大幅降低房间清洁度。</description>
+    <statBases>
+      <Cleanliness>-500</Cleanliness>
+    </statBases>
+    <costList>
+      <Steel>100</Steel>
+      <Silver>150</Silver>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+  </ThingDef>
+</Defs>

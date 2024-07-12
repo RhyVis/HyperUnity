@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <ThingDef Name="RWealthCovertBase" ParentName="BuildingBase" Abstract="True">
+    <thingClass>HyperUnity.Building_WithoutZoneSettings</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Misc/AnimalBed/AnimalSleepBox</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <damageData>
+        <rect>(0.05,0.05,0.9,0.9)</rect>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <size>(1, 1)</size>
+    <building>
+      <preventDeteriorationOnTop>True</preventDeteriorationOnTop>
+      <ignoreStoredThingsBeauty>True</ignoreStoredThingsBeauty>
+    </building>
+    <costList>
+      <Steel>30</Steel>
+    </costList>
+    <tickerType>Normal</tickerType>
+    <passability>PassThroughOnly</passability>
+    <castEdgeShadows>False</castEdgeShadows>
+    <canOverlapZones>False</canOverlapZones>
+    <fillPercent>0.1</fillPercent>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <Mass>8</Mass>
+      <WorkToBuild>100</WorkToBuild>
+    </statBases>
+    <designationCategory>R_MainCategory</designationCategory>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <inspectorTabs>
+      <li>ITab_Storage</li>
+    </inspectorTabs>
+    <comps>
+      <li Class="HyperUnity.CompProperties_PreventDeterioratingOrRotting"/>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="RWealthCovertBase">
+    <defName>R_WealthCovert</defName>
+    <label>财富转化器</label>
+    <description>可以将容器内物品转化为白银。</description>
+    <building>
+      <fixedStorageSettings>
+        <priority>Critical</priority>
+        <filter>
+          <categories>
+            <li>BodyPartsNatural</li>
+          </categories>
+        </filter>
+      </fixedStorageSettings>
+      <defaultStorageSettings>
+        <priority>Critical</priority>
+        <filter>
+          <categories>
+            <li>BodyPartsNatural</li>
+          </categories>
+        </filter>
+      </defaultStorageSettings>
+    </building>
+    <comps>
+      <li Class="LWM.DeepStorage.Properties" MayRequire="LWM.DeepStorage">
+        <maxNumberStacks>12</maxNumberStacks>
+        <overlayType>SumOfItemsPerCell</overlayType>
+      </li>
+      <li Class="HyperUnity.CompProperties_ResourceCovert"/>
+    </comps>
+  </ThingDef>
+</Defs>

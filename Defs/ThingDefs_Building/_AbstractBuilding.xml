@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <ThingDef Name="RFloorStructureBase" ParentName="BuildingBase" Abstract="True">
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <shaderType>CutoutComplex</shaderType>
+      <damageData>
+        <enabled>False</enabled>
+      </damageData>
+    </graphicData>
+    <category>Building</category>
+    <altitudeLayer>FloorCoverings</altitudeLayer>
+    <rotatable>False</rotatable>
+    <castEdgeShadows>False</castEdgeShadows>
+    <canOverlapZones>True</canOverlapZones>
+    <blockWind>False</blockWind>
+    <fillPercent>0</fillPercent>
+    <pathCost>0</pathCost>
+    <passability>Standable</passability>
+    <terrainAffordanceNeeded IsNull="True"/>
+    <blocksAltitudes>
+      <li>FloorCoverings</li>
+    </blocksAltitudes>
+    <building>
+      <isEdifice>False</isEdifice>
+    </building>
+  </ThingDef>
+</Defs>
