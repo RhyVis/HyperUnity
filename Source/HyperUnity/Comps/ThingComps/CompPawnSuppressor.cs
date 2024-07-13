@@ -52,7 +52,7 @@ namespace HyperUnity
         {
           continue;
         }
-        pawn.health.AddHediff(HediffDef.Named("R_SuppressedHediff"));
+        pawn.ApplyHediff(HU_HediffDefOf.R_SuppressedHediff);
         MoteMaker.ThrowText(pawn.TrueCenter() + new Vector3(0.5f, 0.5f, 0.5f), parent.Map, "R_HyperUnity_CompPawnSuppressor_Mote".Translate());
       }
     }

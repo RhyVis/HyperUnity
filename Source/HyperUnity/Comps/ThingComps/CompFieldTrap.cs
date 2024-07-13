@@ -96,8 +96,9 @@ namespace HyperUnity
       SoundDefOf.Psycast_Skip_Entry.PlayOneShot(new TargetInfo(parent.Position, parent.Map));
       foreach (var pawn in pawns)
       {
-        pawn.Position = targetPos;
-        pawn.jobs.StopAll();
+        pawn.ApplyHediff(HU_HediffDefOf.R_SlowHediff);//别动！
+        pawn.Position = targetPos;//过来！
+        pawn.jobs.StopAll();//别走！
         pawn.stances.stunner.StunFor(Props.stunTick, parent, true, !pawn.stances.stunner.Stunned);
       }
     }

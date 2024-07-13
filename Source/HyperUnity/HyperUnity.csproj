@@ -60,6 +60,7 @@
         <Compile Include="Buildings\Building_BodyPartRemove.cs" />
         <Compile Include="Buildings\Building_WithoutZoneSettings.cs" />
         <Compile Include="Comps\HediffComps\HediffComp_SkillDeplete.cs" />
+        <Compile Include="Comps\ThingComps\CompDamageLimit.cs" />
         <Compile Include="Comps\ThingComps\CompBedHediffGiver.cs" />
         <Compile Include="Comps\ThingComps\CompFieldTrap.cs" />
         <Compile Include="Comps\ThingComps\CompGasEmit.cs" />

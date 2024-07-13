@@ -262,6 +262,23 @@
       </li>
     </stages>
   </HediffDef>
+  <HediffDef ParentName="RMiscHediffBase">
+    <defName>R_SlowHediff</defName>
+    <label>缓慢</label>
+    <description>你不得移动。</description>
+    <stages>
+      <li>
+        <statFactors>
+          <MoveSpeed>0.01</MoveSpeed>
+        </statFactors>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>240~240</disappearsAfterTicks>
+      </li>
+    </comps>
+  </HediffDef>
   <HediffDef>
     <defName>R_DeathHediff</defName>
     <label>死亡</label>
