@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <ThingDef ParentName="R_MechanoidWalker_Civilian">
+    <defName>R_AllRoundMechanoid_Normal</defName>
+    <label>机械助手</label>
+    <description>负责协助机械师完成一些简单工作。</description>
+    <race>
+      <mechEnabledWorkTypes>
+        <li>Firefighter</li>
+        <li>BasicWorker</li>
+        <li>Doctor</li>
+        <li>Hauling</li>
+        <li>Cleaning</li>
+        <li MayRequire="mlie.capturethem">CaptureThemCapture</li>
+      </mechEnabledWorkTypes>
+      <mechFixedSkillLevel>20</mechFixedSkillLevel>
+    </race>
+  </ThingDef>
+
+  <PawnKindDef ParentName="R_MechanoidBase">
+    <defName>R_AllRoundMechanoid_Normal</defName>
+    <label>机械助手</label>
+    <race>R_AllRoundMechanoid_Normal</race>
+    <combatPower>100</combatPower>
+    <lifeStages>
+      <li MayRequire="Ludeon.Rimworld.Biotech">
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Mechanoid/HaNui</texPath>
+          <maskPath>Things/Pawn/Mechanoid/FMask/None</maskPath>
+          <shaderType>CutoutWithOverlay</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.3, 0.5)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Mechanoid/HaNui</texPath>
+          <maskPath>Things/Pawn/Mechanoid/FMask/None</maskPath>
+          <shaderType>CutoutWithOverlay</shaderType>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>1</drawSize>
+          <shadowData>
+            <volume>(0.3, 0.3, 0.5)</volume>
+          </shadowData>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <weaponTags>
+      <li>R_UltimateGun</li>
+    </weaponTags>
+  </PawnKindDef>
+</Defs>

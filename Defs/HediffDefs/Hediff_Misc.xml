@@ -38,6 +38,12 @@
     </comps>
   </HediffDef>
   <HediffDef ParentName="RMiscHediffBase">
+    <defName>R_BodyPartWorking</defName>
+    <label>批量移除部位</label>
+    <description>不会死亡。</description>
+    <preventsDeath>True</preventsDeath>
+  </HediffDef>
+  <HediffDef ParentName="RMiscHediffBase">
     <defName>R_RegenerationHediff</defName>
     <label>再生</label>
     <description>大幅增强再生能力。</description>

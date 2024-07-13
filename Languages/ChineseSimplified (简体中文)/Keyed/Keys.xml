@@ -3,30 +3,39 @@
   <!-- Comps -->
   <R_HyperUnity_CompSwitchGizmo_Gizmo_Label>切换开关</R_HyperUnity_CompSwitchGizmo_Gizmo_Label>
   <R_HyperUnity_CompSwitchGizmo_Gizmo_Desc>调整设备是否启动</R_HyperUnity_CompSwitchGizmo_Gizmo_Desc>
-  
+
   <R_HyperUnity_CompPawnSuppressor_Mote>已压制</R_HyperUnity_CompPawnSuppressor_Mote>
-  
+
   <R_HyperUnity_CompRemoteDoor_Gizmo_Label>控制门</R_HyperUnity_CompRemoteDoor_Gizmo_Label>
   <R_HyperUnity_CompRemoteDoor_Gizmo_Desc>远程控制门的开关</R_HyperUnity_CompRemoteDoor_Gizmo_Desc>
-  
+
   <R_HyperUnity_CompUltimateReactor_Gizmo_Label>目标 ({0})</R_HyperUnity_CompUltimateReactor_Gizmo_Label>
   <R_HyperUnity_CompUltimateReactor_Gizmo_Desc>选择超越反应器耗电生成的目标，当前为{0}</R_HyperUnity_CompUltimateReactor_Gizmo_Desc>
   <R_HyperUnity_CompUltimateReactor_TargetName>目标物品</R_HyperUnity_CompUltimateReactor_TargetName>
   <R_HyperUnity_CompUltimateReactor_AmountKeep>数量保持</R_HyperUnity_CompUltimateReactor_AmountKeep>
   <R_HyperUnity_CompUltimateReactor_PowerUse>物品耗能</R_HyperUnity_CompUltimateReactor_PowerUse>
-  
+
   <R_HyperUnity_CompGasEmit_Gizmo_Label>气体释放</R_HyperUnity_CompGasEmit_Gizmo_Label>
   <R_HyperUnity_CompGasEmit_Gizmo_Desc>调整是否释放气体</R_HyperUnity_CompGasEmit_Gizmo_Desc>
-  
+
   <R_HyperUnity_CompFieldTrap_Gizmo_Label>控制力场</R_HyperUnity_CompFieldTrap_Gizmo_Label>
   <R_HyperUnity_CompFieldTrap_Gizmo_Desc>调整是否启动力场</R_HyperUnity_CompFieldTrap_Gizmo_Desc>
-  
+
   <R_HyperUnity_HediffComp_SkillDeplete_Mote>退行: {0} XP -{1}</R_HyperUnity_HediffComp_SkillDeplete_Mote>
-  
+
   <R_HyperUnity_CompResourceCovert_Gizmo_Label>立即转化</R_HyperUnity_CompResourceCovert_Gizmo_Label>
   <R_HyperUnity_CompResourceCovert_Gizmo_Desc>立即将容器内的物品转化为白银</R_HyperUnity_CompResourceCovert_Gizmo_Desc>
   <R_HyperUnity_CompResourceCovert_Mote>转化财富: {0}</R_HyperUnity_CompResourceCovert_Mote>
-  
+
+  <!-- Building -->
+  <R_HyperUnity_Building_BodypartRemove_Gizmo1_Label>自动</R_HyperUnity_Building_BodypartRemove_Gizmo1_Label>
+  <R_HyperUnity_Building_BodypartRemove_Gizmo1_Desc>每1小时，自动尝试批量移除身体部位</R_HyperUnity_Building_BodypartRemove_Gizmo1_Desc>
+  <R_HyperUnity_Building_BodypartRemove_Gizmo2_Label>批量移除身体部位</R_HyperUnity_Building_BodypartRemove_Gizmo2_Label>
+  <R_HyperUnity_Building_BodypartRemove_Gizmo2_Desc>立即尝试批量移除身体部位</R_HyperUnity_Building_BodypartRemove_Gizmo2_Desc>
+  <R_HyperUnity_Building_BodypartRemove_Mote1>床上没有小人</R_HyperUnity_Building_BodypartRemove_Mote1>
+  <R_HyperUnity_Building_BodypartRemove_Mote2>没有足够药品</R_HyperUnity_Building_BodypartRemove_Mote2>
+  <R_HyperUnity_Building_BodypartRemove_Mote3>移除部位: {0}</R_HyperUnity_Building_BodypartRemove_Mote3>
+
   <!-- Wealth PipeSystem -->
   <R_HyperUnity_PipeStorageWealthInspection>储备财富计入</R_HyperUnity_PipeStorageWealthInspection>
   <R_HyperUnity_ExtractWealth>提取500份白银</R_HyperUnity_ExtractWealth>

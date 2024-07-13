@@ -1,7 +1,12 @@
-﻿namespace HyperUnity.Def
+﻿using RimWorld;
+using Verse;
+
+namespace HyperUnity
 {
-  public class HU_HediffDefOf
+  [DefOf]
+  public static class HU_HediffDefOf
   {
-    
+    public static HediffDef R_ImmortalHediff;
+    public static HediffDef R_BodyPartWorking;
   }
 }

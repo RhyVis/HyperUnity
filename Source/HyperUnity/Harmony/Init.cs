@@ -4,7 +4,7 @@ using Verse;
 namespace HyperUnity
 {
   [StaticConstructorOnStartup]
-  internal static class Init
+  public static class Init
   {
     static Init()
     {

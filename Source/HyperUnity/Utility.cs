@@ -141,5 +141,34 @@ namespace HyperUnity
         target.Severity += severityAdjust;
       }
     }
+
+    public static void RemoveHediff(this Pawn pawn, HediffDef hediff)
+    {
+      var target = pawn.health.hediffSet.GetFirstHediffOfDef(hediff);
+      if (target == null)
+      {
+        return;
+      }
+      pawn.health.RemoveHediff(target);
+    }
+
+    public static void DamageBodyPart(this Pawn pawn, BodyPartRecord bodyPart)
+    {
+      pawn.TakeDamage(new DamageInfo(
+        DamageDefOf.SurgicalCut,
+        9999f,
+        999f,
+        -1f,
+        null,
+        bodyPart,
+        null,
+        DamageInfo.SourceCategory.ThingOrUnknown,
+        null,
+        true,
+        true,
+        QualityCategory.Normal,
+        true
+      ));
+    }
   }
 }
