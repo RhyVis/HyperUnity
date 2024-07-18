@@ -2,12 +2,16 @@
 using System.Linq;
 using System.Reflection;
 using RimWorld;
+using UnityEngine;
 using Verse;
 
 namespace HyperUnity
 {
   public static class Utility
   {
+    // Values
+    public static Vector3 RightUp = new Vector3(0.5f, 0.5f, 0.5f);
+    
     public static void SetPrivateField(this object instance, string fieldName, object value)
     {
       var flag = BindingFlags.Instance | BindingFlags.NonPublic;
@@ -152,6 +156,11 @@ namespace HyperUnity
       pawn.health.RemoveHediff(target);
     }
 
+    public static bool HasHediff(this Pawn pawn, HediffDef hediff)
+    {
+      return pawn?.health.hediffSet.GetFirstHediffOfDef(hediff) != null;
+    }
+
     public static void DamageBodyPart(this Pawn pawn, BodyPartRecord bodyPart)
     {
       pawn.TakeDamage(new DamageInfo(
@@ -167,7 +176,7 @@ namespace HyperUnity
         true,
         true,
         QualityCategory.Normal,
-        true
+        false
       ));
     }
   }

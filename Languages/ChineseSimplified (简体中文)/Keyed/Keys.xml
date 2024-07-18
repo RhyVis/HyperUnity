@@ -28,13 +28,14 @@
   <R_HyperUnity_CompResourceCovert_Mote>转化财富: {0}</R_HyperUnity_CompResourceCovert_Mote>
 
   <!-- Building -->
-  <R_HyperUnity_Building_BodypartRemove_Gizmo1_Label>自动</R_HyperUnity_Building_BodypartRemove_Gizmo1_Label>
-  <R_HyperUnity_Building_BodypartRemove_Gizmo1_Desc>每1小时，自动尝试批量移除身体部位</R_HyperUnity_Building_BodypartRemove_Gizmo1_Desc>
-  <R_HyperUnity_Building_BodypartRemove_Gizmo2_Label>批量移除身体部位</R_HyperUnity_Building_BodypartRemove_Gizmo2_Label>
-  <R_HyperUnity_Building_BodypartRemove_Gizmo2_Desc>立即尝试批量移除身体部位</R_HyperUnity_Building_BodypartRemove_Gizmo2_Desc>
+  <R_HyperUnity_Building_BodypartRemove_Gizmo1_Label>移除全部</R_HyperUnity_Building_BodypartRemove_Gizmo1_Label>
+  <R_HyperUnity_Building_BodypartRemove_Gizmo1_Desc>立即尝试批量移除全部身体部位</R_HyperUnity_Building_BodypartRemove_Gizmo1_Desc>
+  <R_HyperUnity_Building_BodypartRemove_Gizmo2_Label>移除腿</R_HyperUnity_Building_BodypartRemove_Gizmo2_Label>
+  <R_HyperUnity_Building_BodypartRemove_Gizmo2_Desc>立即尝试批量移除腿部部位</R_HyperUnity_Building_BodypartRemove_Gizmo2_Desc>
+  <R_HyperUnity_Building_BodypartRemove_Gizmo3_Label>移除眼</R_HyperUnity_Building_BodypartRemove_Gizmo3_Label>
+  <R_HyperUnity_Building_BodypartRemove_Gizmo3_Desc>立即尝试批量移除眼部部位</R_HyperUnity_Building_BodypartRemove_Gizmo3_Desc>
   <R_HyperUnity_Building_BodypartRemove_Mote1>床上没有小人</R_HyperUnity_Building_BodypartRemove_Mote1>
   <R_HyperUnity_Building_BodypartRemove_Mote2>没有足够药品</R_HyperUnity_Building_BodypartRemove_Mote2>
-  <R_HyperUnity_Building_BodypartRemove_Mote3>移除部位: {0}</R_HyperUnity_Building_BodypartRemove_Mote3>
 
   <!-- Wealth PipeSystem -->
   <R_HyperUnity_PipeStorageWealthInspection>储备财富计入</R_HyperUnity_PipeStorageWealthInspection>

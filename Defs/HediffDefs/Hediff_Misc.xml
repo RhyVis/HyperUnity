@@ -42,6 +42,11 @@
     <label>批量移除部位</label>
     <description>不会死亡。</description>
     <preventsDeath>True</preventsDeath>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>1250~1250</disappearsAfterTicks>
+      </li>
+    </comps>
   </HediffDef>
   <HediffDef ParentName="RMiscHediffBase">
     <defName>R_RegenerationHediff</defName>
