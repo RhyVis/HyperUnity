@@ -12,7 +12,6 @@ namespace HyperUnity
     public int checkInterval = 120;
     public int stunTick = 180;
     public float range = 1;
-    public bool checkHostility = true;
     public bool ignoreDistance = false;
 
     public CompProperties_FieldTrap()
@@ -77,14 +76,16 @@ namespace HyperUnity
       {
         pawns = parent.Map.mapPawns.AllPawnsSpawned
           .Where(pawn => !pawn.health.Dead)
-          .Where(pawn => !Props.checkHostility || pawn.Faction != null && pawn.Faction.HostileTo(Faction.OfPlayer))
+          .Where(pawn => (pawn.Faction != null && pawn.Faction.HostileTo(Faction.OfPlayer)) ||
+                         (pawn.RaceProps.Animal && pawn.InAggroMentalState))
           .Where(pawn => !pawn.IsPrisonerInPrisonCell())
           .ToList();
       }
       else
       {
         pawns = this.FindPawnsAliveInRange(Props.range)
-          .Where(pawn => !Props.checkHostility || pawn.Faction != null && pawn.Faction.HostileTo(Faction.OfPlayer))
+          .Where(pawn => (pawn.Faction != null && pawn.Faction.HostileTo(Faction.OfPlayer)) ||
+                         (pawn.RaceProps.Animal && pawn.InAggroMentalState))
           .Where(pawn => !pawn.IsPrisonerInPrisonCell())
           .ToList();
       }

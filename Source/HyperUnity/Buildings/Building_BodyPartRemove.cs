@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
 using UnityEngine;
@@ -6,6 +7,7 @@ using Verse;
 
 namespace HyperUnity
 {
+  [Obsolete("Use ThingComp instead")]
   public class Building_BodyPartRemove : Building_Bed
   {
     private CompRefuelable _refuelable;
@@ -77,20 +79,20 @@ namespace HyperUnity
 
       foreach (var pawn in CurOccupants)
       {
-        var existParts = pawn.health.hediffSet.GetNotMissingParts()
+        var bodyParts = pawn.health.hediffSet.GetNotMissingParts()
           .Where(record => record.def.spawnThingOnRemoved != null).ToList();
-        if (existParts.Count == 0)
+        if (bodyParts.Count == 0)
         {
           return;
         }
         pawn.ApplyHediff(HU_HediffDefOf.R_BodyPartWorking);
-        foreach (var bodyPart in existParts)
+        foreach (var bodyPart in bodyParts)
         {
           var part = ThingMaker.MakeThing(bodyPart.def.spawnThingOnRemoved);
           part.stackCount = 1;
-          GenPlace.TryPlaceThing(part, pawn.Position, pawn.Map, ThingPlaceMode.Near);
+          GenPlace.TryPlaceThing(part, Position, Map, ThingPlaceMode.Near);
           pawn.DamageBodyPart(bodyPart);
-          MoteMaker.ThrowText(this.TrueCenter() + new Vector3(0.5f, 0.5f, 0.5f), this.Map,
+          MoteMaker.ThrowText(this.TrueCenter() + new Vector3(0.5f, 0.5f, 0.5f), Map,
             "R_HyperUnity_Building_BodypartRemove_Mote3".Translate(bodyPart.def.label));
         }
         pawn.RemoveHediff(HU_HediffDefOf.R_BodyPartWorking);

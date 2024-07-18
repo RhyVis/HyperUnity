@@ -64,6 +64,7 @@
         <Compile Include="Comps\ThingComps\CompBedHediffGiver.cs" />
         <Compile Include="Comps\ThingComps\CompFieldTrap.cs" />
         <Compile Include="Comps\ThingComps\CompGasEmit.cs" />
+        <Compile Include="Comps\ThingComps\CompHarvestBed.cs" />
         <Compile Include="Comps\ThingComps\CompHediffGiver.cs" />
         <Compile Include="Comps\ThingComps\CompNetWealthAdjuster.cs" />
         <Compile Include="Comps\ThingComps\CompPawnSuppressor.cs" />

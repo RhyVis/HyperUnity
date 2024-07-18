@@ -177,7 +177,7 @@
   <ThingDef ParentName="BuildingBase">
     <defName>R_WealthTank</defName>
     <label>财富贮藏器</label>
-    <description>用于储存财富网络中的液态财富。存储在其中的财富以0.5倍率计入殖民地总财富，但在摧毁时不会留下其中贮藏的财富。</description>
+    <description>用于储存财富网络中的液态财富。存储在其中的财富以0.1倍率计入殖民地总财富，但在摧毁时不会留下其中贮藏的财富。</description>
     <drawerType>MapMeshAndRealTime</drawerType>
     <graphicData>
       <texPath>Things/Net/Tank/WealthTank</texPath>
@@ -224,7 +224,7 @@
         </extractOptions>
       </li>
       <li Class="HyperUnity.CompProperties_NetWealthAdjuster">
-        <ratio>0.5</ratio>
+        <ratio>0.1</ratio>
       </li>
     </comps>
     <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
