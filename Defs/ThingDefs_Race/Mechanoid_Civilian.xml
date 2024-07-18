@@ -2,7 +2,7 @@
 <Defs>
   <ThingDef ParentName="R_MechanoidWalker_Civilian">
     <defName>R_AllRoundMechanoid_Normal</defName>
-    <label>机械助手</label>
+    <label>机关女仆</label>
     <description>负责完成居住区的基本工作，同时也具有较强防御能力。</description>
     <race>
       <mechEnabledWorkTypes>
