@@ -9,7 +9,7 @@
     <defName>R_HediffGiverBad</defName>
   </DesignatorDropdownGroupDef>
 
-  <ThingDef Name="RHediffGiverBase" ParentName="BuildingBase" Abstract="True">
+  <ThingDef Name="R_HediffGiverBase" ParentName="BuildingBase" Abstract="True">
     <castEdgeShadows>false</castEdgeShadows>
     <blockWind>false</blockWind>
     <blockLight>false</blockLight>
@@ -41,7 +41,7 @@
     </thingCategories>
   </ThingDef>
 
-  <ThingDef Name="RHediffGiverBaseGood" ParentName="RHediffGiverBase" Abstract="True">
+  <ThingDef Name="R_HediffGiverBaseGood" ParentName="R_HediffGiverBase" Abstract="True">
     <designatorDropdown>R_HediffGiverGood</designatorDropdown>
     <specialDisplayRadius>4.9</specialDisplayRadius>
     <building>
@@ -49,7 +49,7 @@
     </building>
   </ThingDef>
 
-  <ThingDef Name="RHediffGiverBaseBad" ParentName="RHediffGiverBase" Abstract="True">
+  <ThingDef Name="R_HediffGiverBaseBad" ParentName="R_HediffGiverBase" Abstract="True">
     <designatorDropdown>R_HediffGiverBad</designatorDropdown>
     <specialDisplayRadius>4.9</specialDisplayRadius>
     <building>
@@ -59,7 +59,7 @@
 
   <!-- Good Givers -->
 
-  <ThingDef ParentName="RHediffGiverBaseGood">
+  <ThingDef ParentName="R_HediffGiverBaseGood">
     <defName>R_HeidffGiver_Immortal</defName>
     <label>不朽装置</label>
     <description>这个装置向周围所有生物释放不死效果，不受心灵敏感度影响。</description>
@@ -73,7 +73,7 @@
       </li>
     </comps>
   </ThingDef>
-  <ThingDef ParentName="RHediffGiverBaseGood">
+  <ThingDef ParentName="R_HediffGiverBaseGood">
     <defName>R_HeidffGiver_Regenration</defName>
     <label>再生装置</label>
     <description>这个装置向周围所有生物释放再生效果，受心灵敏感度影响。</description>
@@ -88,7 +88,7 @@
       </li>
     </comps>
   </ThingDef>
-  <ThingDef ParentName="RHediffGiverBaseGood">
+  <ThingDef ParentName="R_HediffGiverBaseGood">
     <defName>R_HeidffGiver_GoJuice</defName>
     <label>活力装置</label>
     <description>这个装置向周围所有生物释放活力水效果，受心灵敏感度影响。</description>
@@ -104,7 +104,7 @@
       </li>
     </comps>
   </ThingDef>
-  <ThingDef ParentName="RHediffGiverBaseGood">
+  <ThingDef ParentName="R_HediffGiverBaseGood">
     <defName>R_HeidffGiver_Temperature</defName>
     <label>恒温装置</label>
     <description>这个装置向周围所有生物释放恒温效果，不受心灵敏感度影响。</description>
@@ -117,7 +117,7 @@
       </li>
     </comps>
   </ThingDef>
-  <ThingDef ParentName="RHediffGiverBaseGood">
+  <ThingDef ParentName="R_HediffGiverBaseGood">
     <defName>R_HeidffGiver_ToxicResistence</defName>
     <label>抗毒装置</label>
     <description>这个装置向周围所有生物释放抗毒效果，不受心灵敏感度影响。</description>
@@ -130,7 +130,7 @@
       </li>
     </comps>
   </ThingDef>
-  <ThingDef ParentName="RHediffGiverBaseGood">
+  <ThingDef ParentName="R_HediffGiverBaseGood">
     <defName>R_HeidffGiver_OverNeeded</defName>
     <label>免需装置</label>
     <description>这个装置向周围所有生物释放免需效果，不受心灵敏感度影响。</description>
@@ -143,7 +143,7 @@
       </li>
     </comps>
   </ThingDef>
-  <ThingDef ParentName="RHediffGiverBaseGood">
+  <ThingDef ParentName="R_HediffGiverBaseGood">
     <defName>R_HeidffGiver_ConsciousnessUp</defName>
     <label>超感装置</label>
     <description>这个装置向周围所有生物释放超感效果，不受心灵敏感度影响。</description>
@@ -156,7 +156,7 @@
       </li>
     </comps>
   </ThingDef>
-  <ThingDef ParentName="RHediffGiverBaseGood">
+  <ThingDef ParentName="R_HediffGiverBaseGood">
     <defName>R_HeidffGiver_Pregnant</defName>
     <label>怀孕装置</label>
     <description>这个装置让周围所有生物怀孕，不受心灵敏感度影响。</description>
@@ -173,7 +173,7 @@
 
   <!-- Bad Givers -->
 
-  <ThingDef ParentName="RHediffGiverBaseBad">
+  <ThingDef ParentName="R_HediffGiverBaseBad">
     <defName>R_HeidffGiver_SpecialMeal</defName>
     <label>扭曲装置</label>
     <description>这个装置向周围所有生物释放扭曲效果，受心灵敏感度影响。</description>
@@ -189,7 +189,7 @@
       </li>
     </comps>
   </ThingDef>
-  <ThingDef ParentName="RHediffGiverBaseBad">
+  <ThingDef ParentName="R_HediffGiverBaseBad">
     <defName>R_HeidffGiver_BloodLoss</defName>
     <label>失血装置</label>
     <description>这个装置向周围所有生物释放失血效果，受心灵敏感度影响。</description>
@@ -205,7 +205,7 @@
       </li>
     </comps>
   </ThingDef>
-  <ThingDef ParentName="RHediffGiverBaseBad">
+  <ThingDef ParentName="R_HediffGiverBaseBad">
     <defName>R_HeidffGiver_Hunger</defName>
     <label>饥饿装置</label>
     <description>这个装置向周围所有生物释放失血效果，受心灵敏感度影响。</description>
@@ -221,7 +221,7 @@
       </li>
     </comps>
   </ThingDef>
-  <ThingDef ParentName="RHediffGiverBaseBad">
+  <ThingDef ParentName="R_HediffGiverBaseBad">
     <defName>R_HeidffGiver_Berserk</defName>
     <label>狂躁装置</label>
     <description>这个装置向周围所有生物释放失血效果，受心灵敏感度影响。</description>
@@ -237,7 +237,7 @@
       </li>
     </comps>
   </ThingDef>
-  <ThingDef ParentName="RHediffGiverBaseBad">
+  <ThingDef ParentName="R_HediffGiverBaseBad">
     <defName>R_HeidffGiver_Vomit</defName>
     <label>呕吐装置</label>
     <description>这个装置向周围所有生物释放失血效果，受心灵敏感度影响。</description>
@@ -253,7 +253,7 @@
       </li>
     </comps>
   </ThingDef>
-  <ThingDef ParentName="RHediffGiverBaseBad">
+  <ThingDef ParentName="R_HediffGiverBaseBad">
     <defName>R_HeidffGiver_Breakdown</defName>
     <label>冲击装置</label>
     <description>这个装置向周围所有生物释放心灵冲击效果，受心灵敏感度影响。</description>
@@ -269,7 +269,7 @@
       </li>
     </comps>
   </ThingDef>
-  <ThingDef ParentName="RHediffGiverBaseBad">
+  <ThingDef ParentName="R_HediffGiverBaseBad">
     <defName>R_HeidffGiver_Anesthetic</defName>
     <label>麻醉装置</label>
     <description>这个装置向周围所有生物释放麻醉效果，不受心灵敏感度影响。</description>
@@ -282,7 +282,7 @@
       </li>
     </comps>
   </ThingDef>
-  <ThingDef ParentName="RHediffGiverBaseBad">
+  <ThingDef ParentName="R_HediffGiverBaseBad">
     <defName>R_HeidffGiver_Toxic</defName>
     <label>毒害装置</label>
     <description>这个装置向周围所有生物释放剧毒效果，不受心灵敏感度影响。</description>
@@ -295,7 +295,7 @@
       </li>
     </comps>
   </ThingDef>
-  <ThingDef ParentName="RHediffGiverBaseBad">
+  <ThingDef ParentName="R_HediffGiverBaseBad">
     <defName>R_HeidffGiver_Suppress</defName>
     <label>压制装置</label>
     <description>这个装置向周围所有生物释放压制效果，不受心灵敏感度影响。</description>
@@ -308,7 +308,7 @@
       </li>
     </comps>
   </ThingDef>
-  <ThingDef ParentName="RHediffGiverBaseBad">
+  <ThingDef ParentName="R_HediffGiverBaseBad">
     <defName>R_HeidffGiver_Death</defName>
     <label>死亡装置</label>
     <description>这个装置通过降低意识使周围生物死亡，不受心灵敏感度影响。</description>

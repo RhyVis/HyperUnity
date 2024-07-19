@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
   <RecipeDef Name="R_SurgeryBase" Abstract="True">
-    <uiIconThing>R_SpecialMedicine</uiIconThing>
+    <uiIconThing>R_HyperMedicine</uiIconThing>
     <effectWorking>Surgery</effectWorking>
     <soundWorking>Recipe_Surgery</soundWorking>
     <workAmount>1</workAmount>
@@ -31,7 +31,7 @@
       <li>
         <filter>
           <thingDefs>
-            <li>R_SpecialMedicine</li>
+            <li>R_HyperMedicine</li>
           </thingDefs>
         </filter>
         <count>1</count>
@@ -39,7 +39,7 @@
     </ingredients>
     <fixedIngredientFilter>
       <thingDefs>
-        <li>R_SpecialMedicine</li>
+        <li>R_HyperMedicine</li>
       </thingDefs>
     </fixedIngredientFilter>
   </RecipeDef>

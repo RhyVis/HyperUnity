@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-  <ThingDef Name="RJustMealBase" ParentName="MealBase" Abstract="True">
+  <ThingDef Name="R_JustMealBase" ParentName="MealBase" Abstract="True">
     <statBases>
       <Flammability>0</Flammability>
       <DeteriorationRate>0</DeteriorationRate>
@@ -8,10 +8,10 @@
     <thingCategories Inherit="false">
       <li>R_JustMeal_ThingCatMeals</li>
     </thingCategories>
-    <useHitPoints>false</useHitPoints>
+    <useHitPoints>False</useHitPoints>
   </ThingDef>
 
-  <ThingDef ParentName="RJustMealBase">
+  <ThingDef ParentName="R_JustMealBase">
     <defName>R_JustMeal_Normal</defName>
     <label>营养快线</label>
     <description>没有什么特殊效果，喝起来挺好喝。</description>
@@ -33,7 +33,7 @@
     </ingestible>
   </ThingDef>
 
-  <ThingDef ParentName="RJustMealBase">
+  <ThingDef ParentName="R_JustMealBase">
     <defName>R_JustMeal_ComboMeal_Fine</defName>
     <label>加量套餐</label>
     <description>精致食物水平的套餐，吃了对健康似乎也有好处。</description>
@@ -55,7 +55,7 @@
     </ingestible>
   </ThingDef>
 
-  <ThingDef ParentName="RJustMealBase">
+  <ThingDef ParentName="R_JustMealBase">
     <defName>R_JustMeal_ComboMeal_Bad</defName>
     <label>囚徒套餐</label>
     <description>简单食物水平的套餐，能吃饱但并不令人开心，吃起来也偏慢。</description>

@@ -4,7 +4,7 @@
     <defName>R_GasEmitDropdown</defName>
   </DesignatorDropdownGroupDef>
 
-  <ThingDef Name="RGasEmitBase" ParentName="RFloorStructureBase" Abstract="True">
+  <ThingDef Name="R_GasEmitBase" ParentName="R_FloorStructureBase" Abstract="True">
     <graphicData>
       <texPath>Things/Building/RVarious/R_GasEmit</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -39,7 +39,7 @@
     </comps>
   </ThingDef>
 
-  <ThingDef ParentName="RGasEmitBase">
+  <ThingDef ParentName="R_GasEmitBase">
     <defName>R_GasEmit_BlindSmoke</defName>
     <label>瓦斯释放装置</label>
     <description>这个排气口定期向外释放瓦斯。</description>
@@ -50,7 +50,7 @@
     </comps>
   </ThingDef>
 
-  <ThingDef ParentName="RGasEmitBase">
+  <ThingDef ParentName="R_GasEmitBase">
     <defName>R_GasEmit_ToxicGas</defName>
     <label>毒气释放装置</label>
     <description>这个排气口定期向外释放毒气。</description>
@@ -61,7 +61,7 @@
     </comps>
   </ThingDef>
 
-  <ThingDef ParentName="RGasEmitBase">
+  <ThingDef ParentName="R_GasEmitBase">
     <defName>R_GasEmit_RotStink</defName>
     <label>腐气释放装置</label>
     <description>这个排气口定期向外释放腐气。</description>
@@ -72,7 +72,7 @@
     </comps>
   </ThingDef>
 
-  <ThingDef ParentName="RGasEmitBase">
+  <ThingDef ParentName="R_GasEmitBase">
     <defName>R_GasEmit_DeadlifeDust</defName>
     <label>死灵尘释放装置</label>
     <description>这个排气口定期向外释放死灵尘。</description>

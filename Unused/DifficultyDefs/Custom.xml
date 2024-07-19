@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <DifficultyDef>
+    <defName>R_RoughModified</defName>
+    <label>边缘传说</label>
+    <description>你打开边缘世界，发现了一个新的游戏预设
+
+(*SectionTitle)给谁玩呢:(/SectionTitle)
+
+- 我自己捏。</description>
+    <difficulty>8</difficulty>
+    <threatScale>1</threatScale>
+    <adaptationEffectFactor>0.9</adaptationEffectFactor>
+    <colonistMoodOffset>0</colonistMoodOffset>
+    <cropYieldFactor>1</cropYieldFactor>
+    <mineYieldFactor>1</mineYieldFactor>
+    <researchSpeedFactor>1</researchSpeedFactor>
+    <diseaseIntervalFactor>1</diseaseIntervalFactor>
+    <enemyReproductionRateFactor>1</enemyReproductionRateFactor>
+    <deepDrillInfestationChanceFactor>1</deepDrillInfestationChanceFactor>
+    <wastepackInfestationChanceFactor>1</wastepackInfestationChanceFactor>
+    <foodPoisonChanceFactor>1</foodPoisonChanceFactor>
+    <maintenanceCostFactor>1</maintenanceCostFactor>
+    <enemyDeathOnDownedChanceFactor>0.4</enemyDeathOnDownedChanceFactor>
+    <adaptationGrowthRateFactorOverZero>1</adaptationGrowthRateFactorOverZero>
+    <scariaRotChance>0</scariaRotChance>
+  </DifficultyDef>
+</Defs>

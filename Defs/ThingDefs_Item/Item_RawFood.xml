@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-  <ThingDef ParentName="RPlantFoodRawBase">
+  <ThingDef ParentName="R_PlantFoodRawBase">
     <defName>R_RawSyntheticRice</defName>
     <label>合成素食</label>
     <description>通过分子重构技术生成的素食原料。</description>
-    <possessionCount>3000</possessionCount>
+    <possessionCount>100</possessionCount>
     <graphicData>
       <texPath>Things/Item/Resource/RFoodRaw/R_RawSyntheticRice</texPath>
     </graphicData>
@@ -15,11 +15,12 @@
       <foodType>VegetableOrFruit</foodType>
     </ingestible>
   </ThingDef>
-  <ThingDef ParentName="RPlantFoodRawBase">
+
+  <ThingDef ParentName="R_PlantFoodRawBase">
     <defName>R_RawSyntheticMeat</defName>
     <label>合成肉食</label>
     <description>通过分子重构技术生成的肉食原料。</description>
-    <possessionCount>3000</possessionCount>
+    <possessionCount>100</possessionCount>
     <graphicData>
       <texPath>Things/Item/Resource/RFoodRaw/R_RawSyntheticMeat</texPath>
     </graphicData>

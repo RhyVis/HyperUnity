@@ -11,7 +11,7 @@
     <defName>R_UReactor_Universal</defName>
   </DesignatorDropdownGroupDef>
 
-  <ThingDef Name="RNormalUReactorBase" ParentName="BuildingBase" Abstract="True">
+  <ThingDef Name="R_UReactor_NormalBase" ParentName="BuildingBase" Abstract="True">
     <description>这个容器内可以消耗电力来无限生成特定物品。</description>
     <thingClass>HyperUnity.Building_WithoutZoneSettings</thingClass>
     <graphicData>
@@ -61,20 +61,20 @@
     </comps>
   </ThingDef>
 
-  <ThingDef Name="RResourceUReactorBase" ParentName="RNormalUReactorBase" Abstract="True">
+  <ThingDef Name="R_UReactor_ResourceBase" ParentName="R_UReactor_NormalBase" Abstract="True">
     <designatorDropdown>R_UReactor_Resource</designatorDropdown>
   </ThingDef>
-  <ThingDef Name="RMealUReactorBase" ParentName="RNormalUReactorBase" Abstract="True">
+  <ThingDef Name="R_UReactor_MealBase" ParentName="R_UReactor_NormalBase" Abstract="True">
     <designatorDropdown>R_UReactor_Meal</designatorDropdown>
   </ThingDef>
-  <ThingDef Name="RUniversalUReactorBase" ParentName="RNormalUReactorBase" Abstract="True">
+  <ThingDef Name="R_UReactor_UniversalBase" ParentName="R_UReactor_NormalBase" Abstract="True">
     <description>这个容器内可以消耗电力来无限生成特定物品，可以切换几种许可类型。</description>
     <designatorDropdown>R_UReactor_Universal</designatorDropdown>
   </ThingDef>
 
   <!-- UReactor Resource -->
 
-  <ThingDef ParentName="RResourceUReactorBase">
+  <ThingDef ParentName="R_UReactor_ResourceBase">
     <defName>R_UReactor_Medicine</defName>
     <label>超越反应器（超联结医药）</label>
     <building>
@@ -82,7 +82,7 @@
         <priority>Critical</priority>
         <filter>
           <thingDefs>
-            <li>R_SpecialMedicine</li>
+            <li>R_HyperMedicine</li>
           </thingDefs>
         </filter>
       </fixedStorageSettings>
@@ -90,7 +90,7 @@
         <priority>Critical</priority>
         <filter>
           <thingDefs>
-            <li>R_SpecialMedicine</li>
+            <li>R_HyperMedicine</li>
           </thingDefs>
         </filter>
       </defaultStorageSettings>
@@ -101,12 +101,12 @@
         <minCount>5</minCount>
         <refillCount>20</refillCount>
         <eachItemCost>100</eachItemCost>
-        <itemDefName>R_SpecialMedicine</itemDefName>
+        <itemDefName>R_HyperMedicine</itemDefName>
       </li>
     </comps>
   </ThingDef>
 
-  <ThingDef ParentName="RResourceUReactorBase">
+  <ThingDef ParentName="R_UReactor_ResourceBase">
     <defName>R_UReactor_Chemfuel</defName>
     <label>超越反应器（燃料）</label>
     <building>
@@ -137,7 +137,7 @@
     </comps>
   </ThingDef>
 
-  <ThingDef ParentName="RResourceUReactorBase">
+  <ThingDef ParentName="R_UReactor_ResourceBase">
     <defName>R_UReactor_Neutroamine</defName>
     <label>超越反应器（中性胺）</label>
     <building>
@@ -170,7 +170,7 @@
 
   <!-- UReactor Meal -->
 
-  <ThingDef ParentName="RMealUReactorBase">
+  <ThingDef ParentName="R_UReactor_MealBase">
     <defName>R_UReactor_JustMealNormal</defName>
     <label>超越反应器（营养快线）</label>
     <building>
@@ -201,7 +201,7 @@
     </comps>
   </ThingDef>
 
-  <ThingDef ParentName="RMealUReactorBase">
+  <ThingDef ParentName="R_UReactor_MealBase">
     <defName>R_UReactor_MeatHuman</defName>
     <label>超越反应器（人肉）</label>
     <building>
@@ -235,7 +235,7 @@
 
   <!-- Universal UR -->
 
-  <ThingDef ParentName="RUniversalUReactorBase">
+  <ThingDef ParentName="R_UReactor_UniversalBase">
     <defName>R_UReactorUniversal_AdvResource</defName>
     <label>超越反应器（高级资源）</label>
     <building>
@@ -267,7 +267,7 @@
     </comps>
   </ThingDef>
 
-  <ThingDef ParentName="RUniversalUReactorBase">
+  <ThingDef ParentName="R_UReactor_UniversalBase">
     <defName>R_UReactorUniversal_SpecialMeal</defName>
     <label>超越反应器（退行套餐）</label>
     <building>
@@ -308,7 +308,7 @@
     </comps>
   </ThingDef>
 
-  <ThingDef ParentName="RUniversalUReactorBase">
+  <ThingDef ParentName="R_UReactor_UniversalBase">
     <defName>R_UReactorUniversal_SpecialDrink</defName>
     <label>超越反应器（退行饮品）</label>
     <building>
@@ -343,7 +343,7 @@
     </comps>
   </ThingDef>
 
-  <ThingDef ParentName="RUniversalUReactorBase">
+  <ThingDef ParentName="R_UReactor_UniversalBase">
     <defName>R_UReactorUniversal_ComboMeal</defName>
     <label>超越反应器（集成套餐）</label>
     <building>
@@ -376,7 +376,7 @@
     </comps>
   </ThingDef>
 
-  <ThingDef ParentName="RUniversalUReactorBase">
+  <ThingDef ParentName="R_UReactor_UniversalBase">
     <defName>R_UReactorUniversal_SyntheticRaw</defName>
     <label>超越反应器（合成生食）</label>
     <building>

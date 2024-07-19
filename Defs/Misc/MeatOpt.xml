@@ -2,7 +2,7 @@
 <Defs>
   <AlienMeatTest.MeatListDef>
     <defName>R_MeatOpt_WhiteList</defName>
-    <label>White List For (Optimizations: Meat)</label>
+    <label>White List of Hyper Unity (Optimizations: Meat)</label>
     <meats>
       <li>R_RawSyntheticMeat</li>
     </meats>

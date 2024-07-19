@@ -94,14 +94,6 @@ namespace HyperUnity
         }
       }
     }
-
-    public static float countAllAdjustWealthVal()
-    {
-      return Find.CurrentMap.listerBuildings
-        .AllBuildingsColonistOfDef(ThingDef.Named("R_WealthTank"))
-        .Where(thing => thing.TryGetComp<CompNetWealthAdjuster>() != null)
-        .Sum(thing => thing.GetComp<CompNetWealthAdjuster>().AdjustWealthVal);
-    }
   
     public static bool depleteSkillLevel(this SkillRecord skillRecord, float xp)
     {
@@ -170,6 +162,30 @@ namespace HyperUnity
         -1f,
         null,
         bodyPart,
+        null,
+        DamageInfo.SourceCategory.ThingOrUnknown,
+        null,
+        true,
+        true,
+        QualityCategory.Normal,
+        false
+      ));
+    }
+
+    public static void DamageRandomBodyPart(this Pawn pawn, float amount = 1f)
+    {
+      var target = pawn.health.hediffSet.GetNotMissingParts().RandomElement();
+      if (target == null)
+      {
+        return;
+      }
+      pawn.TakeDamage(new DamageInfo(
+        DamageDefOf.SurgicalCut,
+        amount,
+        999f,
+        -1f,
+        null,
+        target,
         null,
         DamageInfo.SourceCategory.ThingOrUnknown,
         null,

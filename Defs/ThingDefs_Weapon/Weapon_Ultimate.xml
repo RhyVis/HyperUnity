@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-  <ThingDef Name="RGunBase" ParentName="BaseGunWithQuality" Abstract="True">
+  <ThingDef Name="R_GunBase" ParentName="BaseGunWithQuality" Abstract="True">
     <recipeMaker>
       <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
       <workSkill>Crafting</workSkill>
@@ -11,9 +11,10 @@
     <statBases>
       <Flammability>0</Flammability>
     </statBases>
+    <generateCommonality>0</generateCommonality>
   </ThingDef>
 
-  <ThingDef ParentName="RGunBase">
+  <ThingDef ParentName="R_GunBase">
     <defName>R_UltimateGun</defName>
     <label>天主之铳</label>
     <description>超越级别的武器。</description>

@@ -7,10 +7,10 @@ namespace HyperUnity
   {
     private int offsetDays = 0;
     
-    protected override void DoIngestionOutcomeSpecial(Pawn pawn, Thing ingested, int ingestedCount = 0)
+    protected override void DoIngestionOutcomeSpecial(Pawn pawn, Thing ingested, int ingestedCount)
     {
-      if (offsetDays == 0f) return;
-      if (offsetDays > 0f)
+      if (offsetDays == 0) return;
+      if (offsetDays > 0)
       {
         if (pawn.RaceProps.Humanlike || pawn.RaceProps.baseBodySize <= 1f)
         {

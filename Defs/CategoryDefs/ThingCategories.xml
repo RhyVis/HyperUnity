@@ -2,14 +2,14 @@
 <Defs>
 
   <ThingCategoryDef>
-    <defName>R_SpecialMeal_ThingCatMeals</defName>
+    <defName>R_TwistMeal_ThingCatMeals</defName>
     <label>退行套餐</label>
     <parent>FoodMeals</parent>
     <iconPath>UI/Icons/ThingCategories/RSpecialMeal</iconPath>
   </ThingCategoryDef>
 
   <ThingCategoryDef>
-    <defName>R_SpecialDrink_ThingCatMeals</defName>
+    <defName>R_TwistDrink_ThingCatMeals</defName>
     <label>退行饮品</label>
     <parent>FoodMeals</parent>
     <iconPath>UI/Icons/ThingCategories/RSpecialDrink</iconPath>

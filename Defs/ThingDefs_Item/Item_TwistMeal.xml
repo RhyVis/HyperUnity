@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-  <ThingDef Name="RSpecialMealBase" ParentName="MealBase" Abstract="True">
+  <ThingDef Name="R_TwistMealBase" ParentName="MealBase" Abstract="True">
     <graphicData>
       <texPath>Things/Item/Meal/RSpecialMeal</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
@@ -26,12 +26,12 @@
     </ingestible>
     <tradeability>Buyable</tradeability>
     <thingCategories Inherit="false">
-      <li>R_SpecialMeal_ThingCatMeals</li>
+      <li>R_TwistMeal_ThingCatMeals</li>
     </thingCategories>
     <useHitPoints>false</useHitPoints>
   </ThingDef>
 
-  <ThingDef ParentName="RSpecialMealBase">
+  <ThingDef ParentName="R_TwistMealBase">
     <defName>R_SpecialMeal</defName>
     <label>退行套餐</label>
     <description>一种奇异的餐食，营养充足，却越吃越饿。</description>
@@ -45,7 +45,7 @@
     </ingestible>
   </ThingDef>
 
-  <ThingDef ParentName="RSpecialMealBase">
+  <ThingDef ParentName="R_TwistMealBase">
     <defName>R_SpecialMeal_Medic</defName>
     <label>退行套餐（医疗）</label>
     <description>一种奇异的餐食，营养充足，却越吃越饿。会增强食用者的免疫效果，原本的扭曲效果相对减弱。</description>
@@ -75,7 +75,7 @@
     </ingestible>
   </ThingDef>
 
-  <ThingDef ParentName="RSpecialMealBase">
+  <ThingDef ParentName="R_TwistMealBase">
     <defName>R_SpecialMeal_Mix</defName>
     <label>退行套餐（混合）</label>
     <description>一种奇异的餐食，营养充足，却越吃越饿。加入了太多效果，原本的扭曲效果大幅减弱。</description>
@@ -124,7 +124,7 @@
     </ingestible>
   </ThingDef>
 
-  <ThingDef ParentName="RSpecialMealBase">
+  <ThingDef ParentName="R_TwistMealBase">
     <defName>R_SpecialMeal_GoJuice</defName>
     <label>退行套餐（活力）</label>
     <description>一种奇异的餐食，营养充足，却越吃越饿。加入了活力水效果，原本的扭曲效果相对减弱。</description>
@@ -156,7 +156,7 @@
     </ingestible>
   </ThingDef>
 
-  <ThingDef ParentName="RSpecialMealBase">
+  <ThingDef ParentName="R_TwistMealBase">
     <defName>R_SpecialMeal_Yayo</defName>
     <label>退行套餐（呀呦）</label>
     <description>一种奇异的餐食，营养充足，却越吃越饿。加入了呀呦粉效果，原本的扭曲效果相对减弱。</description>
@@ -192,7 +192,7 @@
     </ingestible>
   </ThingDef>
 
-  <ThingDef ParentName="RSpecialMealBase">
+  <ThingDef ParentName="R_TwistMealBase">
     <defName>R_SpecialMeal_Wakeup</defName>
     <label>退行套餐（清醒）</label>
     <description>一种奇异的餐食，营养充足，却越吃越饿。加入了清醒丸效果，原本的扭曲效果相对减弱。</description>

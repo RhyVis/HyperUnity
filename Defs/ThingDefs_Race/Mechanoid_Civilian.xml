@@ -32,12 +32,9 @@
         <bodyGraphicData>
           <texPath>Things/Pawn/Mechanoid/OmniservantClean</texPath>
           <maskPath>Things/Pawn/Mechanoid/FMask/Omniservant</maskPath>
-          <texPath>Things/Pawn/Mechanoid/OmniservantClean</texPath>
-          <maskPath>Things/Pawn/Mechanoid/FMask/Omniservant</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>1.2</drawSize>
-          <drawSize>1.2</drawSize>
+          <drawSize>1.22</drawSize>
           <shadowData>
             <volume>(0.3, 0.3, 0.5)</volume>
           </shadowData>
@@ -47,12 +44,9 @@
         <bodyGraphicData>
           <texPath>Things/Pawn/Mechanoid/OmniservantClean</texPath>
           <maskPath>Things/Pawn/Mechanoid/FMask/Omniservant</maskPath>
-          <texPath>Things/Pawn/Mechanoid/OmniservantClean</texPath>
-          <maskPath>Things/Pawn/Mechanoid/FMask/Omniservant</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
-          <drawSize>1.2</drawSize>
-          <drawSize>1.2</drawSize>
+          <drawSize>1.22</drawSize>
           <shadowData>
             <volume>(0.3, 0.3, 0.5)</volume>
           </shadowData>

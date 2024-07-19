@@ -62,6 +62,7 @@
         <Compile Include="Comps\HediffComps\HediffComp_SkillDeplete.cs" />
         <Compile Include="Comps\ThingComps\CompDamageLimit.cs" />
         <Compile Include="Comps\ThingComps\CompBedHediffGiver.cs" />
+        <Compile Include="Comps\ThingComps\CompExplosiveTrigger.cs" />
         <Compile Include="Comps\ThingComps\CompFieldTrap.cs" />
         <Compile Include="Comps\ThingComps\CompGasEmit.cs" />
         <Compile Include="Comps\ThingComps\CompHarvestBed.cs" />
@@ -77,7 +78,6 @@
         <Compile Include="Def\HU_HediffDefOf.cs" />
         <Compile Include="Harmony\Init.cs" />
         <Compile Include="Harmony\Patch_PreventDeterioratingOrRotting.cs" />
-        <Compile Include="Harmony\Patch_WealthWatcher.cs" />
         <Compile Include="Mod\HyperUnity_Mod.cs" />
         <Compile Include="Utility.cs" />
         <Compile Include="Ingestible\IngestionOutcomeDoer_AgeTweaker.cs" />
@@ -85,6 +85,7 @@
     </ItemGroup>
     <ItemGroup>
       <Folder Include="JobDirver\" />
+      <Folder Include="ModExtensions\" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

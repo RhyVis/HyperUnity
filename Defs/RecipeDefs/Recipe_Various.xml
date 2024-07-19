@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+  <!-- Base -->
+
+  <RecipeDef Name="R_WorkSiteRecipeBase" Abstract="True">
+    <description>应用聚合微械技术来合成物品。</description>
+    <jobString>正在构造聚合微械。</jobString>
+    <workAmount>1</workAmount>
+    <workSkill>Crafting</workSkill>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Cremate</effectWorking>
+    <soundWorking>Recipe_Cremate</soundWorking>
+    <allowMixingIngredients>True</allowMixingIngredients>
+    <skillRequirements>
+      <Crafting>1</Crafting>
+    </skillRequirements>
+    <recipeUsers>
+      <li>R_CraftingSpot</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <RecipeDef Name="R_WorkSiteCostRecipeBase" ParentName="R_WorkSiteRecipeBase" Abstract="True">
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>R_NanoChips</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>R_NanoChips</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
+  <!-- No Cost -->
+
+  <RecipeDef ParentName="R_WorkSiteRecipeBase">
+    <defName>R_NanoChipRecipe</defName>
+    <label>构造聚合微械 x100</label>
+    <products>
+      <R_NanoChips>100</R_NanoChips>
+    </products>
+  </RecipeDef>
+
+</Defs>

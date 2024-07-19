@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
 
-  <ThingDef Abstract="True" Name="FortressWallBase" ParentName="BuildingBase">
+  <ThingDef Name="R_FortressWallBase" ParentName="BuildingBase" Abstract="True">
     <thingClass>Building</thingClass>
     <category>Building</category>
     <designationCategory>R_MainCategory</designationCategory>
@@ -68,7 +68,7 @@
     </building>
   </ThingDef>
 
-  <ThingDef ParentName="FortressWallBase">
+  <ThingDef ParentName="R_FortressWallBase">
     <defName>FortressWallRegular</defName>
     <label>要塞墙</label>
     <description>不可被通常方式摧毁的要塞墙。</description>
@@ -84,7 +84,7 @@
     </building>
   </ThingDef>
 
-  <ThingDef ParentName="FortressWallBase">
+  <ThingDef ParentName="R_FortressWallBase">
     <defName>FortressWallEmbrasure</defName>
     <label>要塞射击墙</label>
     <description>不可被通常方式摧毁的要塞墙，允许子弹通过。</description>
@@ -101,7 +101,7 @@
     </building>
   </ThingDef>
 
-  <ThingDef Abstract="True" Name="FortressDoorBase" ParentName="DoorBase">
+  <ThingDef Name="R_FortressDoorBase" ParentName="DoorBase" Abstract="True">
     <useHitPoints>False</useHitPoints>
     <stuffCategories Inherit="False"></stuffCategories>
     <useStuffTerrainAffordance>False</useStuffTerrainAffordance>
@@ -118,7 +118,7 @@
     </graphicData>
   </ThingDef>
 
-  <ThingDef ParentName="FortressDoorBase">
+  <ThingDef ParentName="R_FortressDoorBase">
     <defName>FortressDoorRegular</defName>
     <label>要塞门</label>
     <description>不可被通常方式摧毁的要塞门。</description>
@@ -141,7 +141,7 @@
     </costList>
   </ThingDef>
 
-  <ThingDef ParentName="FortressDoorBase">
+  <ThingDef ParentName="R_FortressDoorBase">
     <defName>FortressDoorAuto</defName>
     <label>要塞自动门</label>
     <description>不可被通常方式摧毁的要塞自动门。</description>
@@ -174,7 +174,7 @@
     <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
   </ThingDef>
 
-  <ThingDef ParentName="FortressDoorBase">
+  <ThingDef ParentName="R_FortressDoorBase">
     <defName>FortressDoorRemote</defName>
     <label>要塞遥控门</label>
     <description>不可被通常方式摧毁的要塞遥控门，在通电时可以远程控制开关。</description>
@@ -207,6 +207,5 @@
     </researchPrerequisites>
     <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
   </ThingDef>
-
 
 </Defs>

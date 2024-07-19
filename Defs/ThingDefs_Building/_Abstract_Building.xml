@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+  <!-- Floor -->
+
+  <ThingDef Name="R_FloorStructureBase" ParentName="BuildingBase" Abstract="True">
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <shaderType>CutoutComplex</shaderType>
+      <damageData>
+        <enabled>False</enabled>
+      </damageData>
+    </graphicData>
+    <category>Building</category>
+    <altitudeLayer>FloorCoverings</altitudeLayer>
+    <rotatable>False</rotatable>
+    <castEdgeShadows>False</castEdgeShadows>
+    <canOverlapZones>True</canOverlapZones>
+    <blockWind>False</blockWind>
+    <fillPercent>0</fillPercent>
+    <pathCost>0</pathCost>
+    <passability>Standable</passability>
+    <terrainAffordanceNeeded IsNull="True"/>
+    <blocksAltitudes>
+      <li>FloorCoverings</li>
+    </blocksAltitudes>
+    <building>
+      <isEdifice>False</isEdifice>
+    </building>
+  </ThingDef>
+
+  <!-- Wall Attachment -->
+
+  <ThingDef Name="R_WallBuildingBase" ParentName="BuildingBase" Abstract="True">
+    <thingClass>Building</thingClass>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>BuildingOnTop</altitudeLayer>
+    <passability>Standable</passability>
+    <terrainAffordanceNeeded IsNull="True" />
+    <pathCost>0</pathCost>
+    <rotatable>True</rotatable>
+    <fillPercent>0.4</fillPercent>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <statBases>
+      <WorkToBuild>800</WorkToBuild>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Mass>5</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <tickerType>Rare</tickerType>
+    <building>
+      <isEdifice>False</isEdifice>
+      <isAttachment>True</isAttachment>
+      <destroySound>BuildingDestroyed_Metal_Small</destroySound>
+    </building>
+    <placeWorkers>
+      <li>Placeworker_AttachedToWall</li>
+    </placeWorkers>
+    <designationCategory>R_MainCategory</designationCategory>
+  </ThingDef>
+</Defs>

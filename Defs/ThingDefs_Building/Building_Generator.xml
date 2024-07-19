@@ -8,7 +8,7 @@
     <graphicData>
       <texPath>Things/Building/RVarious/R_MiniNuclearGenerator</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(1,1)</drawSize>
+      <drawSize>(2,2)</drawSize>
       <damageData>
         <rect>(0.3,0,5.4,6)</rect>
       </damageData>
@@ -43,8 +43,8 @@
     <comps>
       <li Class="CompProperties_Power">
         <compClass>CompPowerPlant</compClass>
-        <basePowerConsumption>-16000</basePowerConsumption>
-        <transmitsPower>true</transmitsPower>
+        <basePowerConsumption>-80000</basePowerConsumption>
+        <transmitsPower>True</transmitsPower>
       </li>
       <li Class="CompProperties_Flickable"/>
       <li Class="CompProperties_Glower">

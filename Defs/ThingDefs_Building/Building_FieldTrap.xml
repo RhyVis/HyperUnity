@@ -2,9 +2,10 @@
 <Defs>
   <DesignatorDropdownGroupDef>
     <defName>R_FieldTrapDropdown</defName>
+    <label>力场陷阱</label>
   </DesignatorDropdownGroupDef>
 
-  <ThingDef Name="RFieldTrapBase" ParentName="RFloorStructureBase" Abstract="True">
+  <ThingDef Name="R_FieldTrapBase" ParentName="R_FloorStructureBase" Abstract="True">
     <graphicData>
       <texPath>Things/Building/RVarious/R_FieldTrap</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -31,7 +32,7 @@
     </comps>
   </ThingDef>
 
-  <ThingDef ParentName="RFieldTrapBase">
+  <ThingDef ParentName="R_FieldTrapBase">
     <defName>R_FieldTrap_Normal</defName>
     <label>制约力场</label>
     <description>这个装置将周围所有敌对对象吸引至其位置上，并对其造成约3秒的眩晕。</description>
@@ -53,7 +54,7 @@
     </comps>
   </ThingDef>
 
-  <ThingDef ParentName="RFieldTrapBase">
+  <ThingDef ParentName="R_FieldTrapBase">
     <defName>R_FieldTrap_Large</defName>
     <label>制约力场（大型）</label>
     <description>这个装置将周围所有敌对对象吸引至其位置上，并对其造成约3秒的眩晕，这个版本的制约力场范围更大。</description>
@@ -75,7 +76,7 @@
     </comps>
   </ThingDef>
 
-  <ThingDef ParentName="RFieldTrapBase">
+  <ThingDef ParentName="R_FieldTrapBase">
     <defName>R_FieldTrap_Huge</defName>
     <label>制约力场（巨型）</label>
     <description>这个装置将周围所有敌对对象吸引至其位置上，并对其造成约3秒的眩晕，这个版本的制约力场范围极大。</description>
@@ -97,7 +98,7 @@
     </comps>
   </ThingDef>
 
-  <ThingDef ParentName="RFieldTrapBase">
+  <ThingDef ParentName="R_FieldTrapBase">
     <defName>R_FieldTrap_Extreme</defName>
     <label>制约力场（广域）</label>
     <description>这个装置将周围所有敌对对象吸引至其位置上，并对其造成约3秒的眩晕，这个版本的制约力场范围大到整个地图。</description>

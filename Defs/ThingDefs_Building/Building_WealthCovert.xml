@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-  <ThingDef Name="RWealthCovertBase" ParentName="BuildingBase" Abstract="True">
+  <ThingDef Name="R_WealthCovertBase" ParentName="BuildingBase" Abstract="True">
     <thingClass>HyperUnity.Building_WithoutZoneSettings</thingClass>
     <graphicData>
       <texPath>Things/Building/RVarious/R_WealthCovert</texPath>
       <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
       <damageData>
         <enabled>False</enabled>
       </damageData>
@@ -43,7 +44,7 @@
     </comps>
   </ThingDef>
 
-  <ThingDef ParentName="RWealthCovertBase">
+  <ThingDef ParentName="R_WealthCovertBase">
     <defName>R_WealthCovert</defName>
     <label>财富转化器</label>
     <description>可以将容器内物品转化为白银。</description>

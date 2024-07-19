@@ -4,7 +4,7 @@
     <defName>R_PawnSuppressorDropdown</defName>
   </DesignatorDropdownGroupDef>
 
-  <ThingDef Name="RPawnSuppressorBase" ParentName="BuildingBase" Abstract="True">
+  <ThingDef Name="R_PawnSuppressorBase" ParentName="BuildingBase" Abstract="True">
     <castEdgeShadows>False</castEdgeShadows>
     <blockWind>False</blockWind>
     <blockLight>False</blockLight>
@@ -40,7 +40,7 @@
     </comps>
   </ThingDef>
 
-  <ThingDef ParentName="RPawnSuppressorBase">
+  <ThingDef ParentName="R_PawnSuppressorBase">
     <defName>R_PawnSuppressor_Normal</defName>
     <label>压制力场</label>
     <description>这个装置压制周围所有处于攻击性精神状态的生物，每次消耗200Wd。</description>
@@ -62,7 +62,7 @@
     </comps>
   </ThingDef>
 
-  <ThingDef ParentName="RPawnSuppressorBase">
+  <ThingDef ParentName="R_PawnSuppressorBase">
     <defName>R_PawnSuppressor_Large</defName>
     <label>压制力场（大型）</label>
     <description>这个装置压制周围所有处于攻击性精神状态的生物，每次消耗350Wd。这个版本的压制力场范围更大，消耗的电力更大。</description>

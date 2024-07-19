@@ -8,7 +8,7 @@
     <defName>R_WallEnv_Bad</defName>
   </DesignatorDropdownGroupDef>
 
-  <ThingDef Name="RWallBuildingBase" ParentName="BuildingBase" Abstract="True">
+  <ThingDef Name="R_WallEnvBase" ParentName="R_WallBuildingBase" Abstract="True">
     <thingClass>Building</thingClass>
     <graphicData>
       <graphicClass>Graphic_Multi</graphicClass>
@@ -20,18 +20,8 @@
         <enabled>False</enabled>
       </damageData>
     </graphicData>
-    <minifiedDef>MinifiedThing</minifiedDef>
-    <altitudeLayer>BuildingOnTop</altitudeLayer>
-    <passability>Standable</passability>
-    <terrainAffordanceNeeded IsNull="True" />
-    <pathCost>0</pathCost>
-    <rotatable>True</rotatable>
-    <fillPercent>0.4</fillPercent>
     <overrideMinifiedRot>North</overrideMinifiedRot>
     <minifiedDrawOffset>(0, 0, 0.2)</minifiedDrawOffset>
-    <thingCategories>
-      <li>BuildingsMisc</li>
-    </thingCategories>
     <statBases>
       <WorkToBuild>800</WorkToBuild>
       <MaxHitPoints>300</MaxHitPoints>
@@ -39,11 +29,6 @@
       <Flammability>0</Flammability>
     </statBases>
     <tickerType>Rare</tickerType>
-    <building>
-      <isEdifice>False</isEdifice>
-      <isAttachment>True</isAttachment>
-      <destroySound>BuildingDestroyed_Metal_Small</destroySound>
-    </building>
     <placeWorkers>
       <li>Placeworker_AttachedToWall</li>
     </placeWorkers>
@@ -53,16 +38,13 @@
         <glowColor>(153,255,255,0)</glowColor>
       </li>
     </comps>
-    <designationCategory>R_MainCategory</designationCategory>
     <researchPrerequisites>
       <li>Electricity</li>
     </researchPrerequisites>
     <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
   </ThingDef>
 
-  <!-- Good -->
-
-  <ThingDef Name="RWallEnvGoodBase" ParentName="RWallBuildingBase" Abstract="True">
+  <ThingDef Name="R_WallEnvGoodBase" ParentName="R_WallEnvBase" Abstract="True">
     <designatorDropdown>R_WallEnv_Good</designatorDropdown>
     <graphicData>
       <texPath>Things/Building/RVarious/RWallEnv/RWallEnv_Good</texPath>
@@ -70,7 +52,17 @@
     <uiIconPath>Things/Building/RVarious/RWallEnv/RWallEnv_Good_MenuIcon</uiIconPath>
   </ThingDef>
 
-  <ThingDef ParentName="RWallEnvGoodBase">
+  <ThingDef Name="R_WallEnvBadBase" ParentName="R_WallEnvBase" Abstract="True">
+    <designatorDropdown>R_WallEnv_Bad</designatorDropdown>
+    <graphicData>
+      <texPath>Things/Building/RVarious/RWallEnv/RWallEnv_Bad</texPath>
+    </graphicData>
+    <uiIconPath>Things/Building/RVarious/RWallEnv/RWallEnv_Bad_MenuIcon</uiIconPath>
+  </ThingDef>
+
+  <!-- Good -->
+
+  <ThingDef ParentName="R_WallEnvGoodBase">
     <defName>R_WallEnvGood_Beauty</defName>
     <label>壁挂美学装置</label>
     <description>一个壁挂式装置，可以大幅提升房间美观度。</description>
@@ -83,7 +75,7 @@
       <ComponentIndustrial>1</ComponentIndustrial>
     </costList>
   </ThingDef>
-  <ThingDef ParentName="RWallEnvGoodBase">
+  <ThingDef ParentName="R_WallEnvGoodBase">
     <defName>R_WallEnvGood_Clean</defName>
     <label>壁挂超净装置</label>
     <description>一个壁挂式装置，可以大幅提升房间清洁度。</description>
@@ -99,15 +91,7 @@
 
   <!-- Bad -->
 
-  <ThingDef Name="RWallEnvBadBase" ParentName="RWallBuildingBase" Abstract="True">
-    <designatorDropdown>R_WallEnv_Bad</designatorDropdown>
-    <graphicData>
-      <texPath>Things/Building/RVarious/RWallEnv/RWallEnv_Bad</texPath>
-    </graphicData>
-    <uiIconPath>Things/Building/RVarious/RWallEnv/RWallEnv_Bad_MenuIcon</uiIconPath>
-  </ThingDef>
-
-  <ThingDef ParentName="RWallEnvBadBase">
+  <ThingDef ParentName="R_WallEnvBadBase">
     <defName>R_WallEnvBad_Beauty</defName>
     <label>壁挂丑恶装置</label>
     <description>一个壁挂式装置，可以大幅降低房间美观度。</description>
@@ -120,7 +104,7 @@
       <ComponentIndustrial>1</ComponentIndustrial>
     </costList>
   </ThingDef>
-  <ThingDef ParentName="RWallEnvBadBase">
+  <ThingDef ParentName="R_WallEnvBadBase">
     <defName>R_WallEnvBad_Clean</defName>
     <label>壁挂污秽装置</label>
     <description>一个壁挂式装置，可以大幅降低房间清洁度。</description>

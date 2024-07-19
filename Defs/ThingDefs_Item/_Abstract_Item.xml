@@ -1,30 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-  <ThingDef Name="RResourceBase" Abstract="True">
+  <ThingDef Name="R_ResourceBase" Abstract="True">
     <thingClass>ThingWithComps</thingClass>
     <category>Item</category>
     <drawerType>MapMeshOnly</drawerType>
     <resourceReadoutPriority>Middle</resourceReadoutPriority>
-    <useHitPoints>False</useHitPoints>
     <selectable>True</selectable>
     <altitudeLayer>Item</altitudeLayer>
-    <stackLimit>75</stackLimit>
+    <stackLimit>1000</stackLimit>
     <statBases>
+      <Mass>0.1</Mass>
       <Beauty>-1</Beauty>
       <Flammability>0</Flammability>
       <DeteriorationRate>0</DeteriorationRate>
     </statBases>
-    <comps>
-      <li Class="CompProperties_Forbiddable"/>
-    </comps>
+    <soundInteract>Silver_Drop</soundInteract>
+    <soundDrop>Silver_Drop</soundDrop>
     <alwaysHaulable>True</alwaysHaulable>
     <drawGUIOverlay>True</drawGUIOverlay>
     <rotatable>False</rotatable>
     <pathCost>0</pathCost>
     <allowedArchonexusCount>-1</allowedArchonexusCount>
+    <techLevel>Spacer</techLevel>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+    </comps>
   </ThingDef>
 
-  <ThingDef Abstract="True" Name="ROrganicProductBase" ParentName="RResourceBase">
+  <ThingDef Abstract="True" Name="R_OrganicProductBase" ParentName="R_ResourceBase">
     <graphicData>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
@@ -36,7 +39,8 @@
     <healthAffectsPrice>False</healthAffectsPrice>
   </ThingDef>
 
-  <ThingDef Abstract="True" Name="RPlantFoodRawBase" ParentName="ROrganicProductBase">
+  <ThingDef Abstract="True" Name="R_PlantFoodRawBase" ParentName="R_OrganicProductBase">
+    <useHitPoints>False</useHitPoints>
     <ingestible>
       <preferability>RawBad</preferability>
       <tasteThought>AteRawFood</tasteThought>
