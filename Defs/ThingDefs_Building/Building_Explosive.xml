@@ -7,7 +7,7 @@
 
   <ThingDef Name="R_ExplosiveBarrelBase" ParentName="R_FloorStructureBase" Abstract="True">
     <graphicData>
-      <texPath>Things/Building/RVarious/Barrel</texPath>
+      <texPath>HU/Things/Building/Security/Barrel/Barrel</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(2,2)</drawSize>
       <shaderType>CutoutComplex</shaderType>

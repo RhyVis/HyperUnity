@@ -6,7 +6,7 @@
     <description>类似闪耀世界医药的超联结医药，效果与其不相上下。</description>
     <thingClass>Medicine</thingClass>
     <graphicData>
-      <texPath>Things/Item/Medicine/RSpecialMedicine</texPath>
+      <texPath>HU/Things/Item/Medicine/RSpecialMedicine</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
       <drawSize>0.6</drawSize>
     </graphicData>

@@ -33,34 +33,34 @@
       <Beauty>20</Beauty>
       <MarketValue>10</MarketValue>
     </statBases>
-    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <leaveResourcesWhenKilled>False</leaveResourcesWhenKilled>
     <altitudeLayer>Building</altitudeLayer>
     <passability>Impassable</passability>
-    <blockWind>true</blockWind>
-    <castEdgeShadows>true</castEdgeShadows>
-    <useHitPoints>false</useHitPoints>
-    <coversFloor>true</coversFloor>
+    <blockWind>True</blockWind>
+    <castEdgeShadows>True</castEdgeShadows>
+    <useHitPoints>False</useHitPoints>
+    <coversFloor>True</coversFloor>
     <placingDraggableDimensions>1</placingDraggableDimensions>
     <tickerType>Never</tickerType>
-    <rotatable>false</rotatable>
-    <selectable>true</selectable>
-    <neverMultiSelect>true</neverMultiSelect>
-    <holdsRoof>true</holdsRoof>
+    <rotatable>False</rotatable>
+    <selectable>True</selectable>
+    <neverMultiSelect>True</neverMultiSelect>
+    <holdsRoof>True</holdsRoof>
     <uiOrder>2000</uiOrder>
     <staticSunShadowHeight>1.0</staticSunShadowHeight>
-    <blockLight>true</blockLight>
-    <canOverlapZones>false</canOverlapZones>
+    <blockLight>True</blockLight>
+    <canOverlapZones>False</canOverlapZones>
     <fertility>0</fertility>
     <costList>
       <Plasteel>4</Plasteel>
       <ComponentIndustrial>1</ComponentIndustrial>
     </costList>
     <building>
-      <paintable>true</paintable>
-      <isInert>true</isInert>
-      <isPlaceOverableWall>true</isPlaceOverableWall>
-      <ai_chillDestination>false</ai_chillDestination>
-      <supportsWallAttachments>true</supportsWallAttachments>
+      <paintable>True</paintable>
+      <isInert>True</isInert>
+      <isPlaceOverableWall>True</isPlaceOverableWall>
+      <ai_chillDestination>False</ai_chillDestination>
+      <supportsWallAttachments>True</supportsWallAttachments>
       <relatedBuildCommands>
         <li>FortressDoorRegular</li>
         <li>FortressDoorAuto</li>
@@ -73,9 +73,9 @@
     <label>要塞墙</label>
     <description>不可被通常方式摧毁的要塞墙。</description>
     <graphicData>
-      <texPath>Things/Building/RFortress/RFortressWall</texPath>
+      <texPath>HU/Things/Building/Fortress/FortressWall</texPath>
     </graphicData>
-    <uiIconPath>Things/Building/RFortress/RFortressWallIcon</uiIconPath>
+    <uiIconPath>HU/Things/Building/Fortress/FortressWallIcon</uiIconPath>
     <fillPercent>1</fillPercent>
     <building>
       <blueprintGraphicData>
@@ -89,11 +89,11 @@
     <label>要塞射击墙</label>
     <description>不可被通常方式摧毁的要塞墙，允许子弹通过。</description>
     <graphicData>
-      <texPath>Things/Building/RFortress/RFortressEmbrasure</texPath>
+      <texPath>HU/Things/Building/Fortress/FortressEmbrasure</texPath>
     </graphicData>
-    <uiIconPath>Things/Building/RFortress/RFortressEmbrasureIcon</uiIconPath>
+    <uiIconPath>HU/Things/Building/Fortress/FortressEmbrasureIcon</uiIconPath>
     <fillPercent>0.75</fillPercent>
-    <disableImpassableShotOverConfigError>true</disableImpassableShotOverConfigError>
+    <disableImpassableShotOverConfigError>True</disableImpassableShotOverConfigError>
     <building>
       <blueprintGraphicData>
         <texPath>Things/Building/Linked/Wall_Blueprint_Atlas</texPath>
@@ -130,7 +130,7 @@
       <texPath>Things/Building/Door/DoorSimple_Mover</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <damageData>
-        <enabled>false</enabled>
+        <enabled>False</enabled>
       </damageData>
     </graphicData>
     <uiIconPath>Things/Building/Door/DoorSimple_MenuIcon</uiIconPath>
@@ -153,7 +153,7 @@
       <texPath>Things/Building/Door/Autodoor_Mover</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <damageData>
-        <enabled>false</enabled>
+        <enabled>False</enabled>
       </damageData>
     </graphicData>
     <uiIconPath>Things/Building/Door/Autodoor_MenuIcon</uiIconPath>
@@ -186,7 +186,7 @@
       <texPath>Things/Building/Door/Autodoor_Mover</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <damageData>
-        <enabled>false</enabled>
+        <enabled>False</enabled>
       </damageData>
     </graphicData>
     <uiIconPath>Things/Building/Door/Autodoor_MenuIcon</uiIconPath>

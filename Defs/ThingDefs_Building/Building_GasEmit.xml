@@ -6,9 +6,9 @@
 
   <ThingDef Name="R_GasEmitBase" ParentName="R_FloorStructureBase" Abstract="True">
     <graphicData>
-      <texPath>Things/Building/RVarious/R_GasEmit</texPath>
+      <texPath>HU/Things/Building/Various/Well</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(0.8)</drawSize>
+      <drawSize>(1,1)</drawSize>
     </graphicData>
     <statBases>
       <MaxHitPoints>120</MaxHitPoints>

@@ -14,7 +14,7 @@ namespace HyperUnity
       compClass = typeof(HediffComp_SkillDeplete);
     }
   }
-  
+
   public class HediffComp_SkillDeplete : HediffComp
   {
     private HediffCompProperties_SkillDeplete Props => (HediffCompProperties_SkillDeplete)props;
@@ -43,7 +43,7 @@ namespace HyperUnity
     {
       var skillRecord = parent.pawn.skills?.skills.RandomElement();
       if (skillRecord == null) return;
-      if (!skillRecord.depleteSkillLevel(Props.depleteAmount))
+      if (!skillRecord.DepleteSkillLevel(Props.depleteAmount))
       {
         return;
       }

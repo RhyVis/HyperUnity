@@ -5,8 +5,8 @@
     <label>聚合微械</label>
     <description>由超凡微械组成的芯片外形材料，但也可以根据需求改变为各种材质，强度极高。</description>
     <graphicData>
-      <texPath>Things/Item/Resource/ES_Chip</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>HU/Things/Item/Resource/NanoChip</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
     </graphicData>
     <generateCommonality>0</generateCommonality>
     <generateAllowChance>0</generateAllowChance>

@@ -32,16 +32,17 @@ namespace HyperUnity
         .Where(pawn => pawn.Position.DistanceToSquared(compInCenter.parent.Position) < range * range)
         .Where(pawn => !pawn.health.Dead);
     }
-    
+
     public static bool ConsumePower(this ThingComp comp, float requiredVal)
     {
       var powerComp = comp.parent.TryGetComp<CompPowerTrader>();
       if (powerComp != null && powerComp.PowerOn)
       {
-        Log.Message("[HyperUnity] Start power check.");
+        Msg.D("ConsumePower: Start power check.");
         var powerSum = powerComp.PowerNet.CurrentStoredEnergy();
         if (powerSum < requiredVal)
         {
+          Msg.D("ConsumePower: Insufficient power.");
           return false;
         }
         var toConsume = requiredVal;
@@ -50,12 +51,15 @@ namespace HyperUnity
           if (battery.StoredEnergy > toConsume)
           {
             battery.SetStoredEnergyPct((battery.StoredEnergy - toConsume) / (battery.Props.storedEnergyMax));
+            Msg.D("ConsumePower: Clear.");
             return true;
           }
           toConsume -= battery.StoredEnergy;
           battery.SetStoredEnergyPct(0f);
+          Msg.D("ConsumePower: Cost " + battery.StoredEnergy);
           if (toConsume <= 0f)
           {
+            Msg.D("ConsumePower: Clear.");
             return true;
           }
         }
@@ -94,8 +98,8 @@ namespace HyperUnity
         }
       }
     }
-  
-    public static bool depleteSkillLevel(this SkillRecord skillRecord, float xp)
+
+    public static bool DepleteSkillLevel(this SkillRecord skillRecord, float xp)
     {
       if (skillRecord.levelInt <= 0 || skillRecord.TotallyDisabled || xp <= 0) return false;
 
@@ -110,7 +114,7 @@ namespace HyperUnity
           return true;
         }
       }
-      
+
       if (skillRecord.xpSinceLastLevel >= xp)
       {
         skillRecord.xpSinceLastLevel -= xp;
@@ -122,9 +126,28 @@ namespace HyperUnity
 
       return true;
     }
-
+    
     public static void ApplyHediff(this Pawn pawn, HediffDef hediff, float severityAdjust = 1.0f)
     {
+      var target = pawn.health.hediffSet.GetFirstHediffOfDef(hediff);
+      if (target == null)
+      {
+        target = HediffMaker.MakeHediff(hediff, pawn);
+        target.Severity = severityAdjust;
+        pawn.health.AddHediff(target);
+      }
+      else
+      {
+        target.Severity += severityAdjust;
+      }
+    }
+
+    public static void ApplyHediffWithStat(this Pawn pawn, HediffDef hediff, List<StatDef> stats = null, float severityAdjust = 1.0f)
+    {
+      if (!(stats?.NullOrEmpty() ?? true))
+      {
+        stats.ForEach(stat => severityAdjust *= pawn.GetStatValue(stat));
+      }
       var target = pawn.health.hediffSet.GetFirstHediffOfDef(hediff);
       if (target == null)
       {
@@ -155,6 +178,7 @@ namespace HyperUnity
 
     public static void DamageBodyPart(this Pawn pawn, BodyPartRecord bodyPart)
     {
+      Msg.D("Doing damage to " + bodyPart.def.label);
       pawn.TakeDamage(new DamageInfo(
         DamageDefOf.SurgicalCut,
         9999f,
@@ -179,6 +203,7 @@ namespace HyperUnity
       {
         return;
       }
+      Msg.D("Doing damage to " + target.def.label);
       pawn.TakeDamage(new DamageInfo(
         DamageDefOf.SurgicalCut,
         amount,
@@ -194,6 +219,65 @@ namespace HyperUnity
         QualityCategory.Normal,
         false
       ));
+    }
+
+    public static void ThrowMote(this ThingComp comp, string s)
+    {
+      MoteMaker.ThrowText(comp.parent.TrueCenter(), comp.parent.Map, s);
+    }
+
+    public static void ThrowMote(this Thing thing, string s)
+    {
+      MoteMaker.ThrowText(thing.TrueCenter(), thing.Map, s);
+    }
+
+    public static IEnumerable<Thing> ThingGridInRange(this IntVec3 origin, Map map, float radius)
+    {
+      return GenRadial.RadialCellsAround(origin, radius, true)
+        .Where(cell => cell.InBounds(map))
+        .SelectMany(cell => map.thingGrid.ThingsListAt(cell));
+    }
+
+    public static IEnumerable<Thing> ThingGridInRoom(this IntVec3 origin, Map map)
+    {
+      var room = origin.GetRoom(map);
+      
+      if (room == null)
+      {
+        return new List<Thing>();
+      }
+
+      return room.Cells
+        .SelectMany(cell => map.thingGrid.ThingsListAt(cell));
+    }
+
+    public static IEnumerable<Thing> ThingGridInRoom(this Thing origin)
+    {
+      var room = origin.GetRoom();
+      
+      if (room == null)
+      {
+        return new List<Thing>();
+      }
+
+      return room.Cells
+        .SelectMany(cell => origin.Map.thingGrid.ThingsListAt(cell));
+    }
+  }
+
+  public static class Msg
+  {
+    public static void D(string s)
+    {
+      if (HyperUnity_ModSettings.Debug)
+      {
+        Log.Message($"[HyperUnity] {s}");
+      }
+    }
+
+    public static void E(string s)
+    {
+      Log.Error($"[HyperUnity] {s}");
     }
   }
 }

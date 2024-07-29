@@ -3,27 +3,28 @@
 
   <DesignatorDropdownGroupDef>
     <defName>R_HediffGiverGood</defName>
+    <label>正向装置</label>
   </DesignatorDropdownGroupDef>
 
   <DesignatorDropdownGroupDef>
     <defName>R_HediffGiverBad</defName>
+    <label>负向装置</label>
   </DesignatorDropdownGroupDef>
 
   <ThingDef Name="R_HediffGiverBase" ParentName="BuildingBase" Abstract="True">
-    <castEdgeShadows>false</castEdgeShadows>
-    <blockWind>false</blockWind>
-    <blockLight>false</blockLight>
+    <castEdgeShadows>False</castEdgeShadows>
+    <blockWind>False</blockWind>
+    <blockLight>False</blockLight>
     <graphicData>
-      <texPath>Things/Building/RVarious/R_HediffGiver</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(0.8)</drawSize>
+      <drawSize>(1.2)</drawSize>
       <damageData>
-        <enabled>false</enabled>
+        <enabled>False</enabled>
       </damageData>
     </graphicData>
     <altitudeLayer>Building</altitudeLayer>
     <passability>Standable</passability>
-    <fillPercent>0.2</fillPercent>
+    <fillPercent>0.1</fillPercent>
     <statBases>
       <MaxHitPoints>300</MaxHitPoints>
       <WorkToBuild>0</WorkToBuild>
@@ -31,7 +32,7 @@
       <Flammability>0</Flammability>
     </statBases>
     <size>(1,1)</size>
-    <costList Inherit="false"/>
+    <costList Inherit="False"/>
     <tickerType>Normal</tickerType>
     <useHitPoints>False</useHitPoints>
     <minifiedDef>MinifiedThing</minifiedDef>
@@ -39,22 +40,24 @@
     <thingCategories>
       <li>BuildingsMisc</li>
     </thingCategories>
+    <building>
+      <expandHomeArea>False</expandHomeArea>
+    </building>
+    <specialDisplayRadius>4.9</specialDisplayRadius>
   </ThingDef>
 
   <ThingDef Name="R_HediffGiverBaseGood" ParentName="R_HediffGiverBase" Abstract="True">
+    <graphicData>
+      <texPath>HU/Things/Building/Security/HediffGiverGreen</texPath>
+    </graphicData>
     <designatorDropdown>R_HediffGiverGood</designatorDropdown>
-    <specialDisplayRadius>4.9</specialDisplayRadius>
-    <building>
-      <expandHomeArea>false</expandHomeArea>
-    </building>
   </ThingDef>
 
   <ThingDef Name="R_HediffGiverBaseBad" ParentName="R_HediffGiverBase" Abstract="True">
+    <graphicData>
+      <texPath>HU/Things/Building/Security/HediffGiverRed</texPath>
+    </graphicData>
     <designatorDropdown>R_HediffGiverBad</designatorDropdown>
-    <specialDisplayRadius>4.9</specialDisplayRadius>
-    <building>
-      <expandHomeArea>false</expandHomeArea>
-    </building>
   </ThingDef>
 
   <!-- Good Givers -->
@@ -65,11 +68,11 @@
     <description>这个装置向周围所有生物释放不死效果，不受心灵敏感度影响。</description>
     <specialDisplayRadius>1</specialDisplayRadius>
     <comps>
-      <li Class="VFECore.CompProperties_HediffGiver">
+      <li Class="HyperUnity.CompProperties_HediffGiver">
         <hediffDef>R_ImmortalHediff</hediffDef>
-        <severityIncrease>1.0</severityIncrease>
+        <severityAdjust>1.0</severityAdjust>
         <radius>1</radius>
-        <tickRate>60</tickRate>
+        <checkInterval>60</checkInterval>
       </li>
     </comps>
   </ThingDef>
@@ -78,9 +81,9 @@
     <label>再生装置</label>
     <description>这个装置向周围所有生物释放再生效果，受心灵敏感度影响。</description>
     <comps>
-      <li Class="VFECore.CompProperties_HediffGiver">
+      <li Class="HyperUnity.CompProperties_HediffGiver">
         <hediffDef>R_RegenerationGreatHediff</hediffDef>
-        <severityIncrease>1.0</severityIncrease>
+        <severityAdjust>1.0</severityAdjust>
         <radius>4.9</radius>
         <stats>
           <li>PsychicSensitivity</li>
@@ -93,11 +96,11 @@
     <label>活力装置</label>
     <description>这个装置向周围所有生物释放活力水效果，受心灵敏感度影响。</description>
     <comps>
-      <li Class="VFECore.CompProperties_HediffGiver">
+      <li Class="HyperUnity.CompProperties_HediffGiver">
         <hediffDef>GoJuiceHigh</hediffDef>
-        <severityIncrease>0.7</severityIncrease>
+        <severityAdjust>0.7</severityAdjust>
         <radius>4.9</radius>
-        <tickRate>60</tickRate>
+        <checkInterval>60</checkInterval>
         <stats>
           <li>PsychicSensitivity</li>
         </stats>
@@ -109,11 +112,11 @@
     <label>恒温装置</label>
     <description>这个装置向周围所有生物释放恒温效果，不受心灵敏感度影响。</description>
     <comps>
-      <li Class="VFECore.CompProperties_HediffGiver">
+      <li Class="HyperUnity.CompProperties_HediffGiver">
         <hediffDef>R_TemperatureHediff</hediffDef>
-        <severityIncrease>1.0</severityIncrease>
+        <severityAdjust>1.0</severityAdjust>
         <radius>4.9</radius>
-        <tickRate>60</tickRate>
+        <checkInterval>60</checkInterval>
       </li>
     </comps>
   </ThingDef>
@@ -122,11 +125,11 @@
     <label>抗毒装置</label>
     <description>这个装置向周围所有生物释放抗毒效果，不受心灵敏感度影响。</description>
     <comps>
-      <li Class="VFECore.CompProperties_HediffGiver">
+      <li Class="HyperUnity.CompProperties_HediffGiver">
         <hediffDef>R_ToxicResistenceHediff</hediffDef>
-        <severityIncrease>1.0</severityIncrease>
+        <severityAdjust>1.0</severityAdjust>
         <radius>4.9</radius>
-        <tickRate>60</tickRate>
+        <checkInterval>60</checkInterval>
       </li>
     </comps>
   </ThingDef>
@@ -135,11 +138,11 @@
     <label>免需装置</label>
     <description>这个装置向周围所有生物释放免需效果，不受心灵敏感度影响。</description>
     <comps>
-      <li Class="VFECore.CompProperties_HediffGiver">
+      <li Class="HyperUnity.CompProperties_HediffGiver">
         <hediffDef>R_OverNeededHediff</hediffDef>
-        <severityIncrease>1.0</severityIncrease>
+        <severityAdjust>1.0</severityAdjust>
         <radius>4.9</radius>
-        <tickRate>600</tickRate>
+        <checkInterval>600</checkInterval>
       </li>
     </comps>
   </ThingDef>
@@ -148,11 +151,11 @@
     <label>超感装置</label>
     <description>这个装置向周围所有生物释放超感效果，不受心灵敏感度影响。</description>
     <comps>
-      <li Class="VFECore.CompProperties_HediffGiver">
+      <li Class="HyperUnity.CompProperties_HediffGiver">
         <hediffDef>R_ConsciousnessUpHediff</hediffDef>
-        <severityIncrease>1.0</severityIncrease>
+        <severityAdjust>1.0</severityAdjust>
         <radius>4.9</radius>
-        <tickRate>60</tickRate>
+        <checkInterval>60</checkInterval>
       </li>
     </comps>
   </ThingDef>
@@ -162,11 +165,11 @@
     <description>这个装置让周围所有生物怀孕，不受心灵敏感度影响。</description>
     <specialDisplayRadius>1</specialDisplayRadius>
     <comps>
-      <li Class="VFECore.CompProperties_HediffGiver">
+      <li Class="HyperUnity.CompProperties_HediffGiver">
         <hediffDef>Pregnant</hediffDef>
         <radius>1</radius>
-        <severityIncrease>0.3</severityIncrease>
-        <tickRate>60</tickRate>
+        <severityAdjust>0.3</severityAdjust>
+        <checkInterval>60</checkInterval>
       </li>
     </comps>
   </ThingDef>
@@ -174,15 +177,16 @@
   <!-- Bad Givers -->
 
   <ThingDef ParentName="R_HediffGiverBaseBad">
-    <defName>R_HeidffGiver_SpecialMeal</defName>
-    <label>扭曲装置</label>
-    <description>这个装置向周围所有生物释放扭曲效果，受心灵敏感度影响。</description>
+    <defName>R_HeidffGiver_BloodLoss</defName>
+    <label>失血装置</label>
+    <description>这个装置向周围所有生物释放失血效果，受心灵敏感度影响。</description>
     <comps>
-      <li Class="VFECore.CompProperties_HediffGiver">
-        <hediffDef>R_RegenerationGreatHediff</hediffDef>
-        <severityIncrease>1.0</severityIncrease>
+      <li Class="HyperUnity.CompProperties_HediffGiver">
+        <hediffDef>BloodLoss</hediffDef>
+        <severityAdjust>0.3</severityAdjust>
         <radius>4.9</radius>
-        <tickRate>3600</tickRate>
+        <checkInterval>60</checkInterval>
+        <danger>True</danger>
         <stats>
           <li>PsychicSensitivity</li>
         </stats>
@@ -190,15 +194,16 @@
     </comps>
   </ThingDef>
   <ThingDef ParentName="R_HediffGiverBaseBad">
-    <defName>R_HeidffGiver_BloodLoss</defName>
-    <label>失血装置</label>
-    <description>这个装置向周围所有生物释放失血效果，受心灵敏感度影响。</description>
+    <defName>R_HeidffGiver_SpecialMeal</defName>
+    <label>扭曲装置</label>
+    <description>这个装置向周围所有生物释放扭曲效果，受心灵敏感度影响。</description>
     <comps>
-      <li Class="VFECore.CompProperties_HediffGiver">
-        <hediffDef>BloodLoss</hediffDef>
-        <severityIncrease>0.3</severityIncrease>
+      <li Class="HyperUnity.CompProperties_HediffGiver">
+        <hediffDef>R_RegenerationGreatHediff</hediffDef>
+        <severityAdjust>1.0</severityAdjust>
         <radius>4.9</radius>
-        <tickRate>60</tickRate>
+        <checkInterval>3600</checkInterval>
+        <danger>True</danger>
         <stats>
           <li>PsychicSensitivity</li>
         </stats>
@@ -210,11 +215,12 @@
     <label>饥饿装置</label>
     <description>这个装置向周围所有生物释放失血效果，受心灵敏感度影响。</description>
     <comps>
-      <li Class="VFECore.CompProperties_HediffGiver">
+      <li Class="HyperUnity.CompProperties_HediffGiver">
         <hediffDef>R_HungerHediff</hediffDef>
-        <severityIncrease>1.0</severityIncrease>
+        <severityAdjust>1.0</severityAdjust>
         <radius>4.9</radius>
-        <tickRate>60</tickRate>
+        <checkInterval>60</checkInterval>
+        <danger>True</danger>
         <stats>
           <li>PsychicSensitivity</li>
         </stats>
@@ -226,11 +232,12 @@
     <label>狂躁装置</label>
     <description>这个装置向周围所有生物释放失血效果，受心灵敏感度影响。</description>
     <comps>
-      <li Class="VFECore.CompProperties_HediffGiver">
+      <li Class="HyperUnity.CompProperties_HediffGiver">
         <hediffDef>R_BerserkHediff</hediffDef>
-        <severityIncrease>1.0</severityIncrease>
+        <severityAdjust>1.0</severityAdjust>
         <radius>4.9</radius>
-        <tickRate>60</tickRate>
+        <checkInterval>60</checkInterval>
+        <danger>True</danger>
         <stats>
           <li>PsychicSensitivity</li>
         </stats>
@@ -242,11 +249,12 @@
     <label>呕吐装置</label>
     <description>这个装置向周围所有生物释放失血效果，受心灵敏感度影响。</description>
     <comps>
-      <li Class="VFECore.CompProperties_HediffGiver">
+      <li Class="HyperUnity.CompProperties_HediffGiver">
         <hediffDef>R_VomitHediff</hediffDef>
-        <severityIncrease>1.0</severityIncrease>
+        <severityAdjust>1.0</severityAdjust>
         <radius>4.9</radius>
-        <tickRate>60</tickRate>
+        <checkInterval>60</checkInterval>
+        <danger>True</danger>
         <stats>
           <li>PsychicSensitivity</li>
         </stats>
@@ -258,11 +266,12 @@
     <label>冲击装置</label>
     <description>这个装置向周围所有生物释放心灵冲击效果，受心灵敏感度影响。</description>
     <comps>
-      <li Class="VFECore.CompProperties_HediffGiver">
+      <li Class="HyperUnity.CompProperties_HediffGiver">
         <hediffDef>CatatonicBreakdown</hediffDef>
-        <severityIncrease>0.5</severityIncrease>
+        <severityAdjust>0.5</severityAdjust>
         <radius>4.9</radius>
-        <tickRate>60</tickRate>
+        <checkInterval>60</checkInterval>
+        <danger>True</danger>
         <stats>
           <li>PsychicSensitivity</li>
         </stats>
@@ -274,11 +283,12 @@
     <label>麻醉装置</label>
     <description>这个装置向周围所有生物释放麻醉效果，不受心灵敏感度影响。</description>
     <comps>
-      <li Class="VFECore.CompProperties_HediffGiver">
+      <li Class="HyperUnity.CompProperties_HediffGiver">
         <hediffDef>Anesthetic</hediffDef>
-        <severityIncrease>0.3</severityIncrease>
+        <severityAdjust>0.3</severityAdjust>
         <radius>4.9</radius>
-        <tickRate>60</tickRate>
+        <checkInterval>60</checkInterval>
+        <danger>True</danger>
       </li>
     </comps>
   </ThingDef>
@@ -287,11 +297,12 @@
     <label>毒害装置</label>
     <description>这个装置向周围所有生物释放剧毒效果，不受心灵敏感度影响。</description>
     <comps>
-      <li Class="VFECore.CompProperties_HediffGiver">
+      <li Class="HyperUnity.CompProperties_HediffGiver">
         <hediffDef>ToxicBuildup</hediffDef>
-        <severityIncrease>0.3</severityIncrease>
+        <severityAdjust>0.3</severityAdjust>
         <radius>4.9</radius>
-        <tickRate>60</tickRate>
+        <checkInterval>60</checkInterval>
+        <danger>True</danger>
       </li>
     </comps>
   </ThingDef>
@@ -300,11 +311,12 @@
     <label>压制装置</label>
     <description>这个装置向周围所有生物释放压制效果，不受心灵敏感度影响。</description>
     <comps>
-      <li Class="VFECore.CompProperties_HediffGiver">
+      <li Class="HyperUnity.CompProperties_HediffGiver">
         <hediffDef>R_SuppressedHediff</hediffDef>
-        <severityIncrease>1.0</severityIncrease>
+        <severityAdjust>1.0</severityAdjust>
         <radius>4.9</radius>
-        <tickRate>60</tickRate>
+        <checkInterval>60</checkInterval>
+        <danger>True</danger>
       </li>
     </comps>
   </ThingDef>
@@ -314,11 +326,12 @@
     <description>这个装置通过降低意识使周围生物死亡，不受心灵敏感度影响。</description>
     <specialDisplayRadius>2.9</specialDisplayRadius>
     <comps>
-      <li Class="VFECore.CompProperties_HediffGiver">
+      <li Class="HyperUnity.CompProperties_HediffGiver">
         <hediffDef>R_DeathHediff</hediffDef>
-        <severityIncrease>2.0</severityIncrease>
+        <severityAdjust>2.0</severityAdjust>
         <radius>2.9</radius>
-        <tickRate>60</tickRate>
+        <checkInterval>60</checkInterval>
+        <danger>True</danger>
       </li>
     </comps>
   </ThingDef>

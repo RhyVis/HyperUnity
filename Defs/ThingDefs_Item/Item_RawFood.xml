@@ -6,7 +6,7 @@
     <description>通过分子重构技术生成的素食原料。</description>
     <possessionCount>100</possessionCount>
     <graphicData>
-      <texPath>Things/Item/Resource/RFoodRaw/R_RawSyntheticRice</texPath>
+      <texPath>HU/Things/Item/Resource/RFoodRaw/R_RawSyntheticRice</texPath>
     </graphicData>
     <statBases>
       <MarketValue>1</MarketValue>
@@ -22,7 +22,7 @@
     <description>通过分子重构技术生成的肉食原料。</description>
     <possessionCount>100</possessionCount>
     <graphicData>
-      <texPath>Things/Item/Resource/RFoodRaw/R_RawSyntheticMeat</texPath>
+      <texPath>HU/Things/Item/Resource/RFoodRaw/R_RawSyntheticMeat</texPath>
     </graphicData>
     <thingCategories Inherit="False">
       <li>MeatRaw</li>

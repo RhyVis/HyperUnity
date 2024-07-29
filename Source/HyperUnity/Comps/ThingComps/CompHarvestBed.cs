@@ -32,6 +32,10 @@ namespace HyperUnity
 
     public override IEnumerable<Gizmo> CompGetGizmosExtra()
     {
+      foreach (var gizmo in base.CompGetGizmosExtra())
+      {
+        yield return gizmo;
+      }
       yield return new Command_Action()
       {
         defaultLabel = "R_HyperUnity_Building_BodypartRemove_Gizmo1_Label".Translate(),

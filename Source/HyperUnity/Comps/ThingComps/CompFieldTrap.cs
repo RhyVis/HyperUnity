@@ -77,7 +77,7 @@ namespace HyperUnity
         pawns = parent.Map.mapPawns.AllPawnsSpawned
           .Where(pawn => !pawn.health.Dead)
           .Where(pawn => (pawn.Faction != null && pawn.Faction.HostileTo(Faction.OfPlayer)) ||
-                         (pawn.RaceProps.Animal && pawn.InAggroMentalState))
+                         (pawn.AnimalOrWildMan() && pawn.InAggroMentalState))
           .Where(pawn => !pawn.IsPrisonerInPrisonCell())
           .ToList();
       }
@@ -85,7 +85,7 @@ namespace HyperUnity
       {
         pawns = this.FindPawnsAliveInRange(Props.range)
           .Where(pawn => (pawn.Faction != null && pawn.Faction.HostileTo(Faction.OfPlayer)) ||
-                         (pawn.RaceProps.Animal && pawn.InAggroMentalState))
+                         (pawn.AnimalOrWildMan() && pawn.InAggroMentalState))
           .Where(pawn => !pawn.IsPrisonerInPrisonCell())
           .ToList();
       }

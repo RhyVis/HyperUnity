@@ -7,7 +7,7 @@
 
   <ThingDef Name="R_FieldTrapBase" ParentName="R_FloorStructureBase" Abstract="True">
     <graphicData>
-      <texPath>Things/Building/RVarious/R_FieldTrap</texPath>
+      <texPath>HU/Things/Building/Security/FieldTrap</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(0.8)</drawSize>
     </graphicData>

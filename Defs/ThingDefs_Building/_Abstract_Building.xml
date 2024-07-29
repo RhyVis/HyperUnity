@@ -60,4 +60,34 @@
     </placeWorkers>
     <designationCategory>R_MainCategory</designationCategory>
   </ThingDef>
+
+  <!-- Furn -->
+  <ThingDef Name="R_FurnBase" ParentName="BuildingBase" Abstract="True">
+    <graphicData>
+      <damageData>
+        <enabled>False</enabled>
+      </damageData>
+    </graphicData>
+    <statBases>
+      <MarketValue>1200</MarketValue>
+      <MaxHitPoints>500</MaxHitPoints>
+      <WorkToBuild>2000</WorkToBuild>
+      <Mass>30</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <castEdgeShadows>False</castEdgeShadows>
+    <blockWind>False</blockWind>
+    <blockLight>False</blockLight>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Standable</passability>
+    <fillPercent>0.1</fillPercent>
+    <size>(1,1)</size>
+    <costList Inherit="False"/>
+    <useHitPoints>False</useHitPoints>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <designationCategory>R_MainCategory</designationCategory>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+  </ThingDef>
 </Defs>

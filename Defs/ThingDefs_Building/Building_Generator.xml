@@ -2,11 +2,11 @@
 <Defs>
   <ThingDef ParentName="BuildingBase">
     <defName>R_MiniNuclearGenerator</defName>
-    <label>微型同位素发电机</label>
-    <description>一个小型同位素发电机。</description>
+    <label>同位素发电机</label>
+    <description>一个同位素发电机。</description>
     <thingClass>Building</thingClass>
     <graphicData>
-      <texPath>Things/Building/RVarious/R_MiniNuclearGenerator</texPath>
+      <texPath>HU/Things/Building/Production/MiniNuclearGenerator</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(2,2)</drawSize>
       <damageData>
@@ -47,6 +47,69 @@
         <transmitsPower>True</transmitsPower>
       </li>
       <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Glower">
+        <glowRadius>1</glowRadius>
+        <glowColor>(14,223,49,0)</glowColor>
+      </li>
+    </comps>
+    <designationCategory>R_MainCategory</designationCategory>
+    <constructEffect>ConstructMetal</constructEffect>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsPower</li>
+    </thingCategories>
+  </ThingDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>R_MiniBattery</defName>
+    <label>量子聚能电池</label>
+    <description>一台储备庞大数量电能的电池。</description>
+    <thingClass>Building_Battery</thingClass>
+    <graphicData>
+      <texPath>HU/Things/Building/Production/Battery</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawOffset>(0,0,-0.25)</drawOffset>
+      <drawSize>(7,7)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <pathCost>70</pathCost>
+    <passability>PassThroughOnly</passability>
+    <castEdgeShadows>True</castEdgeShadows>
+    <fillPercent>1</fillPercent>
+    <canOverlapZones>False</canOverlapZones>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <building>
+      <destroySound>BuildingDestroyed_Metal_Medium</destroySound>
+      <ai_chillDestination>False</ai_chillDestination>
+    </building>
+    <statBases>
+      <MaxHitPoints>1800</MaxHitPoints>
+      <WorkToBuild>6000</WorkToBuild>
+      <Flammability>0</Flammability>
+      <Beauty>0</Beauty>
+      <Mass>60</Mass>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <size>(2,5)</size>
+    <selectable>True</selectable>
+    <costList>
+      <R_NanoChips>200</R_NanoChips>
+      <Steel>800</Steel>
+      <Uranium>400</Uranium>
+      <ComponentSpacer>10</ComponentSpacer>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Battery">
+        <storedEnergyMax>2000000</storedEnergyMax>
+        <efficiency>1</efficiency>
+        <shortCircuitInRain>False</shortCircuitInRain>
+        <transmitsPower>True</transmitsPower>
+      </li>
       <li Class="CompProperties_Glower">
         <glowRadius>1</glowRadius>
         <glowColor>(14,223,49,0)</glowColor>

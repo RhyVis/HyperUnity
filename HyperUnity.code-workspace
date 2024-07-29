@@ -16,5 +16,7 @@
       "path": "D:/Program/Steam/steamapps/workshop/content/294100/1298507261"
     }
   ],
-  "settings": {}
+  "settings": {
+    "dotnet.preferCSharpExtension": true
+  }
 }

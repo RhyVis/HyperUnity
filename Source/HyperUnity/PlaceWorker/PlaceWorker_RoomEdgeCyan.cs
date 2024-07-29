@@ -4,11 +4,11 @@ using Verse;
 
 namespace HyperUnity
 {
-  public class PlaceWorker_RoomEdgeGreen : PlaceWorker
+  public class PlaceWorker_RoomEdgeCyan : PlaceWorker
   {
     public override void DrawGhost(ThingDef def, IntVec3 center, Rot4 rot, Color ghostCol, Thing thing = null)
     {
-      var map = Find.CurrentMap;
+      var map = Find.CurrentMap;  
       var room = center.GetRoom(map);
       if (room != null)
       {

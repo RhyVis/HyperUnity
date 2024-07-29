@@ -3,7 +3,7 @@
   <ThingDef Name="R_WealthCovertBase" ParentName="BuildingBase" Abstract="True">
     <thingClass>HyperUnity.Building_WithoutZoneSettings</thingClass>
     <graphicData>
-      <texPath>Things/Building/RVarious/R_WealthCovert</texPath>
+      <texPath>HU/Things/Building/Various/WealthCovert</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(2,2)</drawSize>
       <damageData>

@@ -1,18 +1,24 @@
-﻿using Verse;
+﻿using System.Collections.Generic;
+using System.Text;
+using RimWorld;
+using UnityEngine;
+using Verse;
+using Verse.Sound;
 
 namespace HyperUnity
 {
-  public class CompProperties_TemperatureControl : CompProperties
+  public class CompProperties_TempSet : CompProperties
   {
-    public CompProperties_TemperatureControl()
+    public CompProperties_TempSet()
     {
-      compClass = typeof(CompTemperatureControl);
+      compClass = typeof(CompTempSet);
     }
   }
-  public class CompTemperatureControl : ThingComp
+  public class CompTempSet : ThingComp
   {
     private bool _activated;
-    private float _targetTemperature = 21f;
+    private int _targetTempInt = 21;
+    private static int TargetTempIntDefault = 21;
     
     public override void CompTick()
     {
@@ -28,6 +34,102 @@ namespace HyperUnity
     {
       base.PostExposeData();
       Scribe_Values.Look(ref _activated, "activated");
+      Scribe_Values.Look(ref _targetTempInt, "targetTempInt");
+    }
+
+    public override string CompInspectStringExtra()
+    {
+      var sb = new StringBuilder();
+      sb.Append(base.CompInspectStringExtra());
+      sb.AppendLineIfNotEmpty();
+      sb.Append("R_HyperUnity_CompTempSet_Mote2".Translate(_targetTempInt));
+      return sb.ToString();
+    }
+
+    private static Texture2D LowTempIcon = ContentFinder<Texture2D>.Get("UI/Commands/TempLower");
+    private static Texture2D ResetTempIcon = ContentFinder<Texture2D>.Get("UI/Commands/TempReset");
+    private static Texture2D HighTempIcon = ContentFinder<Texture2D>.Get("UI/Commands/TempRaise");
+    
+    public override IEnumerable<Gizmo> CompGetGizmosExtra()
+    {
+      foreach (var gizmo in base.CompGetGizmosExtra())
+      {
+        yield return gizmo;
+      }
+
+      yield return new Command_Toggle()
+      {
+        defaultLabel = "R_HyperUnity_CompTempSet_Gizmo_Act_Label".Translate(),
+        defaultDesc = "R_HyperUnity_CompTempSet_Gizmo_Act_Desc".Translate(),
+        icon = TexCommand.ToggleVent,
+        isActive = () => _activated,
+        toggleAction = () => _activated = !_activated
+      };
+
+      yield return new Command_Action()
+      {
+        defaultLabel = "-100",
+        defaultDesc = "-100℃",
+        icon = LowTempIcon,
+        action = () => TweakTarget(-100)
+      };
+      
+      yield return new Command_Action()
+      {
+        defaultLabel = "-10",
+        defaultDesc = "-10℃",
+        icon = LowTempIcon,
+        action = () => TweakTarget(-10)
+      };
+      
+      yield return new Command_Action()
+      {
+        defaultLabel = "-1",
+        defaultDesc = "-1℃",
+        icon = LowTempIcon,
+        action = () => TweakTarget(-1)
+      };
+
+      yield return new Command_Action()
+      {
+        defaultLabel = "R_HyperUnity_CompTempSet_Gizmo_Reset_Label".Translate(),
+        defaultDesc = "R_HyperUnity_CompTempSet_Gizmo_Reset_Desc".Translate(),
+        icon = ResetTempIcon,
+        action = () => _targetTempInt = TargetTempIntDefault
+      };
+      
+      yield return new Command_Action()
+      {
+        defaultLabel = "+1",
+        defaultDesc = "+1℃",
+        icon = HighTempIcon,
+        action = () => TweakTarget(1)
+      };
+      
+      yield return new Command_Action()
+      {
+        defaultLabel = "+10",
+        defaultDesc = "+10℃",
+        icon = HighTempIcon,
+        action = () => TweakTarget(10)
+      };
+      
+      yield return new Command_Action()
+      {
+        defaultLabel = "+100",
+        defaultDesc = "+100℃",
+        icon = HighTempIcon,
+        action = () => TweakTarget(100)
+      };
+
+    }
+
+    private void TweakTarget(int offset)
+    {
+      SoundDefOf.DragSlider.PlayOneShotOnCamera();
+      _targetTempInt += offset;
+      _targetTempInt = Mathf.Clamp(_targetTempInt, -273, 1000);
+      this.ThrowMote("R_HyperUnity_CompTempSet_Mote2".Translate(_targetTempInt));
     }
 
     private void TweakTemperature()
@@ -35,15 +137,15 @@ namespace HyperUnity
       var room = parent.GetRoom();
       if (room == null)
       {
-        this.ThrowMote("R_HyperUnity_CompThingGuardian_Mote1".Translate());
+        this.ThrowMote("R_HyperUnity_CompTempSet_Mote1".Translate());
         _activated = false;
         return;
       }
 
-      var present = room.Temperature;
-      if (present < _targetTemperature || present > _targetTemperature)
+      var target = (float)_targetTempInt;
+      if (room.Temperature < target || room.Temperature > target)
       {
-        room.Temperature = _targetTemperature;
+        room.Temperature = target;
       }
     }
   }

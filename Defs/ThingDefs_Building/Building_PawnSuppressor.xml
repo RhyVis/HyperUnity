@@ -9,9 +9,9 @@
     <blockWind>False</blockWind>
     <blockLight>False</blockLight>
     <graphicData>
-      <texPath>Things/Building/RVarious/R_PawnSuppressor</texPath>
+      <texPath>HU/Things/Building/Security/PawnSuppressor</texPath>
       <graphicClass>Graphic_Single</graphicClass>
-      <drawSize>(0.8)</drawSize>
+      <drawSize>(0.85)</drawSize>
       <damageData>
         <enabled>False</enabled>
       </damageData>

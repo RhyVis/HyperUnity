@@ -30,8 +30,8 @@
     <lifeStages>
       <li MayRequire="Ludeon.Rimworld.Biotech">
         <bodyGraphicData>
-          <texPath>Things/Pawn/Mechanoid/OmniservantClean</texPath>
-          <maskPath>Things/Pawn/Mechanoid/FMask/Omniservant</maskPath>
+          <texPath>HU/Things/Pawn/Mechanoid/OmniservantClean</texPath>
+          <maskPath>HU/Things/Pawn/Mechanoid/FMask/Omniservant</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.22</drawSize>
@@ -42,8 +42,8 @@
       </li>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Pawn/Mechanoid/OmniservantClean</texPath>
-          <maskPath>Things/Pawn/Mechanoid/FMask/Omniservant</maskPath>
+          <texPath>HU/Things/Pawn/Mechanoid/OmniservantClean</texPath>
+          <maskPath>HU/Things/Pawn/Mechanoid/FMask/Omniservant</maskPath>
           <shaderType>CutoutWithOverlay</shaderType>
           <graphicClass>Graphic_Multi</graphicClass>
           <drawSize>1.22</drawSize>
@@ -54,7 +54,7 @@
       </li>
     </lifeStages>
     <weaponTags>
-      <li>R_UltimateGun</li>
+      <li>R_UltimateGunTag</li>
     </weaponTags>
   </PawnKindDef>
 </Defs>

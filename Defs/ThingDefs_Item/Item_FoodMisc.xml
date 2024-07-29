@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <ThingDef Name="R_FoodMiscBase" ParentName="MealBase" Abstract="True">
+    <statBases>
+      <Flammability>0</Flammability>
+      <DeteriorationRate>0</DeteriorationRate>
+    </statBases>
+    <useHitPoints>False</useHitPoints>
+  </ThingDef>
+
+  <ThingDef ParentName="R_FoodMiscBase">
+    <defName>R_VomitPackage</defName>
+    <label>包装呕吐物</label>
+    <description>没有什么特殊效果，喝起来挺好喝。</description>
+    <graphicData>
+      <texPath>HU/Things/Item/Meal/RSpecialDrink</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>15</MarketValue>
+      <Nutrition>1</Nutrition>
+      <Mass>0.05</Mass>
+    </statBases>
+    <ingestible>
+      <preferability>MealFine</preferability>
+      <ingestEffect>EatVegetarian</ingestEffect>
+      <ingestSound>Meal_Eat</ingestSound>
+      <baseIngestTicks>100</baseIngestTicks>
+      <tasteThought>R_AteJustMeal_Normal</tasteThought>
+    </ingestible>
+  </ThingDef>
+</Defs>

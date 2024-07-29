@@ -42,9 +42,6 @@
         <Reference Include="Assembly-CSharp">
           <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
         </Reference>
-        <Reference Include="PipeSystem">
-          <HintPath>..\..\..\..\..\..\workshop\content\294100\2023507013\1.5\Assemblies\PipeSystem.dll</HintPath>
-        </Reference>
         <Reference Include="System"/>
         <Reference Include="System.Core"/>
         <Reference Include="System.Data"/>
@@ -67,10 +64,11 @@
         <Compile Include="Comps\ThingComps\CompGasEmit.cs" />
         <Compile Include="Comps\ThingComps\CompHarvestBed.cs" />
         <Compile Include="Comps\ThingComps\CompHediffGiver.cs" />
-        <Compile Include="Comps\ThingComps\CompNetWealthAdjuster.cs" />
         <Compile Include="Comps\ThingComps\CompPawnSuppressor.cs" />
         <Compile Include="Comps\ThingComps\CompPreventDeterioratingOrRotting.cs" />
         <Compile Include="Comps\ThingComps\CompRemoteDoor.cs" />
+        <Compile Include="Comps\ThingComps\CompTempSet.cs" />
+        <Compile Include="Comps\ThingComps\CompThingGuardian.cs" />
         <Compile Include="Comps\ThingComps\CompResourceCovert.cs" />
         <Compile Include="Comps\ThingComps\CompSwitchGizmo.cs" />
         <Compile Include="Comps\ThingComps\CompUltimateReactor.cs" />
@@ -79,6 +77,8 @@
         <Compile Include="Harmony\Init.cs" />
         <Compile Include="Harmony\Patch_PreventDeterioratingOrRotting.cs" />
         <Compile Include="Mod\HyperUnity_Mod.cs" />
+        <Compile Include="PlaceWorker\PlaceWorker_RoomEdgeCyan.cs" />
+        <Compile Include="PlaceWorker\PlaceWorker_RoomEdgePurple.cs" />
         <Compile Include="Utility.cs" />
         <Compile Include="Ingestible\IngestionOutcomeDoer_AgeTweaker.cs" />
         <Compile Include="Properties\AssemblyInfo.cs"/>

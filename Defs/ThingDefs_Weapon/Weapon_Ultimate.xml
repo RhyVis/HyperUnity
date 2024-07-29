@@ -20,7 +20,7 @@
     <description>超越级别的武器。</description>
     <techLevel>Spacer</techLevel>
     <graphicData>
-      <texPath>Things/Item/Resource/Weapon/R_UltimateGun</texPath>
+      <texPath>HU/Things/Item/Resource/Weapon/R_UltimateGun</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <soundInteract>Interact_ChargeRifle</soundInteract>
@@ -40,19 +40,19 @@
       </recipeUsers>
     </recipeMaker>
     <weaponTags>
-      <li>R_UltimateGun</li>
+      <li>R_UltimateGunTag</li>
     </weaponTags>
     <costList>
       <Steel>100</Steel>
       <Plasteel>50</Plasteel>
-      <ComponentSpacer>50</ComponentSpacer>
+      <ComponentSpacer>2</ComponentSpacer>
     </costList>
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>True</hasStandardCommand>
         <defaultProjectile>R_Bullet_Charged</defaultProjectile>
-        <warmupTime>0.2</warmupTime>
+        <warmupTime>0.1</warmupTime>
         <range>200.0</range>
         <ticksBetweenBurstShots>3</ticksBetweenBurstShots>
         <burstShotCount>10</burstShotCount>

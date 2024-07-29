@@ -62,7 +62,6 @@ namespace HyperUnity
       {
         yield return gizmo;
       }
-
       yield return new Command_Action
       {
         defaultLabel = "R_HyperUnity_CompUltimateReactor_Gizmo_Label".Translate(_targetThingDef.label),

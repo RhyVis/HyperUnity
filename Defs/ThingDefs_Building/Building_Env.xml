@@ -47,17 +47,17 @@
   <ThingDef Name="R_WallEnvGoodBase" ParentName="R_WallEnvBase" Abstract="True">
     <designatorDropdown>R_WallEnv_Good</designatorDropdown>
     <graphicData>
-      <texPath>Things/Building/RVarious/RWallEnv/RWallEnv_Good</texPath>
+      <texPath>HU/Things/Building/Furniture/WallEnv/RWallEnv_Good</texPath>
     </graphicData>
-    <uiIconPath>Things/Building/RVarious/RWallEnv/RWallEnv_Good_MenuIcon</uiIconPath>
+    <uiIconPath>HU/Things/Building/Furniture/WallEnv/RWallEnv_Good_MenuIcon</uiIconPath>
   </ThingDef>
 
   <ThingDef Name="R_WallEnvBadBase" ParentName="R_WallEnvBase" Abstract="True">
     <designatorDropdown>R_WallEnv_Bad</designatorDropdown>
     <graphicData>
-      <texPath>Things/Building/RVarious/RWallEnv/RWallEnv_Bad</texPath>
+      <texPath>HU/Things/Building/Furniture/WallEnv/RWallEnv_Bad</texPath>
     </graphicData>
-    <uiIconPath>Things/Building/RVarious/RWallEnv/RWallEnv_Bad_MenuIcon</uiIconPath>
+    <uiIconPath>HU/Things/Building/Furniture/WallEnv/RWallEnv_Bad_MenuIcon</uiIconPath>
   </ThingDef>
 
   <!-- Good -->

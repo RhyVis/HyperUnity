@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <ThingDef Name="R_ThingGuardianBase" ParentName="R_FurnBase" Abstract="True">
+    <graphicData>
+      <texPath>HU/Things/Building/Various/ThingGuardian</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(0.95)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>2000</MarketValue>
+      <MaxHitPoints>1000</MaxHitPoints>
+      <WorkToBuild>2000</WorkToBuild>
+      <Mass>30</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <fillPercent>0.6</fillPercent>
+    <size>(1,1)</size>
+    <tickerType>Normal</tickerType>
+    <useHitPoints>False</useHitPoints>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <designationCategory>R_MainCategory</designationCategory>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="R_ThingGuardianBase">
+    <defName>R_ThingGuardian_Room</defName>
+    <label>纳米维护器</label>
+    <description>纳米维护器会定期维护室内物品，恢复其耐久，甚至可以恢复腐烂物品。</description>
+    <costList>
+      <Steel>120</Steel>
+      <ComponentSpacer>8</ComponentSpacer>
+    </costList>
+    <placeWorkers>
+      <li>HyperUnity.PlaceWorker_RoomEdgeCyan</li>
+    </placeWorkers>
+    <drawPlaceWorkersWhileSelected>True</drawPlaceWorkersWhileSelected>
+    <comps>
+      <li Class="HyperUnity.CompProperties_ThingGuardian"/>
+    </comps>
+  </ThingDef>
+</Defs>

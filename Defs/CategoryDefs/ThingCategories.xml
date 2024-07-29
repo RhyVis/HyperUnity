@@ -5,21 +5,21 @@
     <defName>R_TwistMeal_ThingCatMeals</defName>
     <label>退行套餐</label>
     <parent>FoodMeals</parent>
-    <iconPath>UI/Icons/ThingCategories/RSpecialMeal</iconPath>
+    <iconPath>HU/UI/Icons/ThingCategories/RSpecialMeal</iconPath>
   </ThingCategoryDef>
 
   <ThingCategoryDef>
     <defName>R_TwistDrink_ThingCatMeals</defName>
     <label>退行饮品</label>
     <parent>FoodMeals</parent>
-    <iconPath>UI/Icons/ThingCategories/RSpecialDrink</iconPath>
+    <iconPath>HU/UI/Icons/ThingCategories/RSpecialDrink</iconPath>
   </ThingCategoryDef>
 
   <ThingCategoryDef>
     <defName>R_JustMeal_ThingCatMeals</defName>
     <label>经典食品</label>
     <parent>FoodMeals</parent>
-    <iconPath>UI/Icons/ThingCategories/RSpecialDrink</iconPath>
+    <iconPath>HU/UI/Icons/ThingCategories/RSpecialDrink</iconPath>
   </ThingCategoryDef>
 
 </Defs>

@@ -9,21 +9,22 @@ namespace HyperUnity
     
     protected override void DoIngestionOutcomeSpecial(Pawn pawn, Thing ingested, int ingestedCount)
     {
-      if (offsetDays == 0) return;
-      if (offsetDays > 0)
+      var d = (double)offsetDays;
+      if (d == 0d) return;
+      if (d > 0d)
       {
         if (pawn.RaceProps.Humanlike || pawn.RaceProps.baseBodySize <= 1f)
         {
-          pawn.ageTracker.AgeBiologicalTicks += offsetDays * 60000;
+          pawn.ageTracker.AgeBiologicalTicks += (long)(d * 60000);
         }
         else
         {
-          pawn.ageTracker.AgeBiologicalTicks += (long)((float)(offsetDays) / pawn.RaceProps.baseBodySize);
+          pawn.ageTracker.AgeBiologicalTicks += (long)(d / pawn.RaceProps.baseBodySize);
         }
       }
       else
       {
-        var offsetDaysAbs = -offsetDays;
+        var offsetDaysAbs = -d;
         if (pawn.RaceProps.Humanlike || pawn.RaceProps.baseBodySize <= 1f)
         {
           if (pawn.ageTracker.AgeBiologicalTicks < offsetDaysAbs)
@@ -32,12 +33,12 @@ namespace HyperUnity
           }
           else
           {
-            pawn.ageTracker.AgeBiologicalTicks -= offsetDays * 60000;
+            pawn.ageTracker.AgeBiologicalTicks -= (long)(offsetDaysAbs * 60000);
           }
         }
         else
         {
-          var offsetAdjusted = (long)((float)(offsetDays) / pawn.RaceProps.baseBodySize);
+          var offsetAdjusted = (long)(offsetDaysAbs / pawn.RaceProps.baseBodySize);
           if (pawn.ageTracker.AgeBiologicalTicks < offsetAdjusted)
           {
             pawn.ageTracker.AgeBiologicalTicks = 0L;

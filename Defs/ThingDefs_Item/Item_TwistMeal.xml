@@ -2,7 +2,7 @@
 <Defs>
   <ThingDef Name="R_TwistMealBase" ParentName="MealBase" Abstract="True">
     <graphicData>
-      <texPath>Things/Item/Meal/RSpecialMeal</texPath>
+      <texPath>HU/Things/Item/Meal/RSpecialMeal</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
     </graphicData>
     <statBases>

@@ -16,7 +16,7 @@
     <label>营养快线</label>
     <description>没有什么特殊效果，喝起来挺好喝。</description>
     <graphicData>
-      <texPath>Things/Item/Meal/RSpecialDrink</texPath>
+      <texPath>HU/Things/Item/Meal/RSpecialDrink</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
     </graphicData>
     <statBases>
@@ -38,7 +38,7 @@
     <label>加量套餐</label>
     <description>精致食物水平的套餐，吃了对健康似乎也有好处。</description>
     <graphicData>
-      <texPath>Things/Item/Meal/RComboMeal</texPath>
+      <texPath>HU/Things/Item/Meal/RComboMeal</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
     </graphicData>
     <statBases>
@@ -60,7 +60,7 @@
     <label>囚徒套餐</label>
     <description>简单食物水平的套餐，能吃饱但并不令人开心，吃起来也偏慢。</description>
     <graphicData>
-      <texPath>Things/Item/Meal/RComboMeal</texPath>
+      <texPath>HU/Things/Item/Meal/RComboMeal</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
     </graphicData>
     <statBases>

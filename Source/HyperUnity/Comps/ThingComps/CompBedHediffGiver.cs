@@ -31,7 +31,7 @@ namespace HyperUnity
       var map = parent.Map;
       parent.CellsAdjacent8WayAndInside()
         .SelectMany(cell => cell.GetThingList(map).OfType<Building_Bed>().SelectMany(bed => bed.CurOccupants))
-        .Where(pawn => !pawn.health.Dead)
+        .Where(pawn => !pawn?.health.Dead ?? false)
         .Distinct()
         .ToList()
         .ForEach(pawn => pawn.ApplyHediff(Props.hefiff, Props.severityAdd));

@@ -6,7 +6,7 @@
     <description>用于生产特制工业产品。</description>
     <thingClass>Building_WorkTable</thingClass>
     <graphicData>
-      <texPath>Things/Building/RVarious/CraftingSpot</texPath>
+      <texPath>HU/Things/Building/Production/CraftingSpot</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(1,1)</drawSize>
     </graphicData>

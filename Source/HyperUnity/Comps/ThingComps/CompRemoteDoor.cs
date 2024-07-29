@@ -30,6 +30,10 @@ namespace HyperUnity
 
     public override IEnumerable<Gizmo> CompGetGizmosExtra()
     {
+      foreach (var gizmo in base.CompGetGizmosExtra())
+      {
+        yield return gizmo;
+      }
       yield return new Command_Toggle()
       {
         defaultLabel = "R_HyperUnity_CompRemoteDoor_Gizmo_Label".Translate(),
