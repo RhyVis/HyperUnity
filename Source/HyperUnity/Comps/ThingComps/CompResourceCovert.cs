@@ -56,18 +56,18 @@ namespace HyperUnity
           return;
         }
       
-        var value = 0f;
+        var value = 0;
         foreach (var thing in things)
         {
-          value += thing.MarketValue * thing.stackCount;
+          value += (int)(thing.MarketValue * thing.stackCount);
           thing.Destroy();
         }
         if (Props.ratio >= 0f)
         {
-          value *= Props.ratio;
+          value = (int)(value * Props.ratio);
         }
         MoteMaker.ThrowText(parent.TrueCenter() + new Vector3(0.5f, 0.5f, 0.5f), parent.Map,
-          "R_HyperUnity_CompResourceCovert_Mote".Translate((int)value));
+          "R_HyperUnity_CompResourceCovert_Mote".Translate(value));
         var stackSilverLimit = ThingDefOf.Silver.stackLimit;
         while (value > 0)
         {
@@ -80,7 +80,7 @@ namespace HyperUnity
           }
           else
           {
-            stackSilver.stackCount = (int)value;
+            stackSilver.stackCount = value;
             GenPlace.TryPlaceThing(stackSilver, parent.Position, parent.Map, ThingPlaceMode.Near);
             value = 0;
           }

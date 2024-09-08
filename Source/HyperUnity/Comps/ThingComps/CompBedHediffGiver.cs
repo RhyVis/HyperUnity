@@ -8,7 +8,7 @@ namespace HyperUnity
   {
     public int checkInterval = 300;
     public float severityAdd = 1.0f;
-    public HediffDef hefiff;
+    public HediffDef hediff;
 
     public CompProperties_BedHediffGiver()
     {
@@ -20,6 +20,14 @@ namespace HyperUnity
   {
     private CompProperties_BedHediffGiver Props => (CompProperties_BedHediffGiver)props;
 
+    private CompFacility _facility;
+
+    public override void PostSpawnSetup(bool respawningAfterLoad)
+    {
+      base.PostSpawnSetup(respawningAfterLoad);
+      _facility = parent.TryGetComp<CompFacility>();
+    }
+
     public override void CompTick()
     {
       base.CompTick();
@@ -28,13 +36,11 @@ namespace HyperUnity
         return;
       }
 
-      var map = parent.Map;
-      parent.CellsAdjacent8WayAndInside()
-        .SelectMany(cell => cell.GetThingList(map).OfType<Building_Bed>().SelectMany(bed => bed.CurOccupants))
+      _facility.LinkedBuildings.OfType<Building_Bed>()
+        .SelectMany(bed => bed.CurOccupants)
         .Where(pawn => !pawn?.health.Dead ?? false)
-        .Distinct()
         .ToList()
-        .ForEach(pawn => pawn.ApplyHediff(Props.hefiff, Props.severityAdd));
+        .ForEach(pawn => pawn.ApplyHediff(Props.hediff, Props.severityAdd));
     }
   }
 }

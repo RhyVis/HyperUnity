@@ -42,6 +42,9 @@
         <Reference Include="Assembly-CSharp">
           <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
         </Reference>
+        <Reference Include="PipeSystem">
+          <HintPath>..\..\..\..\..\..\workshop\content\294100\2023507013\1.5\Assemblies\PipeSystem.dll</HintPath>
+        </Reference>
         <Reference Include="System"/>
         <Reference Include="System.Core"/>
         <Reference Include="System.Data"/>
@@ -56,24 +59,23 @@
     <ItemGroup>
         <Compile Include="Buildings\Building_BodyPartRemove.cs" />
         <Compile Include="Buildings\Building_WithoutZoneSettings.cs" />
+        <Compile Include="Comps\HediffComps\HediffComp_FixWorstCycle.cs" />
         <Compile Include="Comps\HediffComps\HediffComp_SkillDeplete.cs" />
-        <Compile Include="Comps\ThingComps\CompDamageLimit.cs" />
         <Compile Include="Comps\ThingComps\CompBedHediffGiver.cs" />
-        <Compile Include="Comps\ThingComps\CompExplosiveTrigger.cs" />
         <Compile Include="Comps\ThingComps\CompFieldTrap.cs" />
         <Compile Include="Comps\ThingComps\CompGasEmit.cs" />
         <Compile Include="Comps\ThingComps\CompHarvestBed.cs" />
         <Compile Include="Comps\ThingComps\CompHediffGiver.cs" />
-        <Compile Include="Comps\ThingComps\CompPawnSuppressor.cs" />
         <Compile Include="Comps\ThingComps\CompPreventDeterioratingOrRotting.cs" />
         <Compile Include="Comps\ThingComps\CompRemoteDoor.cs" />
+        <Compile Include="Comps\ThingComps\CompSpawnIntoNet.cs" />
         <Compile Include="Comps\ThingComps\CompTempSet.cs" />
         <Compile Include="Comps\ThingComps\CompThingGuardian.cs" />
         <Compile Include="Comps\ThingComps\CompResourceCovert.cs" />
-        <Compile Include="Comps\ThingComps\CompSwitchGizmo.cs" />
         <Compile Include="Comps\ThingComps\CompUltimateReactor.cs" />
         <Compile Include="Comps\ThingComps\CompUltimateReactorExt.cs" />
         <Compile Include="Def\HU_HediffDefOf.cs" />
+        <Compile Include="Def\HU_ThingDefOf.cs" />
         <Compile Include="Harmony\Init.cs" />
         <Compile Include="Harmony\Patch_PreventDeterioratingOrRotting.cs" />
         <Compile Include="Mod\HyperUnity_Mod.cs" />

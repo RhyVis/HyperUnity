@@ -18,15 +18,15 @@
     <statBases>
       <ComfyTemperatureMin>-273</ComfyTemperatureMin>
       <ComfyTemperatureMax>1000</ComfyTemperatureMax>
-      <ArmorRating_Sharp>4.50</ArmorRating_Sharp>
-      <ArmorRating_Blunt>4.50</ArmorRating_Blunt>
-      <BandwidthCost>4</BandwidthCost>
+      <ArmorRating_Sharp>8.00</ArmorRating_Sharp>
+      <ArmorRating_Blunt>8.00</ArmorRating_Blunt>
+      <BandwidthCost>12</BandwidthCost>
       <CarryingCapacity>300</CarryingCapacity>
       <EMPResistance>1.0</EMPResistance>
       <MoveSpeed>7.5</MoveSpeed>
       <MechEnergyLossPerHP>0.10</MechEnergyLossPerHP>
       <WorkSpeedGlobal>5.0</WorkSpeedGlobal>
-      <WastepacksPerRecharge>10</WastepacksPerRecharge>
+      <WastepacksPerRecharge>15</WastepacksPerRecharge>
       <PsychicSensitivity>0</PsychicSensitivity>
     </statBases>
 

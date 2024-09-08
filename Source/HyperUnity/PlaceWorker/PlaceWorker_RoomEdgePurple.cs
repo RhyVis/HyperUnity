@@ -12,7 +12,7 @@ namespace HyperUnity
       var room = center.GetRoom(map);
       if (room != null)
       {
-        GenDraw.DrawFieldEdges(room.Cells.ToList(), new Color(178,102,255));
+        GenDraw.DrawFieldEdges(room.Cells.ToList(), Color.magenta);
       }
     }
   }

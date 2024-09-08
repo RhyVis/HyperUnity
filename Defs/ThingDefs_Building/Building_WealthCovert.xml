@@ -71,12 +71,14 @@
     </building>
     <comps>
       <li Class="LWM.DeepStorage.Properties" MayRequire="LWM.DeepStorage">
-        <maxNumberStacks>8</maxNumberStacks>
+        <maxNumberStacks>24</maxNumberStacks>
         <showContents>False</showContents>
         <timeStoringTakes>0</timeStoringTakes>
         <overlayType>SumOfAllItems</overlayType>
       </li>
-      <li Class="HyperUnity.CompProperties_ResourceCovert"/>
+      <li Class="HyperUnity.CompProperties_ResourceCovert">
+        <ratio>0.7</ratio>
+      </li>
     </comps>
   </ThingDef>
 </Defs>

@@ -42,8 +42,14 @@
   <R_HyperUnity_CompHediffGiver_Gizmo_LabelD>非玩家</R_HyperUnity_CompHediffGiver_Gizmo_LabelD>
   <R_HyperUnity_CompHediffGiver_Gizmo_LabelE>囚犯</R_HyperUnity_CompHediffGiver_Gizmo_LabelE>
 
-  <R_HyperUnity_CompThingGuardian_Gizmo_Label>修复</R_HyperUnity_CompThingGuardian_Gizmo_Label>
-  <R_HyperUnity_CompThingGuardian_Gizmo_Desc>切换是否允许修复范围内物品</R_HyperUnity_CompThingGuardian_Gizmo_Desc>
+  <R_HyperUnity_CompThingGuardian_Gizmo_Label1>维护</R_HyperUnity_CompThingGuardian_Gizmo_Label1>
+  <R_HyperUnity_CompThingGuardian_Gizmo_Desc1>切换是否允许修复范围内物品</R_HyperUnity_CompThingGuardian_Gizmo_Desc1>
+  <R_HyperUnity_CompThingGuardian_Gizmo_Label2>仅殖民地</R_HyperUnity_CompThingGuardian_Gizmo_Label2>
+  <R_HyperUnity_CompThingGuardian_Gizmo_Desc2>切换是否只允许修复属于殖民地派系的物品</R_HyperUnity_CompThingGuardian_Gizmo_Desc2>
+  <R_HyperUnity_CompThingGuardian_Gizmo_Label3>清除气体</R_HyperUnity_CompThingGuardian_Gizmo_Label3>
+  <R_HyperUnity_CompThingGuardian_Gizmo_Desc3>切换是否清除房间内的气体</R_HyperUnity_CompThingGuardian_Gizmo_Desc3>
+  <R_HyperUnity_CompThingGuardian_Gizmo_Label4>清除污物</R_HyperUnity_CompThingGuardian_Gizmo_Label4>
+  <R_HyperUnity_CompThingGuardian_Gizmo_Desc4>切换是否清除房间内的污物</R_HyperUnity_CompThingGuardian_Gizmo_Desc4>
   <R_HyperUnity_CompThingGuardian_Mote1>不在房间内</R_HyperUnity_CompThingGuardian_Mote1>
   
   <R_HyperUnity_CompTempSet_Mote1>不在房间内</R_HyperUnity_CompTempSet_Mote1>
@@ -52,6 +58,23 @@
   <R_HyperUnity_CompTempSet_Gizmo_Act_Desc>启动或禁用温度控制</R_HyperUnity_CompTempSet_Gizmo_Act_Desc>
   <R_HyperUnity_CompTempSet_Gizmo_Reset_Label>重置</R_HyperUnity_CompTempSet_Gizmo_Reset_Label>
   <R_HyperUnity_CompTempSet_Gizmo_Reset_Desc>重置到默认温度</R_HyperUnity_CompTempSet_Gizmo_Reset_Desc>
+  
+  <R_HyperUnity_CompVomitCollect_Mote1>收集到{0}份呕吐物</R_HyperUnity_CompVomitCollect_Mote1>
+  <R_HyperUnity_CompVomitCollect_Mote2>生成{0}份包装呕吐物</R_HyperUnity_CompVomitCollect_Mote2>
+  <R_HyperUnity_CompVomitCollect_Mote3>不在房间内</R_HyperUnity_CompVomitCollect_Mote3>
+  <R_HyperUnity_CompVomitCollect_Inspect1>累积原料: {0}</R_HyperUnity_CompVomitCollect_Inspect1>
+  <R_HyperUnity_CompVomitCollect_Inspect2>生成包装: </R_HyperUnity_CompVomitCollect_Inspect2>
+  <R_HyperUnity_CompVomitCollect_Gizmo1_Label>生成包装呕吐物</R_HyperUnity_CompVomitCollect_Gizmo1_Label>
+  <R_HyperUnity_CompVomitCollect_Gizmo1_Desc>启动或禁用包装呕吐物生成</R_HyperUnity_CompVomitCollect_Gizmo1_Desc>
+  <R_HyperUnity_CompVomitCollect_Gizmo2_Label>清空呕吐物</R_HyperUnity_CompVomitCollect_Gizmo2_Label>
+  <R_HyperUnity_CompVomitCollect_Gizmo2_Desc>清空装置内的呕吐物</R_HyperUnity_CompVomitCollect_Gizmo2_Desc>
+  <R_HyperUnity_CompVomitCollect_Gizmo3_Label>收集呕吐物</R_HyperUnity_CompVomitCollect_Gizmo3_Label>
+  <R_HyperUnity_CompVomitCollect_Gizmo3_Desc>收集房间内的呕吐物</R_HyperUnity_CompVomitCollect_Gizmo3_Desc>
+  
+  <R_HyperUnity_CompEnemyStunner_Gizmo_Label>激活</R_HyperUnity_CompEnemyStunner_Gizmo_Label>
+  <R_HyperUnity_CompEnemyStunner_Gizmo_Desc>对地图上的敌人造成眩晕</R_HyperUnity_CompEnemyStunner_Gizmo_Desc>
+  
+  <R_HyperUnity_CompSpawnIntoNet_Inspect1>距离下一次生成: </R_HyperUnity_CompSpawnIntoNet_Inspect1>
 
   <!-- Building -->
   <R_HyperUnity_Building_BodypartRemove_Gizmo1_Label>移除全部</R_HyperUnity_Building_BodypartRemove_Gizmo1_Label>
@@ -71,4 +94,8 @@
   <R_HyperUnity_PipeStorageWealthInspection>储备财富计入</R_HyperUnity_PipeStorageWealthInspection>
   <R_HyperUnity_ExtractWealth>提取500份白银</R_HyperUnity_ExtractWealth>
   <R_HyperUnity_ExtractWealthDesc>从财富容器中提取500份白银实体</R_HyperUnity_ExtractWealthDesc>
+
+  <!-- Universal -->
+  <R_HyperUnity_U_Enable>启用</R_HyperUnity_U_Enable>
+  <R_HyperUnity_U_Disable>禁用</R_HyperUnity_U_Disable>
 </LanguageData>

@@ -77,6 +77,33 @@
     </comps>
   </ThingDef>
   <ThingDef ParentName="R_HediffGiverBaseGood">
+    <defName>R_HeidffGiver_NoDamage</defName>
+    <label>无伤装置</label>
+    <description>这个装置向周围所有生物释放无伤效果，不受心灵敏感度影响。</description>
+    <specialDisplayRadius>2.9</specialDisplayRadius>
+    <comps>
+      <li Class="HyperUnity.CompProperties_HediffGiver">
+        <hediffDef>R_NoDamageHediff</hediffDef>
+        <severityAdjust>1.0</severityAdjust>
+        <radius>2.9</radius>
+        <checkInterval>60</checkInterval>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="R_HediffGiverBaseGood">
+    <defName>R_HeidffGiver_Recover</defName>
+    <label>复生装置</label>
+    <description>这个装置向周围所有生物释放无伤效果，不受心灵敏感度影响。</description>
+    <comps>
+      <li Class="HyperUnity.CompProperties_HediffGiver">
+        <hediffDef>R_RecoverHediff</hediffDef>
+        <severityAdjust>1.0</severityAdjust>
+        <radius>4.9</radius>
+        <checkInterval>60</checkInterval>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="R_HediffGiverBaseGood">
     <defName>R_HeidffGiver_Regenration</defName>
     <label>再生装置</label>
     <description>这个装置向周围所有生物释放再生效果，受心灵敏感度影响。</description>

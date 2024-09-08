@@ -39,6 +39,24 @@
     </comps>
   </HediffDef>
   <HediffDef ParentName="R_MiscHediffBase">
+    <defName>R_NoDamageHediff</defName>
+    <label>无伤</label>
+    <description>不再受到任何伤害。</description>
+    <preventsDeath>True</preventsDeath>
+    <stages>
+      <li>
+        <statFactors>
+          <IncomingDamageFactor>0</IncomingDamageFactor>
+        </statFactors>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>900~900</disappearsAfterTicks>
+      </li>
+    </comps>
+  </HediffDef>
+  <HediffDef ParentName="R_MiscHediffBase">
     <defName>R_BodyPartWorking</defName>
     <label>批量移除部位</label>
     <description>暂时不会死亡。</description>
@@ -47,6 +65,25 @@
       <li Class="HediffCompProperties_Disappears">
         <disappearsAfterTicks>1250~1250</disappearsAfterTicks>
       </li>
+    </comps>
+  </HediffDef>
+  <HediffDef ParentName="R_MiscHediffBase">
+    <defName>R_RecoverHediff</defName>
+    <label>复生</label>
+    <description>大幅增强再生能力，并定期产生治愈机械液的效果。</description>
+    <stages>
+      <li>
+        <statOffsets>
+          <PainShockThreshold>10</PainShockThreshold>
+        </statOffsets>
+        <regeneration>10</regeneration>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>900~900</disappearsAfterTicks>
+      </li>
+      <li Class="HyperUnity.HediffCompProperties_FixWorstCycle"/>
     </comps>
   </HediffDef>
   <HediffDef ParentName="R_MiscHediffBase">
@@ -229,7 +266,7 @@
     <description>大幅增加饥饿程度。</description>
     <stages>
       <li>
-        <hungerRateFactor>5.0</hungerRateFactor>
+        <hungerRateFactor>15.0</hungerRateFactor>
       </li>
     </stages>
   </HediffDef>
@@ -282,6 +319,20 @@
     <comps>
       <li Class="HediffCompProperties_Disappears">
         <disappearsAfterTicks>240~240</disappearsAfterTicks>
+      </li>
+    </comps>
+  </HediffDef>
+  <HediffDef ParentName="R_MiscHediffBase">
+    <defName>R_DepletingHediff</defName>
+    <label>忘却</label>
+    <description>逐渐忘却技能。</description>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>3600~3600</disappearsAfterTicks>
+      </li>
+      <li Class="HyperUnity.HediffCompProperties_SkillDeplete">
+        <checkInterval>1250</checkInterval>
+        <depleteAmount>10000</depleteAmount>
       </li>
     </comps>
   </HediffDef>

@@ -11,22 +11,22 @@
   <ThingDef ParentName="R_FoodMiscBase">
     <defName>R_VomitPackage</defName>
     <label>包装呕吐物</label>
-    <description>没有什么特殊效果，喝起来挺好喝。</description>
+    <description>这玩意真是太邪恶了，里面包装的呕吐物比营养膏还恶心！</description>
     <graphicData>
-      <texPath>HU/Things/Item/Meal/RSpecialDrink</texPath>
+      <texPath>HU/Things/Item/Meal/RSpecialMeal</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
     </graphicData>
     <statBases>
-      <MarketValue>15</MarketValue>
-      <Nutrition>1</Nutrition>
-      <Mass>0.05</Mass>
+      <MarketValue>1</MarketValue>
+      <Nutrition>0.8</Nutrition>
+      <Mass>0.15</Mass>
     </statBases>
     <ingestible>
-      <preferability>MealFine</preferability>
+      <preferability>MealAwful</preferability>
       <ingestEffect>EatVegetarian</ingestEffect>
       <ingestSound>Meal_Eat</ingestSound>
-      <baseIngestTicks>100</baseIngestTicks>
-      <tasteThought>R_AteJustMeal_Normal</tasteThought>
+      <baseIngestTicks>1500</baseIngestTicks>
+      <tasteThought>R_AteVomitPackage</tasteThought>
     </ingestible>
   </ThingDef>
 </Defs>

@@ -47,6 +47,10 @@ namespace HyperUnity
 
     public override IEnumerable<Gizmo> CompGetGizmosExtra()
     {
+      foreach (var gizmo in base.CompGetGizmosExtra())
+      {
+        yield return gizmo;
+      }
       yield return new Command_Toggle()
       {
         defaultLabel = "R_HyperUnity_CompFieldTrap_Gizmo_Label".Translate(),
@@ -78,7 +82,7 @@ namespace HyperUnity
           .Where(pawn => !pawn.health.Dead)
           .Where(pawn => (pawn.Faction != null && pawn.Faction.HostileTo(Faction.OfPlayer)) ||
                          (pawn.AnimalOrWildMan() && pawn.InAggroMentalState))
-          .Where(pawn => !pawn.IsPrisonerInPrisonCell())
+          .Where(pawn => !pawn.IsPrisoner)
           .ToList();
       }
       else
@@ -86,7 +90,7 @@ namespace HyperUnity
         pawns = this.FindPawnsAliveInRange(Props.range)
           .Where(pawn => (pawn.Faction != null && pawn.Faction.HostileTo(Faction.OfPlayer)) ||
                          (pawn.AnimalOrWildMan() && pawn.InAggroMentalState))
-          .Where(pawn => !pawn.IsPrisonerInPrisonCell())
+          .Where(pawn => !pawn.IsPrisoner)
           .ToList();
       }
       

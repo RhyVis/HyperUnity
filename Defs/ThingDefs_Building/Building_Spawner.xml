@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+  <ThingDef ParentName="R_FurnBase">
+    <defName>R_ChemfuelSpawner</defName>
+    <label>超空间反应釜（燃料）</label>
+    <description>由另一个世界提取可用燃料。</description>
+    <graphicData>
+      <texPath>HU/Things/Building/Production/ThreadMachine</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <statBases>
+      <MarketValue>2500</MarketValue>
+      <MaxHitPoints>500</MaxHitPoints>
+      <WorkToBuild>3500</WorkToBuild>
+      <Mass>18</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.6</fillPercent>
+    <size>(2,2)</size>
+    <rotatable>False</rotatable>
+    <costList Inherit="False">
+      <Steel>350</Steel>
+      <Chemfuel>200</Chemfuel>
+      <ComponentIndustrial>12</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>800</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="HyperUnity.CompProperties_SpawnIntoNet">
+        <pipeNet>VCHE_ChemfuelNet</pipeNet>
+        <spawnCount>500</spawnCount>
+        <interval>2500</interval>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>

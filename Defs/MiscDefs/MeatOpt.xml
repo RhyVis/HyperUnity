@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-  <AlienMeatTest.MeatListDef>
+  <AlienMeatTest.MeatListDef MayRequire="seohyeon.optimizationmeats">
     <defName>R_MeatOpt_WhiteList</defName>
     <label>White List of Hyper Unity (Optimizations: Meat)</label>
     <meats>

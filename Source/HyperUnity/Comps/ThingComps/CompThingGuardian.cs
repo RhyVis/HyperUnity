@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using RimWorld;
-using UnityEngine;
 using Verse;
 
 namespace HyperUnity
@@ -21,6 +20,8 @@ namespace HyperUnity
     private CompProperties_ThingGuardian Props => (CompProperties_ThingGuardian)props;
 
     private bool _activated;
+    private bool _allyOnly;
+    private bool _clearGas;
 
     public override IEnumerable<Gizmo> CompGetGizmosExtra()
     {
@@ -30,11 +31,27 @@ namespace HyperUnity
       }
       yield return new Command_Toggle()
       {
-        defaultLabel = "R_HyperUnity_CompThingGuardian_Gizmo_Label".Translate(),
-        defaultDesc = "R_HyperUnity_CompThingGuardian_Gizmo_Desc".Translate(),
+        defaultLabel = "R_HyperUnity_CompThingGuardian_Gizmo_Label1".Translate(),
+        defaultDesc = "R_HyperUnity_CompThingGuardian_Gizmo_Desc1".Translate(),
         icon = _activated ? TexCommand.ForbidOff : TexCommand.ForbidOn,
         isActive = () => _activated,
         toggleAction = () => _activated = !_activated
+      };
+      yield return new Command_Toggle()
+      {
+        defaultLabel = "R_HyperUnity_CompThingGuardian_Gizmo_Label2".Translate(),
+        defaultDesc = "R_HyperUnity_CompThingGuardian_Gizmo_Desc2".Translate(),
+        icon = TexCommand.PauseCaravan,
+        isActive = () => _allyOnly,
+        toggleAction = () => _allyOnly = !_allyOnly
+      };
+      yield return new Command_Toggle()
+      {
+        defaultLabel = "R_HyperUnity_CompThingGuardian_Gizmo_Label3".Translate(),
+        defaultDesc = "R_HyperUnity_CompThingGuardian_Gizmo_Desc3".Translate(),
+        icon = TexCommand.ToggleVent,
+        isActive = () => _clearGas,
+        toggleAction = () => _clearGas = !_clearGas
       };
     }
 
@@ -42,6 +59,7 @@ namespace HyperUnity
     {
       base.PostExposeData();
       Scribe_Values.Look(ref _activated, "activated");
+      Scribe_Values.Look(ref _allyOnly, "allyOnly");
     }
 
     public override void CompTick()
@@ -60,12 +78,17 @@ namespace HyperUnity
       }
       
       DoRepair();
+      if (_clearGas)
+      {
+        ClearGas();
+      }
     }
 
     private void DoRepair()
     {
       var grid = parent.ThingGridInRoom()
-        .Where(thing => thing.def.category != ThingCategory.Pawn);
+        .Where(thing => thing.def.category != ThingCategory.Pawn)
+        .Where(thing => !_allyOnly || (thing.Faction?.IsPlayer ?? false));
       
       foreach (var thing in grid)
       {
@@ -84,6 +107,14 @@ namespace HyperUnity
           }
         }
       }
+    }
+
+    private void ClearGas()
+    {
+      parent.ThingGridInRoom()
+        .Where(thing => thing.def.category == ThingCategory.Gas)
+        .ToList()
+        .ForEach(thing => thing.Destroy());
     }
   }
 }

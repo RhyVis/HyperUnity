@@ -124,7 +124,7 @@
     <description>不可被通常方式摧毁的要塞门。</description>
     <statBases>
       <MaxHitPoints>30000</MaxHitPoints>
-      <WorkToBuild>50</WorkToBuild>
+      <WorkToBuild>500</WorkToBuild>
     </statBases>
     <graphicData>
       <texPath>Things/Building/Door/DoorSimple_Mover</texPath>
@@ -147,7 +147,7 @@
     <description>不可被通常方式摧毁的要塞自动门。</description>
     <statBases>
       <MaxHitPoints>30000</MaxHitPoints>
-      <WorkToBuild>80</WorkToBuild>
+      <WorkToBuild>800</WorkToBuild>
     </statBases>
     <graphicData>
       <texPath>Things/Building/Door/Autodoor_Mover</texPath>
@@ -180,7 +180,7 @@
     <description>不可被通常方式摧毁的要塞遥控门，在通电时可以远程控制开关。</description>
     <statBases>
       <MaxHitPoints>30000</MaxHitPoints>
-      <WorkToBuild>80</WorkToBuild>
+      <WorkToBuild>1400</WorkToBuild>
     </statBases>
     <graphicData>
       <texPath>Things/Building/Door/Autodoor_Mover</texPath>
@@ -206,6 +206,55 @@
       <li>Autodoors</li>
     </researchPrerequisites>
     <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+  </ThingDef>
+
+  <!-- ================================ Double Door ====================== -->
+  <ThingDef ParentName="DoorBase" MayRequire="rebuild.cotr.doorsandcorners">
+    <defName>FortressDoubleDoor</defName>
+    <label>要塞大门</label>
+    <description>不可被通常方式摧毁的要塞大门。</description>
+    <thingClass>Building_MultiTileDoor</thingClass>
+    <useHitPoints>False</useHitPoints>
+    <stuffCategories Inherit="False" />
+    <useStuffTerrainAffordance>False</useStuffTerrainAffordance>
+    <statBases>
+      <MaxHitPoints>30000</MaxHitPoints>
+      <Flammability>0</Flammability>
+      <Cleanliness>0.3</Cleanliness>
+      <Beauty>20</Beauty>
+      <MarketValue>10</MarketValue>
+      <WorkToBuild>1700</WorkToBuild>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Building/RB_Door/RB_DoubleDoor_Mover</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1.05, 1)</drawSize>
+      <damageData>
+        <enabled>false</enabled>
+      </damageData>
+      <color>(255,255,255)</color>
+    </graphicData>
+    <size>(2, 1)</size>
+    <uiIconPath>Things/Building/RB_Door/RB_DoubleDoor_VanillaMenuIcon</uiIconPath>
+    <useBlueprintGraphicAsGhost>true</useBlueprintGraphicAsGhost>
+    <rotatable>true</rotatable>
+    <costList>
+      <Plasteel>48</Plasteel>
+      <Steel>60</Steel>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <building>
+      <blueprintGraphicData>
+        <texPath>Things/Building/RB_Door/RB_DoubleDoor_VanillaMenuIcon</texPath>
+        <graphicClass>Graphic_Multi</graphicClass>
+        <shaderType>EdgeDetect</shaderType>
+        <drawSize>(2, 2)</drawSize>
+      </blueprintGraphicData>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_MultiCellDoor</li>
+    </placeWorkers>
+    <designationCategory>R_MainCategory</designationCategory>
   </ThingDef>
 
 </Defs>

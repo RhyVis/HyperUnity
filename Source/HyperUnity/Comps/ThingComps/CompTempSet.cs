@@ -46,10 +46,6 @@ namespace HyperUnity
       return sb.ToString();
     }
 
-    private static Texture2D LowTempIcon = ContentFinder<Texture2D>.Get("UI/Commands/TempLower");
-    private static Texture2D ResetTempIcon = ContentFinder<Texture2D>.Get("UI/Commands/TempReset");
-    private static Texture2D HighTempIcon = ContentFinder<Texture2D>.Get("UI/Commands/TempRaise");
-    
     public override IEnumerable<Gizmo> CompGetGizmosExtra()
     {
       foreach (var gizmo in base.CompGetGizmosExtra())
@@ -70,7 +66,7 @@ namespace HyperUnity
       {
         defaultLabel = "-100",
         defaultDesc = "-100℃",
-        icon = LowTempIcon,
+        icon = ContentFinder<Texture2D>.Get("UI/Commands/TempLower"),
         action = () => TweakTarget(-100)
       };
       
@@ -78,7 +74,7 @@ namespace HyperUnity
       {
         defaultLabel = "-10",
         defaultDesc = "-10℃",
-        icon = LowTempIcon,
+        icon = ContentFinder<Texture2D>.Get("UI/Commands/TempLower"),
         action = () => TweakTarget(-10)
       };
       
@@ -86,7 +82,7 @@ namespace HyperUnity
       {
         defaultLabel = "-1",
         defaultDesc = "-1℃",
-        icon = LowTempIcon,
+        icon = ContentFinder<Texture2D>.Get("UI/Commands/TempLower"),
         action = () => TweakTarget(-1)
       };
 
@@ -94,7 +90,7 @@ namespace HyperUnity
       {
         defaultLabel = "R_HyperUnity_CompTempSet_Gizmo_Reset_Label".Translate(),
         defaultDesc = "R_HyperUnity_CompTempSet_Gizmo_Reset_Desc".Translate(),
-        icon = ResetTempIcon,
+        icon = ContentFinder<Texture2D>.Get("UI/Commands/TempReset"),
         action = () => _targetTempInt = TargetTempIntDefault
       };
       
@@ -102,7 +98,7 @@ namespace HyperUnity
       {
         defaultLabel = "+1",
         defaultDesc = "+1℃",
-        icon = HighTempIcon,
+        icon = ContentFinder<Texture2D>.Get("UI/Commands/TempRaise"),
         action = () => TweakTarget(1)
       };
       
@@ -110,7 +106,7 @@ namespace HyperUnity
       {
         defaultLabel = "+10",
         defaultDesc = "+10℃",
-        icon = HighTempIcon,
+        icon = ContentFinder<Texture2D>.Get("UI/Commands/TempRaise"),
         action = () => TweakTarget(10)
       };
       
@@ -118,7 +114,7 @@ namespace HyperUnity
       {
         defaultLabel = "+100",
         defaultDesc = "+100℃",
-        icon = HighTempIcon,
+        icon = ContentFinder<Texture2D>.Get("UI/Commands/TempRaise"),
         action = () => TweakTarget(100)
       };
 

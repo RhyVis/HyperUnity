@@ -129,6 +129,10 @@ namespace HyperUnity
     
     public static void ApplyHediff(this Pawn pawn, HediffDef hediff, float severityAdjust = 1.0f)
     {
+      if (pawn == null)
+      {
+        return;
+      }
       var target = pawn.health.hediffSet.GetFirstHediffOfDef(hediff);
       if (target == null)
       {
@@ -144,6 +148,10 @@ namespace HyperUnity
 
     public static void ApplyHediffWithStat(this Pawn pawn, HediffDef hediff, List<StatDef> stats = null, float severityAdjust = 1.0f)
     {
+      if (pawn == null)
+      {
+        return;
+      }
       if (!(stats?.NullOrEmpty() ?? true))
       {
         stats.ForEach(stat => severityAdjust *= pawn.GetStatValue(stat));
@@ -163,7 +171,7 @@ namespace HyperUnity
 
     public static void RemoveHediff(this Pawn pawn, HediffDef hediff)
     {
-      var target = pawn.health.hediffSet.GetFirstHediffOfDef(hediff);
+      var target = pawn?.health.hediffSet.GetFirstHediffOfDef(hediff);
       if (target == null)
       {
         return;
@@ -262,6 +270,32 @@ namespace HyperUnity
 
       return room.Cells
         .SelectMany(cell => origin.Map.thingGrid.ThingsListAt(cell));
+    }
+
+    public static IEnumerable<Thing> ThingGridInRoom(this Room room)
+    {
+      if (room == null)
+      {
+        return new List<Thing>();
+      }
+
+      return room.Cells
+        .SelectMany(cell => room.Map.thingGrid.ThingsListAt(cell));
+    }
+
+    public static TaggedString BoolTranslate(this bool b)
+    {
+      return b ? "R_HyperUnity_U_Enable".Translate() : "R_HyperUnity_U_Disable".Translate();
+    }
+
+    public static bool IsBetween(this int i, int min, int max)
+    {
+      return i > min && i < max;
+    }
+
+    public static bool IsBetween(this float f, float min, float max)
+    {
+      return f > min && f < max;
     }
   }
 
