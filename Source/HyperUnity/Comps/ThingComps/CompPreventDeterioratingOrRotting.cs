@@ -6,10 +6,7 @@ namespace HyperUnity
   
   public class CompProperties_PreventDeterioratingOrRotting : CompProperties
   {
-    public CompProperties_PreventDeterioratingOrRotting()
-    {
-      compClass = typeof(CompPreventDeterioratingOrRotting);
-    }
+    public CompProperties_PreventDeterioratingOrRotting() => compClass = typeof(CompPreventDeterioratingOrRotting);
   }
   
   public class CompPreventDeterioratingOrRotting : ThingComp

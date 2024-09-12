@@ -11,10 +11,7 @@ namespace HyperUnity
     public int checkInterval = 1250;
     public float ratio = -1.0f;
     
-    public CompProperties_ResourceCovert()
-    {
-      compClass = typeof(CompResourceCovert);
-    }
+    public CompProperties_ResourceCovert() => compClass = typeof(CompResourceCovert);
   }
   
   public class CompResourceCovert : ThingComp

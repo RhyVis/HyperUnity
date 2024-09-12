@@ -9,10 +9,7 @@ namespace HyperUnity
   {
     public int checkInterval = 60;
     
-    public CompProperties_ThingGuardian()
-    {
-      compClass = typeof(CompThingGuardian);
-    }
+    public CompProperties_ThingGuardian() => compClass = typeof(CompThingGuardian);
   }
   
   public class CompThingGuardian : ThingComp
@@ -60,6 +57,7 @@ namespace HyperUnity
       base.PostExposeData();
       Scribe_Values.Look(ref _activated, "activated");
       Scribe_Values.Look(ref _allyOnly, "allyOnly");
+      Scribe_Values.Look(ref _clearGas, "clearGas");
     }
 
     public override void CompTick()
@@ -111,10 +109,14 @@ namespace HyperUnity
 
     private void ClearGas()
     {
-      parent.ThingGridInRoom()
-        .Where(thing => thing.def.category == ThingCategory.Gas)
-        .ToList()
-        .ForEach(thing => thing.Destroy());
+      var density = parent.MapHeld.gasGrid.AccessPrivateField<uint[]>("gasDensity");
+      var cells = parent.GetRoom().Cells;
+      foreach (var cell in cells)
+      {
+        var i = CellIndicesUtility.CellToIndex(cell, parent.Map.Size.x);
+        density[i] = 0U;
+      }
+      parent.Map.mapDrawer.WholeMapChanged((ulong) MapMeshFlagDefOf.Gas);
     }
   }
 }

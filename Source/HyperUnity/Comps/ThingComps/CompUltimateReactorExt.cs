@@ -15,10 +15,7 @@ namespace HyperUnity
     public int refillCount = 10;
     public int eachItemCost = 10;
 
-    public CompProperties_CompUltimateReactorExt()
-    {
-      compClass = typeof(CompUltimateReactorExt);
-    }
+    public CompProperties_CompUltimateReactorExt() => compClass = typeof(CompUltimateReactorExt);
   }
   
   public class CompUltimateReactorExt : ThingComp

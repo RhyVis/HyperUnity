@@ -15,10 +15,7 @@ namespace HyperUnity
     public HediffDef hediffDef;
     public List<StatDef> stats;
 
-    public CompProperties_HediffGiver()
-    {
-      compClass = typeof(CompHediffGiver);
-    }
+    public CompProperties_HediffGiver() => compClass = typeof(CompHediffGiver);
   }
   
   public class CompHediffGiver : ThingComp

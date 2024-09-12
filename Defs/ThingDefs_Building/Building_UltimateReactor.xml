@@ -4,12 +4,6 @@
   <DesignatorDropdownGroupDef>
     <defName>R_UReactor_Resource</defName>
   </DesignatorDropdownGroupDef>
-  <DesignatorDropdownGroupDef>
-    <defName>R_UReactor_Meal</defName>
-  </DesignatorDropdownGroupDef>
-  <DesignatorDropdownGroupDef>
-    <defName>R_UReactor_Universal</defName>
-  </DesignatorDropdownGroupDef>
 
   <ThingDef Name="R_UReactor_NormalBase" ParentName="BuildingBase" Abstract="True">
     <description>这个容器内可以消耗电力来无限生成特定物品。</description>
@@ -63,13 +57,6 @@
 
   <ThingDef Name="R_UReactor_ResourceBase" ParentName="R_UReactor_NormalBase" Abstract="True">
     <designatorDropdown>R_UReactor_Resource</designatorDropdown>
-  </ThingDef>
-  <ThingDef Name="R_UReactor_MealBase" ParentName="R_UReactor_NormalBase" Abstract="True">
-    <designatorDropdown>R_UReactor_Meal</designatorDropdown>
-  </ThingDef>
-  <ThingDef Name="R_UReactor_UniversalBase" ParentName="R_UReactor_NormalBase" Abstract="True">
-    <description>这个容器内可以消耗电力来无限生成特定物品，可以切换几种许可类型。</description>
-    <designatorDropdown>R_UReactor_Universal</designatorDropdown>
   </ThingDef>
 
   <!-- UReactor Resource -->
@@ -164,171 +151,6 @@
         <minCount>50</minCount>
         <refillCount>500</refillCount>
         <itemDefName>Neutroamine</itemDefName>
-      </li>
-    </comps>
-  </ThingDef>
-
-  <!-- UReactor Meal -->
-
-  <ThingDef ParentName="R_UReactor_MealBase">
-    <defName>R_UReactor_JustMealNormal</defName>
-    <label>超越反应器（营养快线）</label>
-    <building>
-      <fixedStorageSettings>
-        <priority>Critical</priority>
-        <filter>
-          <thingDefs>
-            <li>R_JustMeal_Normal</li>
-          </thingDefs>
-        </filter>
-      </fixedStorageSettings>
-      <defaultStorageSettings>
-        <priority>Critical</priority>
-        <filter>
-          <thingDefs>
-            <li>R_JustMeal_Normal</li>
-          </thingDefs>
-        </filter>
-      </defaultStorageSettings>
-    </building>
-    <comps>
-      <li Class="HyperUnity.CompProperties_UltimateReactor">
-        <checkInterval>3600</checkInterval>
-        <minCount>5</minCount>
-        <refillCount>20</refillCount>
-        <itemDefName>R_JustMeal_Normal</itemDefName>
-      </li>
-    </comps>
-  </ThingDef>
-
-  <ThingDef ParentName="R_UReactor_MealBase">
-    <defName>R_UReactor_MeatHuman</defName>
-    <label>超越反应器（人肉）</label>
-    <building>
-      <fixedStorageSettings>
-        <priority>Critical</priority>
-        <filter>
-          <thingDefs>
-            <li>Meat_Human</li>
-          </thingDefs>
-        </filter>
-      </fixedStorageSettings>
-      <defaultStorageSettings>
-        <priority>Critical</priority>
-        <filter>
-          <thingDefs>
-            <li>Meat_Human</li>
-          </thingDefs>
-        </filter>
-      </defaultStorageSettings>
-    </building>
-    <comps>
-      <li Class="HyperUnity.CompProperties_UltimateReactor">
-        <checkInterval>3600</checkInterval>
-        <minCount>50</minCount>
-        <refillCount>500</refillCount>
-        <eachItemCost>5</eachItemCost>
-        <itemDefName>Meat_Human</itemDefName>
-      </li>
-    </comps>
-  </ThingDef>
-
-  <!-- Universal UR -->
-
-  <ThingDef ParentName="R_UReactor_UniversalBase">
-    <defName>R_UReactorUniversal_AdvResource</defName>
-    <label>超越反应器（高级资源）</label>
-    <building>
-      <fixedStorageSettings>
-        <priority>Critical</priority>
-        <filter>
-          <thingDefs>
-            <li>Chemfuel</li>
-            <li>Neutroamine</li>
-          </thingDefs>
-        </filter>
-      </fixedStorageSettings>
-      <defaultStorageSettings>
-        <priority>Critical</priority>
-        <filter>
-          <thingDefs>
-            <li>Chemfuel</li>
-            <li>Neutroamine</li>
-          </thingDefs>
-        </filter>
-      </defaultStorageSettings>
-    </building>
-    <comps>
-      <li Class="HyperUnity.CompProperties_CompUltimateReactorExt">
-        <checkInterval>3600</checkInterval>
-        <minCount>5</minCount>
-        <refillCount>20</refillCount>
-      </li>
-    </comps>
-  </ThingDef>
-
-  <ThingDef ParentName="R_UReactor_UniversalBase">
-    <defName>R_UReactorUniversal_ComboMeal</defName>
-    <label>超越反应器（集成套餐）</label>
-    <building>
-      <fixedStorageSettings>
-        <priority>Critical</priority>
-        <filter>
-          <thingDefs>
-            <li>R_JustMeal_ComboMeal_Fine</li>
-            <li>R_JustMeal_ComboMeal_Bad</li>
-          </thingDefs>
-        </filter>
-      </fixedStorageSettings>
-      <defaultStorageSettings>
-        <priority>Critical</priority>
-        <filter>
-          <thingDefs>
-            <li>R_JustMeal_ComboMeal_Fine</li>
-            <li>R_JustMeal_ComboMeal_Bad</li>
-          </thingDefs>
-        </filter>
-      </defaultStorageSettings>
-    </building>
-    <comps>
-      <li Class="HyperUnity.CompProperties_CompUltimateReactorExt">
-        <checkInterval>3600</checkInterval>
-        <minCount>10</minCount>
-        <refillCount>30</refillCount>
-        <eachItemCost>30</eachItemCost>
-      </li>
-    </comps>
-  </ThingDef>
-
-  <ThingDef ParentName="R_UReactor_UniversalBase">
-    <defName>R_UReactorUniversal_SyntheticRaw</defName>
-    <label>超越反应器（合成生食）</label>
-    <building>
-      <fixedStorageSettings>
-        <priority>Critical</priority>
-        <filter>
-          <thingDefs>
-            <li>R_RawSyntheticRice</li>
-            <li>R_RawSyntheticMeat</li>
-          </thingDefs>
-        </filter>
-      </fixedStorageSettings>
-      <defaultStorageSettings>
-        <priority>Critical</priority>
-        <filter>
-          <thingDefs>
-            <li>R_RawSyntheticRice</li>
-            <li>R_RawSyntheticMeat</li>
-          </thingDefs>
-        </filter>
-      </defaultStorageSettings>
-    </building>
-    <comps>
-      <li Class="HyperUnity.CompProperties_CompUltimateReactorExt">
-        <checkInterval>3600</checkInterval>
-        <minCount>50</minCount>
-        <refillCount>1000</refillCount>
-        <eachItemCost>5</eachItemCost>
       </li>
     </comps>
   </ThingDef>

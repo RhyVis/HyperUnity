@@ -10,10 +10,7 @@ namespace HyperUnity
     public float severityAdd = 1.0f;
     public HediffDef hediff;
 
-    public CompProperties_BedHediffGiver()
-    {
-      compClass = typeof(CompBedHediffGiver);
-    }
+    public CompProperties_BedHediffGiver() => compClass = typeof(CompBedHediffGiver);
   }
 
   public class CompBedHediffGiver : ThingComp

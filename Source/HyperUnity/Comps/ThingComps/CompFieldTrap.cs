@@ -27,6 +27,7 @@ namespace HyperUnity
     private CompPowerTrader _powerTrader;
     
     private bool _activated;
+    private bool _teleport;
 
     public override void PostSpawnSetup(bool respawningAfterLoad)
     {
@@ -43,6 +44,7 @@ namespace HyperUnity
     {
       base.PostExposeData();
       Scribe_Values.Look(ref _activated, "emitActivated");
+      Scribe_Values.Look(ref _teleport, "emitTeleport");
     }
 
     public override IEnumerable<Gizmo> CompGetGizmosExtra()
@@ -53,11 +55,25 @@ namespace HyperUnity
       }
       yield return new Command_Toggle()
       {
-        defaultLabel = "R_HyperUnity_CompFieldTrap_Gizmo_Label".Translate(),
-        defaultDesc = "R_HyperUnity_CompFieldTrap_Gizmo_Desc".Translate(),
+        defaultLabel = "R_HyperUnity_CompFieldTrap_Gizmo_Label1".Translate(),
+        defaultDesc = "R_HyperUnity_CompFieldTrap_Gizmo_Desc1".Translate(),
         icon = _activated ? TexCommand.ForbidOff : TexCommand.ForbidOn,
         isActive = () => _activated,
-        toggleAction = () => _activated = !_activated
+        toggleAction = delegate
+        {
+          _activated = !_activated;
+        }
+      };
+      yield return new Command_Toggle()
+      {
+        defaultLabel = "R_HyperUnity_CompFieldTrap_Gizmo_Label2".Translate(),
+        defaultDesc = "R_HyperUnity_CompFieldTrap_Gizmo_Desc2".Translate(),
+        icon = TexCommand.FireAtWill,
+        isActive = () => _teleport,
+        toggleAction = delegate
+        {
+          _teleport = !_teleport;
+        }
       };
     }
 
@@ -68,10 +84,10 @@ namespace HyperUnity
       {
         return;
       }
-      pullPawns();
+      DoStun();
     }
 
-    private void pullPawns()
+    private void DoStun()
     {
       var targetPos = parent.Position;
       List<Pawn> pawns;
@@ -98,13 +114,27 @@ namespace HyperUnity
       {
         return;
       }
+
       SoundDefOf.Psycast_Skip_Entry.PlayOneShot(new TargetInfo(parent.Position, parent.Map));
-      foreach (var pawn in pawns)
+      
+      if (_teleport)
       {
-        pawn.ApplyHediff(HU_HediffDefOf.R_SlowHediff);//别动！
-        pawn.Position = targetPos;//过来！
-        pawn.jobs.StopAll();//别走！
-        pawn.stances.stunner.StunFor(Props.stunTick, parent, true, !pawn.stances.stunner.Stunned);
+        foreach (var pawn in pawns)
+        {
+          pawn.ApplyHediff(HU_HediffDefOf.R_SlowHediff);
+          pawn.Position = targetPos;
+          pawn.jobs.StopAll();
+          pawn.stances.stunner.StunFor(Props.stunTick, parent, true, !pawn.stances.stunner.Stunned);
+        }
+      }
+      else
+      {
+        foreach (var pawn in pawns)
+        {
+          pawn.ApplyHediff(HU_HediffDefOf.R_SlowHediff);
+          pawn.jobs.StopAll();
+          pawn.stances.stunner.StunFor(Props.stunTick, parent, true, !pawn.stances.stunner.Stunned);
+        }
       }
     }
   }

@@ -9,10 +9,7 @@ namespace HyperUnity
 {
   public class CompProperties_TempSet : CompProperties
   {
-    public CompProperties_TempSet()
-    {
-      compClass = typeof(CompTempSet);
-    }
+    public CompProperties_TempSet() => compClass = typeof(CompTempSet);
   }
   public class CompTempSet : ThingComp
   {

@@ -9,10 +9,7 @@ namespace HyperUnity
     public int gas = 1;
     public int amount = 1600;
     
-    public CompProperties_GasEmit()
-    {
-      compClass = typeof(CompGasEmit);
-    }
+    public CompProperties_GasEmit() => compClass = typeof(CompGasEmit);
   }
   public class CompGasEmit : ThingComp
   {

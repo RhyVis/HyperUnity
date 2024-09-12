@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using JetBrains.Annotations;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -11,27 +12,22 @@ namespace HyperUnity
   {
     // Values
     public static Vector3 RightUp = new Vector3(0.5f, 0.5f, 0.5f);
+    private static BindingFlags PrivateFlags = BindingFlags.Instance | BindingFlags.NonPublic;
     
+    public static T AccessPrivateField<T>(this object instance, string fieldName)
+      => (T)instance?.GetType().GetField(fieldName, PrivateFlags)?.GetValue(instance);
+
     public static void SetPrivateField(this object instance, string fieldName, object value)
-    {
-      var flag = BindingFlags.Instance | BindingFlags.NonPublic;
-      var type = instance.GetType();
-      var field = type.GetField(fieldName, flag);
-      field?.SetValue(instance, value);
-    }
+      => instance?.GetType().GetField(fieldName, PrivateFlags)?.SetValue(instance, value);
 
     public static IEnumerable<Pawn> FindPawnsInRange(this ThingComp compInCenter, float range)
-    {
-      return compInCenter.parent.Map.mapPawns.AllPawnsSpawned
+      => compInCenter.parent.Map.mapPawns.AllPawnsSpawned
         .Where(pawn => pawn.Position.DistanceToSquared(compInCenter.parent.Position) < range * range);
-    }
 
     public static IEnumerable<Pawn> FindPawnsAliveInRange(this ThingComp compInCenter, float range)
-    {
-      return compInCenter.parent.Map.mapPawns.AllPawnsSpawned
+      => compInCenter.parent.Map.mapPawns.AllPawnsSpawned
         .Where(pawn => pawn.Position.DistanceToSquared(compInCenter.parent.Position) < range * range)
         .Where(pawn => !pawn.health.Dead);
-    }
 
     public static bool ConsumePower(this ThingComp comp, float requiredVal)
     {
@@ -180,9 +176,7 @@ namespace HyperUnity
     }
 
     public static bool HasHediff(this Pawn pawn, HediffDef hediff)
-    {
-      return pawn?.health.hediffSet.GetFirstHediffOfDef(hediff) != null;
-    }
+      => pawn?.health.hediffSet.GetFirstHediffOfDef(hediff) != null;
 
     public static void DamageBodyPart(this Pawn pawn, BodyPartRecord bodyPart)
     {
@@ -230,21 +224,15 @@ namespace HyperUnity
     }
 
     public static void ThrowMote(this ThingComp comp, string s)
-    {
-      MoteMaker.ThrowText(comp.parent.TrueCenter(), comp.parent.Map, s);
-    }
+      => MoteMaker.ThrowText(comp.parent.TrueCenter(), comp.parent.Map, s);
 
-    public static void ThrowMote(this Thing thing, string s)
-    {
-      MoteMaker.ThrowText(thing.TrueCenter(), thing.Map, s);
-    }
+    public static void ThrowMote(this Thing thing, string s) => MoteMaker.ThrowText(thing.TrueCenter(), thing.Map, s);
+    
 
     public static IEnumerable<Thing> ThingGridInRange(this IntVec3 origin, Map map, float radius)
-    {
-      return GenRadial.RadialCellsAround(origin, radius, true)
+      => GenRadial.RadialCellsAround(origin, radius, true)
         .Where(cell => cell.InBounds(map))
         .SelectMany(cell => map.thingGrid.ThingsListAt(cell));
-    }
 
     public static IEnumerable<Thing> ThingGridInRoom(this IntVec3 origin, Map map)
     {
@@ -283,20 +271,13 @@ namespace HyperUnity
         .SelectMany(cell => room.Map.thingGrid.ThingsListAt(cell));
     }
 
-    public static TaggedString BoolTranslate(this bool b)
-    {
-      return b ? "R_HyperUnity_U_Enable".Translate() : "R_HyperUnity_U_Disable".Translate();
-    }
+    public static TaggedString BoolTranslate(this bool b) 
+      => b ? "R_HyperUnity_U_Enable".Translate() : "R_HyperUnity_U_Disable".Translate();
 
-    public static bool IsBetween(this int i, int min, int max)
-    {
-      return i > min && i < max;
-    }
-
-    public static bool IsBetween(this float f, float min, float max)
-    {
-      return f > min && f < max;
-    }
+    public static bool IsBetween(this int i, int min, int max) => i > min && i < max;
+    
+    public static bool IsBetween(this float f, float min, float max) => f > min && f < max;
+    
   }
 
   public static class Msg
@@ -309,9 +290,7 @@ namespace HyperUnity
       }
     }
 
-    public static void E(string s)
-    {
-      Log.Error($"[HyperUnity] {s}");
-    }
+    public static void E(string s) => Log.Error($"[HyperUnity] {s}");
+    
   }
 }

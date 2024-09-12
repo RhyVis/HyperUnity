@@ -23,8 +23,10 @@
   <R_HyperUnity_CompGasEmit_Gizmo_Label>气体释放</R_HyperUnity_CompGasEmit_Gizmo_Label>
   <R_HyperUnity_CompGasEmit_Gizmo_Desc>调整是否释放气体</R_HyperUnity_CompGasEmit_Gizmo_Desc>
 
-  <R_HyperUnity_CompFieldTrap_Gizmo_Label>控制力场</R_HyperUnity_CompFieldTrap_Gizmo_Label>
-  <R_HyperUnity_CompFieldTrap_Gizmo_Desc>调整是否启动力场</R_HyperUnity_CompFieldTrap_Gizmo_Desc>
+  <R_HyperUnity_CompFieldTrap_Gizmo_Label1>控制力场</R_HyperUnity_CompFieldTrap_Gizmo_Label1>
+  <R_HyperUnity_CompFieldTrap_Gizmo_Desc1>调整是否启动力场</R_HyperUnity_CompFieldTrap_Gizmo_Desc1>
+  <R_HyperUnity_CompFieldTrap_Gizmo_Label2>传送</R_HyperUnity_CompFieldTrap_Gizmo_Label2>
+  <R_HyperUnity_CompFieldTrap_Gizmo_Desc2>调整是否将敌人传送至装置</R_HyperUnity_CompFieldTrap_Gizmo_Desc2>
 
   <R_HyperUnity_HediffComp_SkillDeplete_Mote>退行: {0} XP -{1}</R_HyperUnity_HediffComp_SkillDeplete_Mote>
 

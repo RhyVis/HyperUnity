@@ -9,10 +9,7 @@ namespace HyperUnity
     public int checkInterval = 10000;
     public int depleteAmount = 5000;
 
-    public HediffCompProperties_SkillDeplete()
-    {
-      compClass = typeof(HediffComp_SkillDeplete);
-    }
+    public HediffCompProperties_SkillDeplete() => compClass = typeof(HediffComp_SkillDeplete);
   }
 
   public class HediffComp_SkillDeplete : HediffComp

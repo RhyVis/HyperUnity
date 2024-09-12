@@ -12,10 +12,7 @@ namespace HyperUnity
     public float harvestLegCost = 2.0f;
     public float harvestEyeCost = 2.0f;
     
-    public CompProperties_HarvestBed()
-    {
-      compClass = typeof(CompHarvestBed);
-    }
+    public CompProperties_HarvestBed() => compClass = typeof(CompHarvestBed);
   }
   
   public class CompHarvestBed : ThingComp

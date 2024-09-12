@@ -7,10 +7,7 @@ namespace HyperUnity
   {
     public int checkInterval = 1250;
     
-    public HediffCompProperties_FixWorstCycle()
-    {
-      compClass = typeof(HediffComp_FixWorstCycle);
-    }
+    public HediffCompProperties_FixWorstCycle() => compClass = typeof(HediffComp_FixWorstCycle);
   }
   
   public class HediffComp_FixWorstCycle : HediffComp

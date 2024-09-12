@@ -7,10 +7,7 @@ namespace HyperUnity
 {
   public class CompProperties_RemoteDoor : CompProperties
   {
-    public CompProperties_RemoteDoor()
-    {
-      compClass = typeof(CompRemoteDoor);
-    }
+    public CompProperties_RemoteDoor() => compClass = typeof(CompRemoteDoor);
   }
 
   public class CompRemoteDoor : ThingComp

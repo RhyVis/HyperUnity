@@ -13,10 +13,7 @@ namespace HyperUnity
     public int eachItemCost = 10;
     public string itemDefName = "Steel";
 
-    public CompProperties_UltimateReactor()
-    {
-      compClass = typeof(CompUltimateReactor);
-    }
+    public CompProperties_UltimateReactor() => compClass = typeof(CompUltimateReactor);
   }
 
   public class CompUltimateReactor : ThingComp
