@@ -6,15 +6,17 @@ namespace HyperUnity
   public class HediffCompProperties_FixWorstCycle : HediffCompProperties
   {
     public int checkInterval = 1250;
-    
-    public HediffCompProperties_FixWorstCycle() => compClass = typeof(HediffComp_FixWorstCycle);
+
+    public HediffCompProperties_FixWorstCycle()
+    {
+      compClass = typeof(HediffComp_FixWorstCycle);
+    }
   }
-  
+
   public class HediffComp_FixWorstCycle : HediffComp
   {
-    private HediffCompProperties_FixWorstCycle Props => (HediffCompProperties_FixWorstCycle)props;
-
     private int _ticker;
+    private HediffCompProperties_FixWorstCycle Props => (HediffCompProperties_FixWorstCycle)props;
 
     public override void CompPostMake()
     {
@@ -30,17 +32,12 @@ namespace HyperUnity
         _ticker--;
         return;
       }
+
       var fixText = HealthUtility.FixWorstHealthCondition(parent.pawn);
-      if (fixText.NullOrEmpty())
-      {
-        return;
-      }
-      if (!PawnUtility.ShouldSendNotificationAbout(parent.pawn))
-      {
-        return;
-      }
-      Messages.Message(fixText,parent.pawn, MessageTypeDefOf.PositiveEvent);
+      if (fixText.NullOrEmpty()) return;
       _ticker = Props.checkInterval;
+      if (!PawnUtility.ShouldSendNotificationAbout(parent.pawn)) return;
+      Messages.Message(fixText, parent.pawn, MessageTypeDefOf.PositiveEvent);
     }
   }
 }

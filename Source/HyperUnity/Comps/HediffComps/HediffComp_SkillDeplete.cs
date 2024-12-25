@@ -9,14 +9,16 @@ namespace HyperUnity
     public int checkInterval = 10000;
     public int depleteAmount = 5000;
 
-    public HediffCompProperties_SkillDeplete() => compClass = typeof(HediffComp_SkillDeplete);
+    public HediffCompProperties_SkillDeplete()
+    {
+      compClass = typeof(HediffComp_SkillDeplete);
+    }
   }
 
   public class HediffComp_SkillDeplete : HediffComp
   {
-    private HediffCompProperties_SkillDeplete Props => (HediffCompProperties_SkillDeplete)props;
-
     private int _ticker;
+    private HediffCompProperties_SkillDeplete Props => (HediffCompProperties_SkillDeplete)props;
 
     public override void CompPostMake()
     {
@@ -32,18 +34,17 @@ namespace HyperUnity
         _ticker--;
         return;
       }
-      doDeplete();
+
+      DoDeplete();
       _ticker = Props.checkInterval;
     }
 
-    private void doDeplete()
+    private void DoDeplete()
     {
       var skillRecord = parent.pawn.skills?.skills.RandomElement();
       if (skillRecord == null) return;
-      if (!skillRecord.DepleteSkillLevel(Props.depleteAmount))
-      {
-        return;
-      }
+      if (!skillRecord.DepleteSkillLevel(Props.depleteAmount)) return;
+      
       MoteMaker.ThrowText(parent.pawn.TrueCenter() + new Vector3(0.5f, 0.5f, 0.5f),
         parent.pawn.Map,
         "R_HyperUnity_HediffComp_SkillDeplete_Mote".Translate(skillRecord.def.label, Props.depleteAmount));

@@ -10,21 +10,21 @@ namespace HyperUnity
   {
     public int checkInterval = 1250;
     public float ratio = -1.0f;
-    
-    public CompProperties_ResourceCovert() => compClass = typeof(CompResourceCovert);
+
+    public CompProperties_ResourceCovert()
+    {
+      compClass = typeof(CompResourceCovert);
+    }
   }
-  
+
   public class CompResourceCovert : ThingComp
   {
     private CompProperties_ResourceCovert Props => (CompProperties_ResourceCovert)props;
 
     public override IEnumerable<Gizmo> CompGetGizmosExtra()
     {
-      foreach (var gizmo in base.CompGetGizmosExtra())
-      {
-        yield return gizmo;
-      }
-      yield return new Command_Action()
+      foreach (var gizmo in base.CompGetGizmosExtra()) yield return gizmo;
+      yield return new Command_Action
       {
         defaultLabel = "R_HyperUnity_CompResourceCovert_Gizmo_Label".Translate(),
         defaultDesc = "R_HyperUnity_CompResourceCovert_Gizmo_Desc".Translate(),
@@ -36,10 +36,7 @@ namespace HyperUnity
     public override void CompTick()
     {
       base.CompTick();
-      if (!parent.IsHashIntervalTick(Props.checkInterval) || !parent.Spawned)
-      {
-        return;
-      }
+      if (!parent.IsHashIntervalTick(Props.checkInterval) || !parent.Spawned) return;
       DoCovert();
     }
 
@@ -48,21 +45,16 @@ namespace HyperUnity
       if (parent is IHaulDestination)
       {
         var things = parent.GetSlotGroup().HeldThings.Where(thing => thing.def != ThingDefOf.Silver).ToList();
-        if (things.Count == 0)
-        {
-          return;
-        }
-      
+        if (things.Count == 0) return;
+
         var value = 0;
         foreach (var thing in things)
         {
           value += (int)(thing.MarketValue * thing.stackCount);
           thing.Destroy();
         }
-        if (Props.ratio >= 0f)
-        {
-          value = (int)(value * Props.ratio);
-        }
+
+        if (Props.ratio >= 0f) value = (int)(value * Props.ratio);
         MoteMaker.ThrowText(parent.TrueCenter() + new Vector3(0.5f, 0.5f, 0.5f), parent.Map,
           "R_HyperUnity_CompResourceCovert_Mote".Translate(value));
         var stackSilverLimit = ThingDefOf.Silver.stackLimit;

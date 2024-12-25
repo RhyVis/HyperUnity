@@ -8,25 +8,24 @@ namespace HyperUnity
   public class CompProperties_ThingGuardian : CompProperties
   {
     public int checkInterval = 60;
-    
-    public CompProperties_ThingGuardian() => compClass = typeof(CompThingGuardian);
+
+    public CompProperties_ThingGuardian()
+    {
+      compClass = typeof(CompThingGuardian);
+    }
   }
-  
+
   public class CompThingGuardian : ThingComp
   {
-    private CompProperties_ThingGuardian Props => (CompProperties_ThingGuardian)props;
-
     private bool _activated;
     private bool _allyOnly;
     private bool _clearGas;
+    private CompProperties_ThingGuardian Props => (CompProperties_ThingGuardian)props;
 
     public override IEnumerable<Gizmo> CompGetGizmosExtra()
     {
-      foreach (var gizmo in base.CompGetGizmosExtra())
-      {
-        yield return gizmo;
-      }
-      yield return new Command_Toggle()
+      foreach (var gizmo in base.CompGetGizmosExtra()) yield return gizmo;
+      yield return new Command_Toggle
       {
         defaultLabel = "R_HyperUnity_CompThingGuardian_Gizmo_Label1".Translate(),
         defaultDesc = "R_HyperUnity_CompThingGuardian_Gizmo_Desc1".Translate(),
@@ -34,7 +33,7 @@ namespace HyperUnity
         isActive = () => _activated,
         toggleAction = () => _activated = !_activated
       };
-      yield return new Command_Toggle()
+      yield return new Command_Toggle
       {
         defaultLabel = "R_HyperUnity_CompThingGuardian_Gizmo_Label2".Translate(),
         defaultDesc = "R_HyperUnity_CompThingGuardian_Gizmo_Desc2".Translate(),
@@ -42,7 +41,7 @@ namespace HyperUnity
         isActive = () => _allyOnly,
         toggleAction = () => _allyOnly = !_allyOnly
       };
-      yield return new Command_Toggle()
+      yield return new Command_Toggle
       {
         defaultLabel = "R_HyperUnity_CompThingGuardian_Gizmo_Label3".Translate(),
         defaultDesc = "R_HyperUnity_CompThingGuardian_Gizmo_Desc3".Translate(),
@@ -63,23 +62,17 @@ namespace HyperUnity
     public override void CompTick()
     {
       base.CompTick();
-      
-      if (!_activated || !parent.IsHashIntervalTick(Props.checkInterval) || !parent.Spawned)
-      {
-        return;
-      }
+
+      if (!_activated || !parent.IsHashIntervalTick(Props.checkInterval) || !parent.Spawned) return;
 
       if (parent.GetRoom() == null)
       {
         _activated = false;
         parent.ThrowMote("R_HyperUnity_CompThingGuardian_Mote1".Translate());
       }
-      
+
       DoRepair();
-      if (_clearGas)
-      {
-        ClearGas();
-      }
+      if (_clearGas) ClearGas();
     }
 
     private void DoRepair()
@@ -87,22 +80,16 @@ namespace HyperUnity
       var grid = parent.ThingGridInRoom()
         .Where(thing => thing.def.category != ThingCategory.Pawn)
         .Where(thing => !_allyOnly || (thing.Faction?.IsPlayer ?? false));
-      
+
       foreach (var thing in grid)
       {
-        if (thing.def.useHitPoints && thing.HitPoints < thing.MaxHitPoints)
-        {
-          thing.HitPoints = thing.MaxHitPoints;
-        }
+        if (thing.def.useHitPoints && thing.HitPoints < thing.MaxHitPoints) thing.HitPoints = thing.MaxHitPoints;
 
         var rottable = thing.TryGetComp<CompRottable>();
         if (rottable != null)
         {
           rottable.RotProgress -= 2000f;
-          if (rottable.RotProgress < 0f)
-          {
-            rottable.RotProgress = 0f;
-          }
+          if (rottable.RotProgress < 0f) rottable.RotProgress = 0f;
         }
       }
     }
@@ -116,7 +103,8 @@ namespace HyperUnity
         var i = CellIndicesUtility.CellToIndex(cell, parent.Map.Size.x);
         density[i] = 0U;
       }
-      parent.Map.mapDrawer.WholeMapChanged((ulong) MapMeshFlagDefOf.Gas);
+
+      parent.Map.mapDrawer.WholeMapChanged((ulong)MapMeshFlagDefOf.Gas);
     }
   }
 }

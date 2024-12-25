@@ -7,7 +7,7 @@ namespace HyperUnity
   public static class HU_HediffDefOf
   {
     public static HediffDef R_BodyPartWorking;
-    
+
     // Hediff_Misc Bad
     public static HediffDef R_BerserkHediff;
     public static HediffDef R_HungerHediff;

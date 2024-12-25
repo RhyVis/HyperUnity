@@ -9,21 +9,22 @@ namespace HyperUnity
 {
   public class CompProperties_TempSet : CompProperties
   {
-    public CompProperties_TempSet() => compClass = typeof(CompTempSet);
+    public CompProperties_TempSet()
+    {
+      compClass = typeof(CompTempSet);
+    }
   }
+
   public class CompTempSet : ThingComp
   {
+    private static readonly int TargetTempIntDefault = 21;
     private bool _activated;
     private int _targetTempInt = 21;
-    private static int TargetTempIntDefault = 21;
-    
+
     public override void CompTick()
     {
       base.CompTick();
-      if (!_activated || !parent.Spawned)
-      {
-        return;
-      }
+      if (!_activated || !parent.Spawned) return;
       TweakTemperature();
     }
 
@@ -45,12 +46,9 @@ namespace HyperUnity
 
     public override IEnumerable<Gizmo> CompGetGizmosExtra()
     {
-      foreach (var gizmo in base.CompGetGizmosExtra())
-      {
-        yield return gizmo;
-      }
+      foreach (var gizmo in base.CompGetGizmosExtra()) yield return gizmo;
 
-      yield return new Command_Toggle()
+      yield return new Command_Toggle
       {
         defaultLabel = "R_HyperUnity_CompTempSet_Gizmo_Act_Label".Translate(),
         defaultDesc = "R_HyperUnity_CompTempSet_Gizmo_Act_Desc".Translate(),
@@ -59,23 +57,23 @@ namespace HyperUnity
         toggleAction = () => _activated = !_activated
       };
 
-      yield return new Command_Action()
+      yield return new Command_Action
       {
         defaultLabel = "-100",
         defaultDesc = "-100℃",
         icon = ContentFinder<Texture2D>.Get("UI/Commands/TempLower"),
         action = () => TweakTarget(-100)
       };
-      
-      yield return new Command_Action()
+
+      yield return new Command_Action
       {
         defaultLabel = "-10",
         defaultDesc = "-10℃",
         icon = ContentFinder<Texture2D>.Get("UI/Commands/TempLower"),
         action = () => TweakTarget(-10)
       };
-      
-      yield return new Command_Action()
+
+      yield return new Command_Action
       {
         defaultLabel = "-1",
         defaultDesc = "-1℃",
@@ -83,38 +81,37 @@ namespace HyperUnity
         action = () => TweakTarget(-1)
       };
 
-      yield return new Command_Action()
+      yield return new Command_Action
       {
         defaultLabel = "R_HyperUnity_CompTempSet_Gizmo_Reset_Label".Translate(),
         defaultDesc = "R_HyperUnity_CompTempSet_Gizmo_Reset_Desc".Translate(),
         icon = ContentFinder<Texture2D>.Get("UI/Commands/TempReset"),
         action = () => _targetTempInt = TargetTempIntDefault
       };
-      
-      yield return new Command_Action()
+
+      yield return new Command_Action
       {
         defaultLabel = "+1",
         defaultDesc = "+1℃",
         icon = ContentFinder<Texture2D>.Get("UI/Commands/TempRaise"),
         action = () => TweakTarget(1)
       };
-      
-      yield return new Command_Action()
+
+      yield return new Command_Action
       {
         defaultLabel = "+10",
         defaultDesc = "+10℃",
         icon = ContentFinder<Texture2D>.Get("UI/Commands/TempRaise"),
         action = () => TweakTarget(10)
       };
-      
-      yield return new Command_Action()
+
+      yield return new Command_Action
       {
         defaultLabel = "+100",
         defaultDesc = "+100℃",
         icon = ContentFinder<Texture2D>.Get("UI/Commands/TempRaise"),
         action = () => TweakTarget(100)
       };
-
     }
 
     private void TweakTarget(int offset)
@@ -136,10 +133,7 @@ namespace HyperUnity
       }
 
       var target = (float)_targetTempInt;
-      if (room.Temperature < target || room.Temperature > target)
-      {
-        room.Temperature = target;
-      }
+      if (room.Temperature < target || room.Temperature > target) room.Temperature = target;
     }
   }
 }

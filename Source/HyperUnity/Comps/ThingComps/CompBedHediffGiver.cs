@@ -7,17 +7,19 @@ namespace HyperUnity
   public class CompProperties_BedHediffGiver : CompProperties
   {
     public int checkInterval = 300;
-    public float severityAdd = 1.0f;
     public HediffDef hediff;
+    public float severityAdd = 1.0f;
 
-    public CompProperties_BedHediffGiver() => compClass = typeof(CompBedHediffGiver);
+    public CompProperties_BedHediffGiver()
+    {
+      compClass = typeof(CompBedHediffGiver);
+    }
   }
 
   public class CompBedHediffGiver : ThingComp
   {
-    private CompProperties_BedHediffGiver Props => (CompProperties_BedHediffGiver)props;
-
     private CompFacility _facility;
+    private CompProperties_BedHediffGiver Props => (CompProperties_BedHediffGiver)props;
 
     public override void PostSpawnSetup(bool respawningAfterLoad)
     {
@@ -28,11 +30,12 @@ namespace HyperUnity
     public override void CompTick()
     {
       base.CompTick();
-      if (!parent.IsHashIntervalTick(Props.checkInterval) || !parent.Spawned)
-      {
-        return;
-      }
+      if (!parent.IsHashIntervalTick(Props.checkInterval) || parent.Fogged() || !parent.Spawned) return;
+      GiveHediff();
+    }
 
+    private void GiveHediff()
+    {
       _facility.LinkedBuildings.OfType<Building_Bed>()
         .SelectMany(bed => bed.CurOccupants)
         .Where(pawn => !pawn?.health.Dead ?? false)

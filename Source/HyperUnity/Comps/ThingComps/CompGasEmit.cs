@@ -6,28 +6,30 @@ namespace HyperUnity
 {
   public class CompProperties_GasEmit : CompProperties
   {
-    public int gas = 1;
     public int amount = 1600;
-    
-    public CompProperties_GasEmit() => compClass = typeof(CompGasEmit);
+    public int gas = 1;
+
+    public CompProperties_GasEmit()
+    {
+      compClass = typeof(CompGasEmit);
+    }
   }
+
   public class CompGasEmit : ThingComp
   {
-    private CompProperties_GasEmit Props => (CompProperties_GasEmit)props;
-    private CompPowerTrader _powerTrader;
+    private static readonly GasType[] _gasTypes =
+      { GasType.BlindSmoke, GasType.ToxGas, GasType.RotStink, GasType.DeadlifeDust };
 
-    private static GasType[] _gasTypes = {GasType.BlindSmoke, GasType.ToxGas, GasType.RotStink, GasType.DeadlifeDust};
     private bool _activated;
+    private CompPowerTrader _powerTrader;
+    private CompProperties_GasEmit Props => (CompProperties_GasEmit)props;
 
     public override void PostSpawnSetup(bool respawningAfterLoad)
     {
       base.PostSpawnSetup(respawningAfterLoad);
       _powerTrader = parent.TryGetComp<CompPowerTrader>();
-      
-      if (_powerTrader == null)
-      {
-        Log.Error("[HyperUnity] CompPowerTrader needed for CompGasEmit!"); 
-      }
+
+      if (_powerTrader == null) Log.Error("[HyperUnity] CompPowerTrader needed for CompGasEmit!");
     }
 
     public override void PostExposeData()
@@ -38,11 +40,8 @@ namespace HyperUnity
 
     public override IEnumerable<Gizmo> CompGetGizmosExtra()
     {
-      foreach (var gizmo in base.CompGetGizmosExtra())
-      {
-        yield return gizmo;
-      }
-      yield return new Command_Toggle()
+      foreach (var gizmo in base.CompGetGizmosExtra()) yield return gizmo;
+      yield return new Command_Toggle
       {
         defaultLabel = "R_HyperUnity_CompGasEmit_Gizmo_Label".Translate(),
         defaultDesc = "R_HyperUnity_CompGasEmit_Gizmo_Desc".Translate(),
@@ -55,10 +54,7 @@ namespace HyperUnity
     public override void CompTick()
     {
       base.CompTick();
-      if (!parent.IsHashIntervalTick(300) || !_powerTrader.PowerOn || !_activated || !parent.Spawned)
-      {
-        return;
-      }
+      if (!parent.IsHashIntervalTick(300) || !_powerTrader.PowerOn || !_activated || !parent.Spawned) return;
       GasUtility.AddGas(parent.Position, parent.Map, _gasTypes[Props.gas], Props.amount);
     }
   }

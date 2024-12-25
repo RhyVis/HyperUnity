@@ -17,12 +17,13 @@ namespace HyperUnity
       listing.CheckboxLabeled("R_HyperUnity_SettingCat_DebugMsg_Label".Translate(), ref HyperUnity_ModSettings.Debug);
       listing.End();
     }
-    
-    public override string SettingsCategory() {
+
+    public override string SettingsCategory()
+    {
       return "R_HyperUnity_SettingCat_Label".Translate();
     }
   }
-    
+
   public class HyperUnity_ModSettings : ModSettings
   {
     public static bool Debug;

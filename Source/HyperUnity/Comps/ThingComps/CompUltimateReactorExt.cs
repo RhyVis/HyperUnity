@@ -7,26 +7,28 @@ using Verse.Sound;
 
 namespace HyperUnity
 {
-  
-  public class CompProperties_CompUltimateReactorExt: CompProperties
+  public class CompProperties_CompUltimateReactorExt : CompProperties
   {
     public int checkInterval = 3600; // One hour in game
+    public int eachItemCost = 10;
     public int minCount = 0;
     public int refillCount = 10;
-    public int eachItemCost = 10;
 
-    public CompProperties_CompUltimateReactorExt() => compClass = typeof(CompUltimateReactorExt);
+    public CompProperties_CompUltimateReactorExt()
+    {
+      compClass = typeof(CompUltimateReactorExt);
+    }
   }
-  
+
   public class CompUltimateReactorExt : ThingComp
   {
-    private CompProperties_CompUltimateReactorExt Props => (CompProperties_CompUltimateReactorExt)props;
-
-    private ThingDef _targetThingDef;
     private List<ThingDef> _allowedThingDefs;
+    private CompForbiddable _forbiddable;
 
     private CompPowerTrader _powerTrader;
-    private CompForbiddable _forbiddable;
+
+    private ThingDef _targetThingDef;
+    private CompProperties_CompUltimateReactorExt Props => (CompProperties_CompUltimateReactorExt)props;
 
     public override void PostSpawnSetup(bool respawningAfterLoad)
     {
@@ -36,15 +38,10 @@ namespace HyperUnity
 
       _allowedThingDefs = parent.def.building.fixedStorageSettings.filter.AllowedThingDefs.ToList();
 
-      if (!respawningAfterLoad)
-      {
-        _targetThingDef = _allowedThingDefs[0];
-      }
+      if (!respawningAfterLoad) _targetThingDef = _allowedThingDefs[0];
 
       if (_powerTrader == null || _forbiddable == null)
-      {
         Log.Error("[HyperUnity] CompUltimateReactorExt need CompPowerTrader and CompForbiddable!");
-      }
     }
 
     public override void PostExposeData()
@@ -55,10 +52,7 @@ namespace HyperUnity
 
     public override IEnumerable<Gizmo> CompGetGizmosExtra()
     {
-      foreach (var gizmo in base.CompGetGizmosExtra())
-      {
-        yield return gizmo;
-      }
+      foreach (var gizmo in base.CompGetGizmosExtra()) yield return gizmo;
       yield return new Command_Action
       {
         defaultLabel = "R_HyperUnity_CompUltimateReactor_Gizmo_Label".Translate(_targetThingDef.label),
@@ -72,19 +66,22 @@ namespace HyperUnity
     {
       var sb = new StringBuilder();
       sb.Append(base.CompInspectStringExtra());
-      sb.AppendLineIfNotEmpty().Append($"{"R_HyperUnity_CompUltimateReactor_TargetName".Translate()}: {_targetThingDef.label}");
-      sb.AppendLineIfNotEmpty().Append($"{"R_HyperUnity_CompUltimateReactor_AmountKeep".Translate()}: {Props.minCount}/{Props.refillCount}");
-      sb.AppendLineIfNotEmpty().Append($"{"R_HyperUnity_CompUltimateReactor_PowerUse".Translate()}: {Props.eachItemCost} Wd");
+      sb.AppendLineIfNotEmpty()
+        .Append($"{"R_HyperUnity_CompUltimateReactor_TargetName".Translate()}: {_targetThingDef.label}");
+      sb.AppendLineIfNotEmpty()
+        .Append($"{"R_HyperUnity_CompUltimateReactor_AmountKeep".Translate()}: {Props.minCount}/{Props.refillCount}");
+      sb.AppendLineIfNotEmpty()
+        .Append($"{"R_HyperUnity_CompUltimateReactor_PowerUse".Translate()}: {Props.eachItemCost} Wd");
       return sb.ToString();
     }
 
     public override void CompTick()
     {
       base.CompTick();
-      if (parent.IsHashIntervalTick(Props.checkInterval) && _powerTrader.PowerOn && !_forbiddable.Forbidden || !parent.Spawned)
-      {
-        this.CompSpawnThingWithPowerCost(_targetThingDef.defName, Props.minCount, Props.refillCount, Props.eachItemCost);
-      }
+      if ((parent.IsHashIntervalTick(Props.checkInterval) && _powerTrader.PowerOn && !_forbiddable.Forbidden) ||
+          !parent.Spawned)
+        this.CompSpawnThingWithPowerCost(_targetThingDef.defName, Props.minCount, Props.refillCount,
+          Props.eachItemCost);
     }
 
     private void ToggleTargetThingDef()
@@ -95,5 +92,4 @@ namespace HyperUnity
       _targetThingDef = _allowedThingDefs.ElementAt(currentIndex);
     }
   }
-  
 }

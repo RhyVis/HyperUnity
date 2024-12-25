@@ -13,10 +13,7 @@ namespace HyperUnity
 
       foreach (var gizmo in base.GetGizmos())
       {
-        if (gizmo is Command_Action act && (act.defaultLabel == copyStr || act.defaultLabel == pasteStr))
-        {
-          continue;
-        }
+        if (gizmo is Command_Action act && (act.defaultLabel == copyStr || act.defaultLabel == pasteStr)) continue;
         yield return gizmo;
       }
     }

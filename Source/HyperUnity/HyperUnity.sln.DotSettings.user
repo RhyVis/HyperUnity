@@ -1,11 +1,22 @@
-﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=D_003A_005CProgram_005CSteam_005Csteamapps_005Ccommon_005CRimWorld_005CRimWorldWin64_005FData_005CManaged_005CAssembly_002DCSharp_002Edll/@EntryIndexedValue">True</s:Boolean>
-	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=D_003A_005CProgram_005CSteam_005Csteamapps_005Ccommon_005CRimWorld_005CRimWorldWin64_005FData_005CManaged_005CUnityEngine_002ECoreModule_002Edll/@EntryIndexedValue">True</s:Boolean>
-	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=D_003A_005CProgram_005CSteam_005Csteamapps_005Ccommon_005CRimWorld_005CRimWorldWin64_005FData_005CManaged_005CUnityEngine_002Edll/@EntryIndexedValue">True</s:Boolean>
-	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=D_003A_005CProgram_005CSteam_005Csteamapps_005Cworkshop_005Ccontent_005C294100_005C1617282896_005C1_002E5_005CAssemblies_005CLWM_002EDeepStorage_002Edll/@EntryIndexedValue">True</s:Boolean>
-	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=D_003A_005CProgram_005CSteam_005Csteamapps_005Cworkshop_005Ccontent_005C294100_005C2009463077_005C1_002E4_005CAssemblies_005C0Harmony_002Edll/@EntryIndexedValue">True</s:Boolean>
-	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=D_003A_005CProgram_005CSteam_005Csteamapps_005Cworkshop_005Ccontent_005C294100_005C2023507013_005C1_002E5_005CAssemblies_005CPipeSystem_002Edll/@EntryIndexedValue">True</s:Boolean>
-	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;&#xD;
+﻿<wpf:ResourceDictionary xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib"
+                        xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                        xml:space="preserve">
+	<s:Boolean
+    x:Key="/Default/AddReferences/RecentPaths/=D_003A_005CProgram_005CSteam_005Csteamapps_005Ccommon_005CRimWorld_005CRimWorldWin64_005FData_005CManaged_005CAssembly_002DCSharp_002Edll/@EntryIndexedValue">True</s:Boolean>
+  <s:Boolean
+    x:Key="/Default/AddReferences/RecentPaths/=D_003A_005CProgram_005CSteam_005Csteamapps_005Ccommon_005CRimWorld_005CRimWorldWin64_005FData_005CManaged_005CUnityEngine_002ECoreModule_002Edll/@EntryIndexedValue">True</s:Boolean>
+  <s:Boolean
+    x:Key="/Default/AddReferences/RecentPaths/=D_003A_005CProgram_005CSteam_005Csteamapps_005Ccommon_005CRimWorld_005CRimWorldWin64_005FData_005CManaged_005CUnityEngine_002Edll/@EntryIndexedValue">True</s:Boolean>
+  <s:Boolean
+    x:Key="/Default/AddReferences/RecentPaths/=D_003A_005CProgram_005CSteam_005Csteamapps_005Cworkshop_005Ccontent_005C294100_005C1617282896_005C1_002E5_005CAssemblies_005CLWM_002EDeepStorage_002Edll/@EntryIndexedValue">True</s:Boolean>
+  <s:Boolean
+    x:Key="/Default/AddReferences/RecentPaths/=D_003A_005CProgram_005CSteam_005Csteamapps_005Cworkshop_005Ccontent_005C294100_005C2009463077_005C1_002E4_005CAssemblies_005C0Harmony_002Edll/@EntryIndexedValue">True</s:Boolean>
+  <s:Boolean
+    x:Key="/Default/AddReferences/RecentPaths/=D_003A_005CProgram_005CSteam_005Csteamapps_005Cworkshop_005Ccontent_005C294100_005C2023507013_005C1_002E5_005CAssemblies_005CPipeSystem_002Edll/@EntryIndexedValue">True</s:Boolean>
+  <s:String x:Key="/Default/CodeInspection/Highlighting/InspectionSeverities/=CheckNamespace/@EntryIndexedValue">DO_NOT_SHOW</s:String>
+  <s:String x:Key="/Default/CodeInspection/Highlighting/InspectionSeverities/=InconsistentNaming/@EntryIndexedValue">HINT</s:String>
+
+  <s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;&#xD;
   &lt;Assembly Path="D:\Program\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp.dll" /&gt;&#xD;
   &lt;Assembly Path="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Xml.dll" /&gt;&#xD;
   &lt;Assembly Path="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\mscorlib.dll" /&gt;&#xD;
