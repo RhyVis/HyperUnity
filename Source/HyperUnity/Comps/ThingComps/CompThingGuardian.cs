@@ -86,11 +86,9 @@ namespace HyperUnity
         if (thing.def.useHitPoints && thing.HitPoints < thing.MaxHitPoints) thing.HitPoints = thing.MaxHitPoints;
 
         var rottable = thing.TryGetComp<CompRottable>();
-        if (rottable != null)
-        {
-          rottable.RotProgress -= 2000f;
-          if (rottable.RotProgress < 0f) rottable.RotProgress = 0f;
-        }
+        if (rottable is null) return;
+        rottable.RotProgress -= 2000f;
+        if (rottable.RotProgress < 0f) rottable.RotProgress = 0f;
       }
     }
 

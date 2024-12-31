@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-
+<!--
   <DesignatorDropdownGroupDef>
     <defName>R_UReactor_Resource</defName>
   </DesignatorDropdownGroupDef>
 
-  <ThingDef Name="R_UReactor_NormalBase" ParentName="BuildingBase" Abstract="True">
+  <ThingDef Name="R_UReactor_NormalBase" ParentName="AdaptiveStorageMinifiableBase" Abstract="True">
     <description>这个容器内可以消耗电力来无限生成特定物品。</description>
     <thingClass>HyperUnity.Building_WithoutZoneSettings</thingClass>
     <graphicData>
@@ -58,8 +58,6 @@
   <ThingDef Name="R_UReactor_ResourceBase" ParentName="R_UReactor_NormalBase" Abstract="True">
     <designatorDropdown>R_UReactor_Resource</designatorDropdown>
   </ThingDef>
-
-  <!-- UReactor Resource -->
 
   <ThingDef ParentName="R_UReactor_ResourceBase">
     <defName>R_UReactor_Medicine</defName>
@@ -155,4 +153,35 @@
     </comps>
   </ThingDef>
 
+  <ThingDef ParentName="R_UReactor_ResourceBase" MayRequire="tw.tangs.guochaopackagedmeal">
+    <defName>R_UReactor_GuochaoPackagedMeal</defName>
+    <label>超越反应器（国潮来袭）</label>
+    <building>
+      <fixedStorageSettings>
+        <priority>Critical</priority>
+        <filter>
+          <thingDefs>
+            <li>TW_Meal_GuochaoPackagedMeal</li>
+          </thingDefs>
+        </filter>
+      </fixedStorageSettings>
+      <defaultStorageSettings>
+        <priority>Critical</priority>
+        <filter>
+          <thingDefs>
+            <li>TW_Meal_GuochaoPackagedMeal</li>
+          </thingDefs>
+        </filter>
+      </defaultStorageSettings>
+    </building>
+    <comps>
+      <li Class="HyperUnity.CompProperties_UltimateReactor">
+        <checkInterval>3600</checkInterval>
+        <minCount>30</minCount>
+        <refillCount>100</refillCount>
+        <itemDefName>TW_Meal_GuochaoPackagedMeal</itemDefName>
+      </li>
+    </comps>
+  </ThingDef>
+-->
 </Defs>

@@ -67,10 +67,12 @@ D:\Program\Steam\steamapps\common\RimWorld\Mods\HyperUnity\Source\HyperUnity\bin
 D:\Program\Steam\steamapps\common\RimWorld\Mods\HyperUnity\Source\HyperUnity\bin\Release\Unity.Burst.Unsafe.dll
 D:\Program\Steam\steamapps\common\RimWorld\Mods\HyperUnity\Source\HyperUnity\obj\Release\HyperUnity.csproj.AssemblyReference.cache
 D:\Program\Steam\steamapps\common\RimWorld\Mods\HyperUnity\Source\HyperUnity\obj\Release\HyperUnity.csproj.CoreCompileInputs.cache
-D:\Program\Steam\steamapps\common\RimWorld\Mods\HyperUnity\Source\HyperUnity\obj\Release\HyperUnity.csproj.CopyComplete
 D:\Program\Steam\steamapps\common\RimWorld\Mods\HyperUnity\Source\HyperUnity\obj\Release\HyperUnity.dll
 D:\Program\Steam\steamapps\common\RimWorld\Mods\HyperUnity\Source\HyperUnity\obj\Release\HyperUnity.pdb
 D:\Program\Steam\steamapps\common\RimWorld\Mods\HyperUnity\Source\HyperUnity\bin\Release\0Harmony.dll
 D:\Program\Steam\steamapps\common\RimWorld\Mods\HyperUnity\Source\HyperUnity\bin\Release\PipeSystem.dll
 D:\Program\Steam\steamapps\common\RimWorld\Mods\HyperUnity\Source\HyperUnity\bin\Release\VFECore.dll
 D:\Program\Steam\steamapps\common\RimWorld\Mods\HyperUnity\Source\HyperUnity\bin\Release\KCSG.dll
+D:\Program\Steam\steamapps\common\RimWorld\Mods\HyperUnity\Source\HyperUnity\obj\Release\HyperUnity.csproj.Up2Date
+D:\Program\Steam\steamapps\common\RimWorld\Mods\HyperUnity\Source\HyperUnity\bin\Release\AdaptiveStorageFramework.dll
+D:\Program\Steam\steamapps\common\RimWorld\Mods\HyperUnity\Source\HyperUnity\bin\Release\AdaptiveStorageFramework.pdb

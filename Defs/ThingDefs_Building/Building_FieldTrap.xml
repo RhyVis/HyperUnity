@@ -43,11 +43,6 @@
       <ComponentIndustrial>3</ComponentIndustrial>
     </costList>
     <comps>
-      <li Class="CompProperties_Power">
-        <compClass>CompPowerTrader</compClass>
-        <shortCircuitInRain>False</shortCircuitInRain>
-        <basePowerConsumption>300</basePowerConsumption>
-      </li>
       <li Class="HyperUnity.CompProperties_FieldTrap">
         <range>4.9</range>
       </li>
@@ -65,11 +60,6 @@
       <ComponentIndustrial>5</ComponentIndustrial>
     </costList>
     <comps>
-      <li Class="CompProperties_Power">
-        <compClass>CompPowerTrader</compClass>
-        <shortCircuitInRain>False</shortCircuitInRain>
-        <basePowerConsumption>800</basePowerConsumption>
-      </li>
       <li Class="HyperUnity.CompProperties_FieldTrap">
         <range>7.9</range>
       </li>
@@ -87,11 +77,6 @@
       <ComponentIndustrial>12</ComponentIndustrial>
     </costList>
     <comps>
-      <li Class="CompProperties_Power">
-        <compClass>CompPowerTrader</compClass>
-        <shortCircuitInRain>False</shortCircuitInRain>
-        <basePowerConsumption>2000</basePowerConsumption>
-      </li>
       <li Class="HyperUnity.CompProperties_FieldTrap">
         <range>14.9</range>
       </li>
@@ -110,11 +95,6 @@
       <ComponentSpacer>18</ComponentSpacer>
     </costList>
     <comps>
-      <li Class="CompProperties_Power">
-        <compClass>CompPowerTrader</compClass>
-        <shortCircuitInRain>False</shortCircuitInRain>
-        <basePowerConsumption>30000</basePowerConsumption>
-      </li>
       <li Class="HyperUnity.CompProperties_FieldTrap">
         <ignoreDistance>True</ignoreDistance>
       </li>

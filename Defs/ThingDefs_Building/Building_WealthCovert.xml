@@ -1,53 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-  <ThingDef Name="R_WealthCovertBase" ParentName="BuildingBase" Abstract="True">
-    <thingClass>HyperUnity.Building_WithoutZoneSettings</thingClass>
+  <ThingDef Name="R_WealthCovertBase" ParentName="AdaptiveStorageMinifiableBase" Abstract="True">
+    <thingClass>HyperUnity.Building_WealthCovert</thingClass>
     <graphicData>
-      <texPath>HU/Things/Building/Various/WealthCovert</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
+      <texPath>HU/Things/Building/Various/WealthCovert/WealthCovert</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
       <drawSize>(2,2)</drawSize>
+      <drawRotated>true</drawRotated>
+      <allowFlip>true</allowFlip>
       <damageData>
         <enabled>False</enabled>
       </damageData>
     </graphicData>
-    <altitudeLayer>Building</altitudeLayer>
     <size>(1, 1)</size>
     <building>
-      <preventDeteriorationOnTop>True</preventDeteriorationOnTop>
-      <ignoreStoredThingsBeauty>True</ignoreStoredThingsBeauty>
+      <maxItemsInCell>16</maxItemsInCell>
     </building>
     <costList>
       <Steel>300</Steel>
       <Plasteel>25</Plasteel>
       <Silver>120</Silver>
     </costList>
-    <tickerType>Normal</tickerType>
-    <passability>PassThroughOnly</passability>
-    <castEdgeShadows>False</castEdgeShadows>
-    <canOverlapZones>False</canOverlapZones>
-    <fillPercent>0.1</fillPercent>
+    <tickerType>Rare</tickerType>
     <statBases>
       <MaxHitPoints>250</MaxHitPoints>
       <Mass>8</Mass>
       <WorkToBuild>100</WorkToBuild>
     </statBases>
     <designationCategory>R_MainCategory</designationCategory>
-    <thingCategories>
-      <li>BuildingsMisc</li>
-    </thingCategories>
-    <minifiedDef>MinifiedThing</minifiedDef>
-    <inspectorTabs>
-      <li>ITab_Storage</li>
-    </inspectorTabs>
-    <comps>
-      <li Class="HyperUnity.CompProperties_PreventDeterioratingOrRotting"/>
-    </comps>
   </ThingDef>
 
   <ThingDef ParentName="R_WealthCovertBase">
     <defName>R_WealthCovert</defName>
     <label>财富转化器</label>
-    <description>可以将容器内物品转化为白银。</description>
+    <description>可以将容器内物品转化为白银或黄金。</description>
     <building>
       <fixedStorageSettings>
         <priority>Critical</priority>
@@ -69,16 +55,22 @@
         </filter>
       </defaultStorageSettings>
     </building>
-    <comps>
-      <li Class="LWM.DeepStorage.Properties" MayRequire="LWM.DeepStorage">
-        <maxNumberStacks>24</maxNumberStacks>
-        <showContents>False</showContents>
-        <timeStoringTakes>0</timeStoringTakes>
-        <overlayType>SumOfAllItems</overlayType>
-      </li>
-      <li Class="HyperUnity.CompProperties_ResourceCovert">
-        <ratio>0.7</ratio>
-      </li>
-    </comps>
   </ThingDef>
+  
+  <AdaptiveStorage.GraphicsDef>
+    <defName>R_WealthCovertGraphics</defName>
+    <targetDef>R_WealthCovert</targetDef>
+    <showContainedItems>false</showContainedItems>
+    <graphics>
+      <li>
+        <graphicData>
+          <texPath>HU/Things/Building/Various/WealthCovert/WealthCovert</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <drawSize>(2,2)</drawSize>
+          <drawRotated>true</drawRotated>
+          <allowFlip>true</allowFlip>
+        </graphicData>
+      </li>
+    </graphics>
+  </AdaptiveStorage.GraphicsDef>
 </Defs>

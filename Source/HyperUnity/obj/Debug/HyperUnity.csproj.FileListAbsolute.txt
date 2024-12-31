@@ -74,3 +74,5 @@ D:\Program\Steam\steamapps\common\RimWorld\Mods\HyperUnity\Source\HyperUnity\obj
 D:\Program\Steam\steamapps\common\RimWorld\Mods\HyperUnity\Source\HyperUnity\obj\Debug\HyperUnity.csproj.Up2Date
 D:\Program\Steam\steamapps\common\RimWorld\Mods\HyperUnity\Source\HyperUnity\obj\Debug\HyperUnity.dll
 D:\Program\Steam\steamapps\common\RimWorld\Mods\HyperUnity\Source\HyperUnity\obj\Debug\HyperUnity.pdb
+D:\Program\Steam\steamapps\common\RimWorld\Mods\HyperUnity\Source\HyperUnity\bin\Debug\AdaptiveStorageFramework.dll
+D:\Program\Steam\steamapps\common\RimWorld\Mods\HyperUnity\Source\HyperUnity\bin\Debug\AdaptiveStorageFramework.pdb

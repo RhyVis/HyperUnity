@@ -1,23 +1,17 @@
-﻿<wpf:ResourceDictionary xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib"
-                        xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                        xml:space="preserve">
-	<s:Boolean
-    x:Key="/Default/AddReferences/RecentPaths/=D_003A_005CProgram_005CSteam_005Csteamapps_005Ccommon_005CRimWorld_005CRimWorldWin64_005FData_005CManaged_005CAssembly_002DCSharp_002Edll/@EntryIndexedValue">True</s:Boolean>
-  <s:Boolean
-    x:Key="/Default/AddReferences/RecentPaths/=D_003A_005CProgram_005CSteam_005Csteamapps_005Ccommon_005CRimWorld_005CRimWorldWin64_005FData_005CManaged_005CUnityEngine_002ECoreModule_002Edll/@EntryIndexedValue">True</s:Boolean>
-  <s:Boolean
-    x:Key="/Default/AddReferences/RecentPaths/=D_003A_005CProgram_005CSteam_005Csteamapps_005Ccommon_005CRimWorld_005CRimWorldWin64_005FData_005CManaged_005CUnityEngine_002Edll/@EntryIndexedValue">True</s:Boolean>
-  <s:Boolean
-    x:Key="/Default/AddReferences/RecentPaths/=D_003A_005CProgram_005CSteam_005Csteamapps_005Cworkshop_005Ccontent_005C294100_005C1617282896_005C1_002E5_005CAssemblies_005CLWM_002EDeepStorage_002Edll/@EntryIndexedValue">True</s:Boolean>
-  <s:Boolean
-    x:Key="/Default/AddReferences/RecentPaths/=D_003A_005CProgram_005CSteam_005Csteamapps_005Cworkshop_005Ccontent_005C294100_005C2009463077_005C1_002E4_005CAssemblies_005C0Harmony_002Edll/@EntryIndexedValue">True</s:Boolean>
-  <s:Boolean
-    x:Key="/Default/AddReferences/RecentPaths/=D_003A_005CProgram_005CSteam_005Csteamapps_005Cworkshop_005Ccontent_005C294100_005C2023507013_005C1_002E5_005CAssemblies_005CPipeSystem_002Edll/@EntryIndexedValue">True</s:Boolean>
+﻿<wpf:ResourceDictionary xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xml:space="preserve">
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=D_003A_005CProgram_005CSteam_005Csteamapps_005Ccommon_005CRimWorld_005CRimWorldWin64_005FData_005CManaged_005CAssembly_002DCSharp_002Edll/@EntryIndexedValue">True</s:Boolean>
+  <s:Boolean x:Key="/Default/AddReferences/RecentPaths/=D_003A_005CProgram_005CSteam_005Csteamapps_005Ccommon_005CRimWorld_005CRimWorldWin64_005FData_005CManaged_005CUnityEngine_002ECoreModule_002Edll/@EntryIndexedValue">True</s:Boolean>
+  <s:Boolean x:Key="/Default/AddReferences/RecentPaths/=D_003A_005CProgram_005CSteam_005Csteamapps_005Ccommon_005CRimWorld_005CRimWorldWin64_005FData_005CManaged_005CUnityEngine_002Edll/@EntryIndexedValue">True</s:Boolean>
+  <s:Boolean x:Key="/Default/AddReferences/RecentPaths/=D_003A_005CProgram_005CSteam_005Csteamapps_005Cworkshop_005Ccontent_005C294100_005C1617282896_005C1_002E5_005CAssemblies_005CLWM_002EDeepStorage_002Edll/@EntryIndexedValue">True</s:Boolean>
+  <s:Boolean x:Key="/Default/AddReferences/RecentPaths/=D_003A_005CProgram_005CSteam_005Csteamapps_005Cworkshop_005Ccontent_005C294100_005C2009463077_005C1_002E4_005CAssemblies_005C0Harmony_002Edll/@EntryIndexedValue">True</s:Boolean>
+  <s:Boolean x:Key="/Default/AddReferences/RecentPaths/=D_003A_005CProgram_005CSteam_005Csteamapps_005Cworkshop_005Ccontent_005C294100_005C2023507013_005C1_002E5_005CAssemblies_005CPipeSystem_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=D_003A_005CProgram_005CSteam_005Csteamapps_005Cworkshop_005Ccontent_005C294100_005C3033901359_005C1_002E5_005CAssemblies_005CAdaptiveStorageFramework_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003ABuilding_005FStorage_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003F_002E_002E_003F_002E_002E_003F_002E_002E_003F_002E_002E_003F_002E_002E_003F_002E_002E_003F_002E_002E_003FWorkbench_003FJetBrains_003F_005FData_003F_002ERider_003Fconfig_003Fresharper_002Dhost_003FDecompilerCache_003Fdecompiler_003F69945a8ed6c540cf90b578de735e0605ca2600_003Fd8_003Fb20c70a5_003FBuilding_005FStorage_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003ACompProperties_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003F_002E_002E_003F_002E_002E_003F_002E_002E_003F_002E_002E_003F_002E_002E_003F_002E_002E_003F_002E_002E_003FWorkbench_003FJetBrains_003F_005FData_003F_002ERider_003Fconfig_003Fresharper_002Dhost_003FDecompilerCache_003Fdecompiler_003F69945a8ed6c540cf90b578de735e0605ca2600_003Fb1_003F8c0864fa_003FCompProperties_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AGasGrid_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003F_002E_002E_003F_002E_002E_003F_002E_002E_003F_002E_002E_003F_002E_002E_003F_002E_002E_003F_002E_002E_003FWorkbench_003FJetBrains_003F_005FData_003F_002ERider_003Fconfig_003Fresharper_002Dhost_003FDecompilerCache_003Fdecompiler_003F69945a8ed6c540cf90b578de735e0605ca2600_003Fa5_003F3b4cffc4_003FGasGrid_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AMap_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003F_002E_002E_003F_002E_002E_003F_002E_002E_003F_002E_002E_003F_002E_002E_003F_002E_002E_003F_002E_002E_003FWorkbench_003FJetBrains_003F_005FData_003F_002ERider_003Fconfig_003Fresharper_002Dhost_003FDecompilerCache_003Fdecompiler_003F69945a8ed6c540cf90b578de735e0605ca2600_003F14_003Fbbeebfcc_003FMap_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AThingClass_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003F_002E_002E_003F_002E_002E_003F_002E_002E_003F_002E_002E_003F_002E_002E_003F_002E_002E_003F_002E_002E_003FWorkbench_003FJetBrains_003F_005FData_003F_002ERider_003Fconfig_003Fresharper_002Dhost_003FDecompilerCache_003Fdecompiler_003F3d4f924b8cbc4dc9b7ef751c36105b8a23400_003Fdc_003Fddc34419_003FThingClass_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
   <s:String x:Key="/Default/CodeInspection/Highlighting/InspectionSeverities/=CheckNamespace/@EntryIndexedValue">DO_NOT_SHOW</s:String>
   <s:String x:Key="/Default/CodeInspection/Highlighting/InspectionSeverities/=InconsistentNaming/@EntryIndexedValue">HINT</s:String>
 
-  <s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;&#xD;
-  &lt;Assembly Path="D:\Program\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp.dll" /&gt;&#xD;
-  &lt;Assembly Path="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Xml.dll" /&gt;&#xD;
-  &lt;Assembly Path="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\mscorlib.dll" /&gt;&#xD;
-&lt;/AssemblyExplorer&gt;</s:String></wpf:ResourceDictionary>
+  <s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer /&gt;</s:String></wpf:ResourceDictionary>

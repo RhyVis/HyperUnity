@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
+  <!--
   <DesignatorDropdownGroupDef>
     <label>超空间反应釜</label>
     <defName>R_SpawnerNetDropdown</defName>
   </DesignatorDropdownGroupDef>
+  -->
 
   <ThingDef Name="R_SpawnerNetBase" ParentName="R_FurnBase" Abstract="True">
     <statBases>
@@ -32,7 +34,7 @@
     <designatorDropdown>R_SpawnerNetDropdown</designatorDropdown>
   </ThingDef>
 
-  <ThingDef ParentName="R_SpawnerNetBase">
+  <ThingDef ParentName="R_SpawnerNetBase" MayRequire="vanillaexpanded.vchemfuele">
     <defName>R_ChemfuelSpawner</defName>
     <label>超空间反应釜（燃料）</label>
     <description>由另一个世界提取可用燃料。</description>
@@ -56,7 +58,7 @@
   <ThingDef ParentName="R_SpawnerNetBase" MayRequire="vanillaracesexpanded.android">
     <defName>R_NeutroamineSpawner</defName>
     <label>超空间反应釜（中性胺）</label>
-    <description>由另一个世界提取可用燃料。</description>
+    <description>由另一个世界提取中性胺。</description>
     <graphicData>
       <texPath>HU/Things/Building/Production/MachineBlue</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -70,6 +72,27 @@
       <li Class="HyperUnity.CompProperties_SpawnIntoNet">
         <pipeNet>VREA_NeutroamineNet</pipeNet>
         <spawnCount>500</spawnCount>
+        <interval>2500</interval>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="R_SpawnerNetBase" MayRequire="vanillaracesexpanded.sanguophage">
+    <defName>R_HemogenSpawner</defName>
+    <label>超空间反应釜（血原）</label>
+    <description>由另一个世界提取血原。</description>
+    <graphicData>
+      <texPath>HU/Things/Building/Production/MachineRed</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+    </graphicData>
+    <size>(2,2)</size>
+    <costList>
+      <Hemogen>30</Hemogen>
+    </costList>
+    <comps>
+      <li Class="HyperUnity.CompProperties_SpawnIntoNet">
+        <pipeNet>VRE_HemogenNet</pipeNet>
+        <spawnCount>200</spawnCount>
         <interval>2500</interval>
       </li>
     </comps>
