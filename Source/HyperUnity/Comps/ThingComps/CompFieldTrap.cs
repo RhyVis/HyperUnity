@@ -21,14 +21,18 @@ public class CompProperties_FieldTrap : CompProperties
 public class CompFieldTrap : ThingComp
 {
   private bool _activated;
+  private bool _highSpeed;
   private bool _teleport;
   private CompProperties_FieldTrap Props => (CompProperties_FieldTrap)props;
+
+  private int interval => _highSpeed ? Props.checkInterval / 2 : Props.checkInterval;
 
   public override void PostExposeData()
   {
     base.PostExposeData();
     Scribe_Values.Look(ref _activated, "emitActivated");
     Scribe_Values.Look(ref _teleport, "emitTeleport");
+    Scribe_Values.Look(ref _highSpeed, "emitHighSpeed");
   }
 
   public override IEnumerable<Gizmo> CompGetGizmosExtra()
@@ -50,12 +54,20 @@ public class CompFieldTrap : ThingComp
       isActive = () => _teleport,
       toggleAction = delegate { _teleport = !_teleport; }
     };
+    yield return new Command_Toggle
+    {
+      defaultLabel = "R_HyperUnity_CompFieldTrap_Gizmo_Label3".Translate(),
+      defaultDesc = "R_HyperUnity_CompFieldTrap_Gizmo_Desc3".Translate(),
+      icon = TexCommand.DesirePower,
+      isActive = () => _highSpeed,
+      toggleAction = delegate { _highSpeed = !_highSpeed; }
+    };
   }
 
   public override void CompTick()
   {
     base.CompTick();
-    if (!parent.IsHashIntervalTick(Props.checkInterval) || !_activated ||
+    if (!parent.IsHashIntervalTick(interval) || !_activated ||
         !parent.Spawned) return;
     DoStun();
   }

@@ -28,6 +28,8 @@
   <R_HyperUnity_CompFieldTrap_Gizmo_Desc1>调整是否启动力场</R_HyperUnity_CompFieldTrap_Gizmo_Desc1>
   <R_HyperUnity_CompFieldTrap_Gizmo_Label2>传送</R_HyperUnity_CompFieldTrap_Gizmo_Label2>
   <R_HyperUnity_CompFieldTrap_Gizmo_Desc2>调整是否将敌人传送至装置</R_HyperUnity_CompFieldTrap_Gizmo_Desc2>
+  <R_HyperUnity_CompFieldTrap_Gizmo_Label3>高速模式</R_HyperUnity_CompFieldTrap_Gizmo_Label3>
+  <R_HyperUnity_CompFieldTrap_Gizmo_Desc3>高速模式下每秒激活一次</R_HyperUnity_CompFieldTrap_Gizmo_Desc3>
 
   <R_HyperUnity_HediffComp_SkillDeplete_Mote>退行: {0} XP -{1}</R_HyperUnity_HediffComp_SkillDeplete_Mote>
 
