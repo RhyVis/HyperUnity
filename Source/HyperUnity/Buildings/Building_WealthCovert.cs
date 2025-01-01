@@ -24,23 +24,25 @@ public class Building_WealthCovert : ThingClass
   public override IEnumerable<Gizmo> GetGizmos()
   {
     foreach (var gizmo in base.GetGizmos()) yield return gizmo;
-    yield return new Command_Action
+    yield return new Command_Toggle
     {
-      defaultLabel = "R_HyperUnity_CompResourceCovert_GizmoAuto_Label".Translate(AutoCovertString),
-      defaultDesc = "R_HyperUnity_CompResourceCovert_GizmoAuto_Desc".Translate(AutoCovertString),
+      defaultLabel = "R_HyperUnity_CompResourceCovert_GizmoA_Label".Translate(AutoCovertString),
+      defaultDesc = "R_HyperUnity_CompResourceCovert_GizmoA_Desc".Translate(AutoCovertString),
       icon = TexCommand.DesirePower,
-      action = delegate
+      isActive = () => _autoConvert,
+      toggleAction = delegate
       {
         _autoConvert = !_autoConvert;
         _ticks = 1250;
       }
     };
-    yield return new Command_Action
+    yield return new Command_Toggle
     {
-      defaultLabel = "R_HyperUnity_CompResourceCovert_GizmoAutoPlace_Label".Translate(AutoPlaceString),
-      defaultDesc = "R_HyperUnity_CompResourceCovert_GizmoAutoPlace_Desc".Translate(AutoPlaceString),
+      defaultLabel = "R_HyperUnity_CompResourceCovert_GizmoAP_Label".Translate(AutoPlaceString),
+      defaultDesc = "R_HyperUnity_CompResourceCovert_GizmoAP_Desc".Translate(AutoPlaceString),
       icon = TexCommand.DesirePower,
-      action = delegate
+      isActive = () => _autoPlace,
+      toggleAction = delegate
       {
         _autoPlace = !_autoPlace;
         _ticks = 1250;
@@ -55,8 +57,8 @@ public class Building_WealthCovert : ThingClass
     };
     yield return new Command_Action
     {
-      defaultLabel = "R_HyperUnity_CompResourceCovert_GizmoPlace_Label".Translate(),
-      defaultDesc = "R_HyperUnity_CompResourceCovert_GizmoPlace_Desc".Translate(),
+      defaultLabel = "R_HyperUnity_CompResourceCovert_GizmoP_Label".Translate(),
+      defaultDesc = "R_HyperUnity_CompResourceCovert_GizmoP_Desc".Translate(),
       icon = TexCommand.ForbidOff,
       action = delegate { TryPlace(true); }
     };

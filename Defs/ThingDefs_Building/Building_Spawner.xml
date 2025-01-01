@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-  <!--
   <DesignatorDropdownGroupDef>
     <label>超空间反应釜</label>
     <defName>R_SpawnerNetDropdown</defName>
   </DesignatorDropdownGroupDef>
-  -->
 
   <ThingDef Name="R_SpawnerNetBase" ParentName="R_FurnBase" Abstract="True">
     <statBases>
@@ -37,7 +35,7 @@
   <ThingDef ParentName="R_SpawnerNetBase" MayRequire="vanillaexpanded.vchemfuele">
     <defName>R_ChemfuelSpawner</defName>
     <label>超空间反应釜（燃料）</label>
-    <description>由另一个世界提取可用燃料。</description>
+    <description>由另一个世界提取燃料。</description>
     <graphicData>
       <texPath>HU/Things/Building/Production/MachineRed</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -81,13 +79,13 @@
     <label>超空间反应釜（血原）</label>
     <description>由另一个世界提取血原。</description>
     <graphicData>
-      <texPath>HU/Things/Building/Production/MachineRed</texPath>
+      <texPath>HU/Things/Building/Production/MachineDarkRed</texPath>
       <graphicClass>Graphic_Single</graphicClass>
       <drawSize>(2,2)</drawSize>
     </graphicData>
     <size>(2,2)</size>
     <costList>
-      <Hemogen>30</Hemogen>
+      <HemogenPack>30</HemogenPack>
     </costList>
     <comps>
       <li Class="HyperUnity.CompProperties_SpawnIntoNet">

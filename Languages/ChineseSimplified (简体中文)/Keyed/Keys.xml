@@ -34,18 +34,15 @@
   <R_HyperUnity_CompResourceCovert_Gizmo_Label>立即转化</R_HyperUnity_CompResourceCovert_Gizmo_Label>
   <R_HyperUnity_CompResourceCovert_Gizmo_Desc>立即将容器内的物品转化为贮存财富
   </R_HyperUnity_CompResourceCovert_Gizmo_Desc>
-  <R_HyperUnity_CompResourceCovert_Gizmo_Label>立即放置</R_HyperUnity_CompResourceCovert_Gizmo_Label>
-  <R_HyperUnity_CompResourceCovert_Gizmo_Desc>立即将容器内贮存的财富放置为白银或黄金
-  </R_HyperUnity_CompResourceCovert_Gizmo_Desc>
+  <R_HyperUnity_CompResourceCovert_GizmoP_Label>立即放置</R_HyperUnity_CompResourceCovert_GizmoP_Label>
+  <R_HyperUnity_CompResourceCovert_GizmoP_Desc>立即将容器内贮存的财富放置为白银或黄金
+  </R_HyperUnity_CompResourceCovert_GizmoP_Desc>
   <R_HyperUnity_CompResourceCovert_Gizmo1_Label>当前模式: {0}</R_HyperUnity_CompResourceCovert_Gizmo1_Label>
   <R_HyperUnity_CompResourceCovert_Gizmo1_Desc>决定转化为的目标</R_HyperUnity_CompResourceCovert_Gizmo1_Desc>
-  <R_HyperUnity_CompResourceCovert_GizmoAuto_Label>自动转化: {0}</R_HyperUnity_CompResourceCovert_GizmoAuto_Label>
-  <R_HyperUnity_CompResourceCovert_GizmoAuto_Desc>当前自动转化状态为: {0}
-  </R_HyperUnity_CompResourceCovert_GizmoAuto_Desc>
-  <R_HyperUnity_CompResourceCovert_GizmoAutoPlace_Label>自动放置: {0}
-  </R_HyperUnity_CompResourceCovert_GizmoAutoPlace_Label>
-  <R_HyperUnity_CompResourceCovert_GizmoAutoPlace_Desc>当前自动放置状态为: {0}
-  </R_HyperUnity_CompResourceCovert_GizmoAutoPlace_Desc>
+  <R_HyperUnity_CompResourceCovert_GizmoA_Label>自动转化: {0}</R_HyperUnity_CompResourceCovert_GizmoA_Label>
+  <R_HyperUnity_CompResourceCovert_GizmoA_Desc>当前自动转化状态为: {0}</R_HyperUnity_CompResourceCovert_GizmoA_Desc>
+  <R_HyperUnity_CompResourceCovert_GizmoAP_Label>自动放置: {0}</R_HyperUnity_CompResourceCovert_GizmoAP_Label>
+  <R_HyperUnity_CompResourceCovert_GizmoAP_Desc>当前自动放置状态为: {0}</R_HyperUnity_CompResourceCovert_GizmoAP_Desc>
   <R_HyperUnity_CompResourceCovert_Mote>转化财富: {0}</R_HyperUnity_CompResourceCovert_Mote>
   <R_HyperUnity_CompResourceCovert_MoteFailure>放置财富失败, 剩余: {0}</R_HyperUnity_CompResourceCovert_MoteFailure>
   <R_HyperUnity_CompResourceCovert_Info>储存财富: {0}</R_HyperUnity_CompResourceCovert_Info>
